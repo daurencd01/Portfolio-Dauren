@@ -10,6 +10,9 @@ body {
     font-family: var(--font-body);
     overflow-x: hidden;
     transition: background-color 0.5s;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Interactive Canvas */
@@ -120,6 +123,21 @@ body {
 .nav-links a:hover {
     color: var(--theme-color);
     text-shadow: 0 0 8px var(--theme-shadow);
+}
+
+/* Focus States for Accessibility */
+a:focus-visible,
+button:focus-visible,
+.hr-switch:focus-visible,
+.lang-switch:focus-visible {
+    outline: 2px solid var(--theme-color);
+    outline-offset: 2px;
+}
+
+.contact-card:focus-visible,
+.p-item:focus-visible {
+    outline: 2px solid var(--theme-color);
+    outline-offset: 4px;
 }
 
 /* Hero Section */
