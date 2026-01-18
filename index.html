@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koshkenbek Dauren | Cybersecurity Specialist</title>
+    <!-- Google Fonts: Orbitron, Space Grotesk, Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500;700;900&family=Space+Grotesk:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Modular CSS Structure -->
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body class="theme-scroll">
+
+    <canvas id="cyber-canvas"></canvas>
+    <div class="scanline"></div>
+
+    <!-- Navigation -->
+    <nav class="cyber-nav">
+        <div class="logo">KD_SEC</div>
+
+        <!-- Controls Container -->
+        <div class="nav-controls">
+            <!-- Recruiter Mode Toggle -->
+            <div class="hr-switch" id="hr-switch">
+                <span data-i18n="nav.hr">HR MODE</span>
+                <div class="toggle-box">
+                    <div class="toggle-knob"></div>
+                </div>
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="lang-switch" id="lang-switch">
+                <span class="active" data-lang="en">EN</span>
+                <span class="divider">/</span>
+                <span data-lang="ru">RU</span>
+            </div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#about" data-i18n="nav.about">ABOUT</a></li>
+            <li><a href="#experience" data-i18n="nav.exp">EXPERIENCE</a></li>
+            <li><a href="#dashboard" data-i18n="nav.dashboard">SOC-DASH</a></li>
+            <li><a href="#skills" data-i18n="nav.modules">MODULES</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <!-- Profile Photo (PNG) -->
+        <img src="assets/photo/profile.png" alt="Koshkenbek Dauren profile photo" class="profile-photo">
+
+        <div class="hero-content">
+            <h1 class="glitch-text" data-text="KOSHKENBEK DAUREN" data-i18n="hero.name">KOSHKENBEK DAUREN</h1>
+            <h2 class="subtitle" data-i18n="hero.title">CYBERSECURITY SPECIALIST</h2>
+            <div class="roles">
+                <span class="role blue-glow" data-i18n="hero.role1">SOC ANALYST L1</span>
+                <span class="separator">|</span>
+                <span class="role red-glow" data-i18n="hero.role2">PENTESTER (in training)</span>
+            </div>
+            <p class="tagline" data-i18n="hero.tagline">"Defending systems. Simulating attacks. Securing the future."
+            </p>
+        </div>
+        <div class="scroll-indicator">
+            <span data-i18n="hero.scroll">SCROLL_DOWN</span>
+            <div class="arrow"></div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- About (Intro) -->
+        <section id="about" class="fade-in">
+            <div class="section-title">
+                <h2 data-i18n="nav.about">ABOUT ME</h2>
+            </div>
+            <p class="about-text" data-i18n="about.desc">
+                Astana IT University student.
+            </p>
+
+            <!-- Career Goals -->
+            <div class="goals-container">
+                <div class="goal-item">
+                    <h4 data-i18n="goals.short_title">SHORT-TERM GOAL</h4>
+                    <p data-i18n="goals.short_desc">SOC Analyst L2 / Blue Team Engineer</p>
+                </div>
+                <div class="goal-item">
+                    <h4 data-i18n="goals.long_title">LONG-TERM GOAL</h4>
+                    <p data-i18n="goals.long_desc">Penetration Tester with strong defensive background</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="fade-in">
+            <div class="section-title">
+                <h2 data-i18n="exp.title">PROFESSIONAL EXPERIENCE</h2>
+            </div>
+            <div class="exp-card">
+                <div class="exp-header-row">
+                    <!-- Company Logo (PNG) -->
+                    <img src="assets/logos/sr-holding.png" alt="Sr Holding Logo" class="company-logo">
+                    <div class="exp-header">
+                        <h3 data-i18n="exp.role">SOC Analyst L1</h3>
+                        <span class="exp-company" data-i18n="exp.company">Sr Holding (China)</span>
+                        <span class="exp-date" data-i18n="exp.date">5 months – Present</span>
+                    </div>
+                </div>
+                <ul class="exp-list">
+                    <li data-i18n="exp.list1">Security event monitoring in SOC environment</li>
+                    <li data-i18n="exp.list2">Log analysis from network, endpoint, and system sources</li>
+                    <li data-i18n="exp.list3">Initial incident triage and alert investigation</li>
+                    <li data-i18n="exp.list4">Identification of suspicious activity and escalation when required</li>
+                    <li data-i18n="exp.list5">Working with security monitoring tools and dashboards</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SOC Dashboard -->
+        <section id="dashboard" class="fade-in">
+            <div class="dashboard-container">
+                <div class="dash-header">
+                    <h3 data-i18n="dash.title">LIVE SOC DASHBOARD</h3>
+                    <div class="live-dot"></div>
+                </div>
+                <div class="dash-grid">
+                    <div class="dash-stat">
+                        <span class="stat-label" data-i18n="dash.threats">THREATS BLOCKED</span>
+                        <span class="stat-value" id="threat-count">12,408</span>
+                    </div>
+                    <div class="dash-stat">
+                        <span class="stat-label" data-i18n="dash.uptime">SYSTEM UPTIME</span>
+                        <span class="stat-value">99.9%</span>
+                    </div>
+                    <div class="dash-visual">
+                        <!-- Simulated Bar Chart -->
+                        <div class="bar-chart">
+                            <div class="bar-col">
+                                <div class="fill" style="height: 40%"></div>
+                            </div>
+                            <div class="bar-col">
+                                <div class="fill" style="height: 70%"></div>
+                            </div>
+                            <div class="bar-col">
+                                <div class="fill" style="height: 50%"></div>
+                            </div>
+                            <div class="bar-col">
+                                <div class="fill" style="height: 85%"></div>
+                            </div>
+                            <div class="bar-col">
+                                <div class="fill" style="height: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-log">
+                    <span class="log-line" id="log-feed">Initializing monitoring protocols...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- How I Think (Mindset) -->
+        <section id="mindset" class="fade-in">
+            <div class="section-title">
+                <h2 data-i18n="mindset.title">HOW I THINK</h2>
+            </div>
+            <div class="mindset-container">
+                <div class="mindset-card blue-card">
+                    <h3 data-i18n="mindset.blue_h">BLUE TEAM MINDSET</h3>
+                    <p data-i18n="mindset.blue_desc">I focus on visibility, detection logic, and understanding what is
+                        normal versus suspicious behavior in systems and networks.</p>
+                </div>
+                <div class="mindset-card red-card">
+                    <h3 data-i18n="mindset.red_h">RED TEAM MINDSET</h3>
+                    <p data-i18n="mindset.red_desc">I analyze systems from an attacker’s perspective, looking for
+                        misconfigurations, weak points, and realistic attack paths.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dual Team Section (Skills Overview) -->
+        <div class="dual-section-container">
+            <!-- Blue Team -->
+            <section id="blue-team" class="team-section blue-border fade-in">
+                <div class="section-header">
+                    <h2 class="blue-text" data-i18n="blue.title">BLUE TEAM SKILLS</h2>
+                </div>
+                <div class="card-grid">
+                    <div class="cyber-card">
+                        <h3 data-i18n="blue.card1.title">SOC MONITORING</h3>
+                        <p data-i18n="blue.card1.desc">Real-time analysis of security alerts and SIEM logs.</p>
+                    </div>
+                    <div class="cyber-card">
+                        <h3 data-i18n="blue.card2.title">INCIDENT DETECTION</h3>
+                        <p data-i18n="blue.card2.desc">Triage, investigation, and threat analysis.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Red Team -->
+            <section id="red-team" class="team-section red-border fade-in">
+                <div class="section-header">
+                    <h2 class="red-text" data-i18n="red.title">RED TEAM SKILLS</h2>
+                </div>
+                <div class="card-grid">
+                    <div class="cyber-card">
+                        <h3 data-i18n="red.card1.title">PENTESTING FUNDAMENTALS</h3>
+                        <p data-i18n="red.card1.desc">Web & Network security basics, ethical hacking mindset.</p>
+                    </div>
+                    <div class="cyber-card">
+                        <h3 data-i18n="red.card2.title">VULNERABILITY ASSESSMENT</h3>
+                        <p data-i18n="red.card2.desc">Systematic identification and prioritization of security
+                            weaknesses.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tools -->
+        <section id="skills" class="fade-in">
+            <div class="section-title">
+                <h2 data-i18n="skills.title">TOOLS & TECHNOLOGIES</h2>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-item">KALI LINUX</div>
+                <div class="tool-item">WINDOWS OS</div>
+                <div class="tool-item">NMAP</div>
+                <div class="tool-item">WIRESHARK</div>
+                <div class="tool-item">BURP SUITE</div>
+                <div class="tool-item">METASPLOIT</div>
+                <div class="tool-item">SIEM CONCEPTS</div>
+                <div class="tool-item">GIT</div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="fade-in">
+            <div class="section-title">
+                <h2 data-i18n="archives.edu">EDUCATION</h2>
+            </div>
+            <div class="archives-grid">
+                <div class="archive-card education-card">
+                    <div class="card-top" data-i18n="archives.edu">EDUCATION</div>
+                    <!-- University Logo (PNG) -->
+                    <img src="assets/logos/aitu.png" alt="Astana IT University Logo" class="university-logo">
+                    <h4 data-i18n="archives.e1.title">Astana IT University</h4>
+                    <p data-i18n="archives.e1.time">3rd year student</p>
+                    <p data-i18n="archives.e1.desc">Bachelor’s Degree — Cybersecurity</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Certification Section -->
+        <section id="featured-cert" class="fade-in">
+            <div class="section-title">
+                <h2 data-i18n="cert.featured_title">FEATURED CERTIFICATION</h2>
+            </div>
+            <div class="featured-cert-container">
+                <div class="featured-header">
+                    <p data-i18n="cert.featured_subtitle">Industry-recognized professional training</p>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-img-wrapper">
+                        <img src="assets/certificates/cert-5.png" alt="Red Hat System Administration I (RH124)"
+                            class="featured-img">
+                        <div class="glow-effect"></div>
+                    </div>
+                    <div class="featured-details">
+                        <h3 data-i18n="cert.rh.title">Red Hat System Administration I (RH124)</h3>
+                        <p class="issuer" data-i18n="cert.rh.issuer">Red Hat Training and Certification</p>
+                        <p class="holder">Issued to: <span class="white-text">Dauren Koshkenbek</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- General Certifications Section -->
+        <section id="certificates" class="fade-in">
+            <div class="section-title">
+                <h2 data-i18n="archives.title">CERTIFICATIONS</h2>
+            </div>
+            <div class="cert-grid">
+                <!-- Cert 1 -->
+                <div class="cert-item">
+                    <div class="cert-preview">
+                        <img src="assets/certificates/cert-1.png" alt="IBM EDA Certificate">
+                    </div>
+                    <h4 data-i18n="archives.c1.title">Exploratory Data Analysis for Machine Learning</h4>
+                    <p>IBM • ID: <span class="mono">4E0CCP2N8JEO</span></p>
+                </div>
+                <!-- Cert 2 -->
+                <div class="cert-item">
+                    <div class="cert-preview">
+                        <img src="assets/certificates/cert-2.png" alt="Cloud Security Certificate">
+                    </div>
+                    <h4 data-i18n="archives.c2.title">Securing Cloud and Hybrid Networks</h4>
+                    <p>LearnQuest • ID: <span class="mono">C6973UXET7O5</span></p>
+                </div>
+                <!-- Cert 3 -->
+                <div class="cert-item">
+                    <div class="cert-preview">
+                        <img src="assets/certificates/cert-3.png" alt="Firewalls Certificate">
+                    </div>
+                    <h4 data-i18n="archives.c3.title">Next-Generation Firewalls and Intrusion Prevention</h4>
+                    <p>LearnQuest • ID: <span class="mono">UVZK33SZYZ2E</span></p>
+                </div>
+                <!-- Cert 4 -->
+                <div class="cert-item">
+                    <div class="cert-preview">
+                        <img src="assets/certificates/cert-4.png" alt="ML Regression Certificate">
+                    </div>
+                    <h4 data-i18n="archives.c4.title">Supervised Machine Learning: Regression</h4>
+                    <p>IBM • ID: <span class="mono">WGFI25H8VBDH</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages & Projects -->
+        <section id="extra" class="fade-in">
+            <div class="two-col-layout">
+                <div class="col">
+                    <h3 class="purple-text" data-i18n="languages.title">LANGUAGES</h3>
+                    <ul class="lang-list">
+                        <li><span data-i18n="languages.kk">Kazakh — Native</span>
+                            <div class="bar full"></div>
+                        </li>
+                        <li><span data-i18n="languages.ru">Russian — C2</span>
+                            <div class="bar full"></div>
+                        </li>
+                        <li><span data-i18n="languages.en">English — B2</span>
+                            <div class="bar med-high"></div>
+                        </li>
+                        <li><span data-i18n="languages.zh">Chinese — HSK 6</span>
+                            <div class="bar high"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3 class="purple-text" data-i18n="projects.title">PROJECTS / INITIATIVES</h3>
+                    <div class="project-mini-list">
+                        <!-- Project 1: CyberQuest Arena -->
+                        <a href="https://cyberquest-arena.vercel.app/" target="_blank" class="p-item">
+                            <div class="p-header">
+                                <h4 data-i18n="projects.p1.title">CyberQuest Arena</h4>
+                                <div class="external-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p data-i18n="projects.p1.desc">Cybersecurity learning and challenge-based project aimed at
+                                developing practical security skills.</p>
+                        </a>
+
+                        <!-- Project 2: OYNA -->
+                        <a href="https://oyna-play.vercel.app/" target="_blank" class="p-item">
+                            <div class="p-header">
+                                <h4 data-i18n="projects.p2.title">OYNA</h4>
+                                <div class="external-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p data-i18n="projects.p2.desc">Kazakhstan’s first platform for amateur sports, enabling
+                                fair matchmaking by skill level.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="fade-in">
+            <div class="contact-container">
+                <h2 class="glitch-text" data-text="CONTACT ME" data-i18n="contact.title">CONTACT ME</h2>
+                <p class="subtitle" data-i18n="contact.subtitle">
+                    Open to cybersecurity opportunities and collaboration
+                </p>
+
+                <div class="contact-methods">
+                    <!-- Email Card -->
+                    <a href="mailto:daurencd@gmail.com" class="contact-card email-card">
+                        <div class="icon-wrapper">
+                            <!-- Helper SVG Envelope -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="card-details">
+                            <h3>Email</h3>
+                            <p>daurencd@gmail.com</p>
+                        </div>
+                    </a>
+
+                    <!-- Telegram Card -->
+                    <a href="https://t.me/yellowcd" target="_blank" class="contact-card telegram-card">
+                        <div class="icon-wrapper">
+                            <!-- Telegram Paper Plane SVG -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </div>
+                        <div class="card-details">
+                            <h3>Telegram</h3>
+                            <p>@yellowcd</p>
+                        </div>
+                    </a>
+
+                    <!-- Instagram Card -->
+                    <a href="https://www.instagram.com/dauren_cd" target="_blank" class="contact-card instagram-card">
+                        <div class="icon-wrapper">
+                            <!-- Instagram Camera/Logo SVG -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </div>
+                        <div class="card-details">
+                            <h3>Instagram</h3>
+                            <p>dauren_cd</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-line"></div>
+        <p>© 2026 CYBERSECURITY PORTFOLIO | <span class="blue-text" data-i18n="nav.blue">BLUE DEFENSE</span> • <span
+                class="red-text" data-i18n="nav.red">RED OFFENSE</span></p>
+    </footer>
+
+    <!-- Modular JS Structure -->
+    <script src="js/language-switcher.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/recruiter-mode.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

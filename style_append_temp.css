@@ -1,0 +1,116 @@
+/* ... (Existing CSS) is assumed to be appended to, but write_to_file overwrites. 
+   I need to Append or Use Replace. I will use Replace/Append logic or just output the NEW styles
+   and then I realize I should probably use `replace_file_content` to append to the end of style.css
+   or I can use `write_to_file` with Overwrite=True if I include the old content.
+   
+   However, `replace_file_content` is better for appending. I will use that.
+   Wait, `replace_file_content` replaces a specific block. 
+   To append, I can target the last closing brace or just use `write_to_file` if I had the full content.
+   I don't have the full content in memory perfectly (though I just wrote it). 
+   Let's use `view_file` to be safe? No, I wrote it 2 steps ago. 
+   
+   Actually, I can just target the end of the file. 
+   The file ends with the footer styles. 
+   I will target the end of the file to append new styles.
+*/
+
+/* About Section */
+.block-text {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.info-block {
+    margin-bottom: 8px;
+}
+
+.info-block .label {
+    color: var(--cyan);
+    font-weight: bold;
+    min-width: 120px;
+    display: inline-block;
+}
+
+.info-block .value {
+    color: var(--text-color);
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-category h3 {
+    color: var(--green);
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #333;
+    padding-bottom: 5px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.skill-category li {
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.skill-category li::before {
+    content: "> ";
+    color: var(--primary-accent);
+}
+
+/* Certificates Section */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.cert-card {
+    background: #1a1e24;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.cert-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-accent);
+}
+
+.cert-card .icon {
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+.cert-card .cert-info h4 {
+    color: var(--yellow);
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.cert-card .cert-info p {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.cert-card .permissions {
+    font-family: monospace;
+    color: var(--green);
+    font-size: 0.75rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2px 4px;
+    border-radius: 2px;
+}

@@ -1,0 +1,61 @@
+:root {
+    --bg-dark: #050505;
+    --neon-blue: #00e5ff;
+    --neon-red: #ff003c;
+    --purple: #7000ff;
+    --text-main: #ffffff;
+    --text-dim: #888888;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-sub: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Dynamic Theme Base */
+    --theme-color: #00e5ff;
+    --theme-shadow: rgba(0, 229, 255, 0.4);
+}
+
+/* Recruiter Mode Colors */
+body.recruiter-mode {
+    --bg-dark: #f0f2f5;
+    --text-main: #1a1a1a;
+    --text-dim: #555;
+    --font-heading: 'Inter', sans-serif;
+    --font-sub: 'Inter', sans-serif;
+}
+
+/* Typography Helpers - Colors */
+.blue-text {
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue);
+}
+
+.red-text {
+    color: var(--neon-red);
+    text-shadow: 0 0 5px var(--neon-red);
+}
+
+.purple-text {
+    color: var(--purple);
+    text-shadow: 0 0 5px var(--purple);
+}
+
+.blue-glow {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.red-glow {
+    color: var(--neon-red);
+    text-shadow: 0 0 10px var(--neon-red);
+}
+
+/* Theme Overrides for Recruiter Mode */
+body.recruiter-mode .blue-text,
+body.recruiter-mode .red-text,
+body.recruiter-mode .purple-text,
+body.recruiter-mode .blue-glow,
+body.recruiter-mode .red-glow {
+    color: #0056b3;
+    /* Standard Blue link color for print */
+    text-shadow: none;
+}

@@ -1,0 +1,86 @@
+/* Scanline Effect */
+.scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0.5;
+    animation: scanline 8s linear infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateY(0vh);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+/* Live Dot Blink */
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Fade In Scroll Effect */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Glitch Text Effect Helpers */
+.glitch-text {
+    position: relative;
+}
+
+/* Focus Borders for Inputs */
+.focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--theme-color);
+    transition: width 0.3s, background 0.5s;
+}
+
+input:focus~.focus-border,
+textarea:focus~.focus-border {
+    width: 100%;
+}
+
+/* Text Fade for Language Switch */
+.text-fade {
+    animation: fadeText 0.3s ease-in-out;
+}
+
+@keyframes fadeText {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
