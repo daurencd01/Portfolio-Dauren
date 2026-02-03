@@ -5,7 +5,38 @@ const translations = {
         hero: { name: "KOSHKENBEK DAUREN", title: "CYBERSECURITY SPECIALIST", role1: "SOC ANALYST L1", role2: "PENTESTER (in training)", tagline: "\"Defending systems. Simulating attacks. Securing the future.\"", scroll: "SCROLL_DOWN" },
         about: { desc: "Koshkenbek Dauren is a 3rd-year Cybersecurity student at Astana IT University and a SOC Analyst L1 with hands-on experience in real-world security monitoring.\n\nCurrently working at Sr Holding, a Chinese company, where I have been part of the Security Operations Center for over 5 months. My responsibilities include continuous monitoring, log analysis, and initial incident investigation across network, endpoint, and system-level events.\n\nWhile my professional experience is focused on Blue Team operations, I am actively transitioning toward penetration testing. I am studying offensive security independently, practicing with Kali Linux and its toolset, and building a strong foundation in ethical hacking methodologies.\n\nIn parallel, I am developing my own technical initiatives and mini-startups, including OYNA and CyberQuest Arena, combining cybersecurity knowledge with product and platform thinking." },
         goals: { short_title: "SHORT-TERM GOAL", short_desc: "SOC Analyst L2 / Blue Team Engineer", long_title: "LONG-TERM GOAL", long_desc: "Penetration Tester with strong defensive background" },
-        exp: { title: "PROFESSIONAL EXPERIENCE", role: "SOC Analyst L1", company: "Sr Holding (China)", date: "5 months – Present", list1: "Security event monitoring in SOC environment", list2: "Log analysis from network, endpoint, and system sources", list3: "Initial incident triage and alert investigation", list4: "Identification of suspicious activity and escalation when required", list5: "Working with security monitoring tools and dashboards" },
+        exp: {
+            title: "PROFESSIONAL EXPERIENCE",
+            job1: {
+                role: "SOC Analyst L1",
+                company: "GTS — Information Security of Kazakhstan",
+                date: "February 03, 2026 – Present",
+                list1: "Security event monitoring in SOC environment",
+                list2: "Log analysis from network, endpoint, and system sources",
+                list3: "Initial alert triage and incident investigation",
+                list4: "Identification of suspicious activity and escalation",
+                list5: "Working within a high-responsibility national security environment"
+            },
+            job2: {
+                role: "SOC Analyst L1",
+                company: "Sr Holding (China)",
+                date: "September 01, 2025 – February 01, 2026",
+                list1: "Security event monitoring in SOC environment",
+                list2: "Log analysis from network, endpoint, and system sources",
+                list3: "Initial incident triage and alert investigation",
+                list4: "Identification of suspicious activity and escalation when required",
+                list5: "Working with security monitoring tools and dashboards"
+            },
+            job3: {
+                role: "Network Security Project Participant",
+                company: "Kazakhtelecom (Sapa+)",
+                date: "January 20, 2025 – June 20, 2025",
+                list1: "Participation in a network security project",
+                list2: "Support of secure network infrastructure",
+                list3: "Monitoring and basic analysis of network security events",
+                list4: "Working within a large enterprise telecom environment"
+            }
+        },
         dash: { title: "LIVE SOC DASHBOARD", threats: "THREATS BLOCKED", uptime: "SYSTEM UPTIME" },
         mindset: { title: "HOW I THINK", blue_h: "BLUE TEAM MINDSET", blue_desc: "I focus on visibility, detection logic, and understanding what is normal versus suspicious behavior in systems and networks.", red_h: "RED TEAM MINDSET", red_desc: "I analyze systems from an attacker’s perspective, looking for misconfigurations, weak points, and realistic attack paths." },
         blue: { title: "BLUE TEAM SKILLS", card1: { title: "SOC MONITORING", desc: "Real-time analysis of security alerts and SIEM logs." }, card2: { title: "INCIDENT DETECTION", desc: "Triage, investigation, and threat analysis." } },
@@ -21,7 +52,38 @@ const translations = {
         hero: { name: "КОШКЕНБЕК ДАУРЕН", title: "СПЕЦИАЛИСТ ПО КИБЕРБЕЗОПАСНОСТИ", role1: "SOC АНАЛИТИК", role2: "ПЕНТЕСТЕР", tagline: "\"Защита систем. Симуляция атак. Безопасное будущее.\"", scroll: "ВНИЗ" },
         about: { desc: "Koshkenbek Dauren — студент 3 курса Astana IT University по направлению Cybersecurity и SOC Analyst L1 с практическим опытом работы в центре мониторинга безопасности.\n\nНа данный момент более 5 месяцев работаю в китайской компании Sr Holding в роли SOC Analyst L1. Занимаюсь постоянным мониторингом событий безопасности, анализом логов, сетевого трафика и endpoint-событий, а также первичной обработкой и классификацией инцидентов.\n\nМой коммерческий опыт сосредоточен на Blue Team, однако я активно развиваюсь в направлении penetration testing. Изучаю offensive security, уверенно работаю с Kali Linux и его инструментами, осваиваю подходы этичного хакинга и уязвимостей.\n\nПараллельно разрабатываю собственные мини-проекты и стартапы, такие как OYNA и CyberQuest Arena, совмещая кибербезопасность с продуктовым мышлением." },
         goals: { short_title: "КРАТКОСРОЧНАЯ ЦЕЛЬ", short_desc: "SOC Analyst L2 / Blue Team Engineer", long_title: "ДОЛГОСРОЧНАЯ ЦЕЛЬ", long_desc: "Penetration Tester с сильным защитным бэкграундом" },
-        exp: { title: "ОПЫТ РАБОТЫ", role: "SOC Analyst L1", company: "Sr Holding (China)", date: "5 месяцев – По настоящее время", list1: "Мониторинг событий безопасности в SOC", list2: "Анализ логов сетевых устройств, endpoint и систем", list3: "Первичная обработка алертов и инцидентов", list4: "Выявление подозрительной активности и эскалация", list5: "Работа с системами мониторинга и аналитическими панелями" },
+        exp: {
+            title: "ОПЫТ РАБОТЫ",
+            job1: {
+                role: "SOC Analyst L1",
+                company: "GTS — Information Security of Kazakhstan",
+                date: "3 февраля 2026 – По настоящее время",
+                list1: "Мониторинг событий безопасности в SOC",
+                list2: "Анализ логов сетевых устройств, endpoint и систем",
+                list3: "Первичная обработка алертов и инцидентов",
+                list4: "Выявление подозрительной активности и эскалация",
+                list5: "Работа в среде с повышенными требованиями к безопасности"
+            },
+            job2: {
+                role: "SOC Analyst L1",
+                company: "Sr Holding (China)",
+                date: "1 сентября 2025 – 1 февраля 2026",
+                list1: "Мониторинг событий безопасности в SOC",
+                list2: "Анализ логов сетевых устройств, endpoint и систем",
+                list3: "Первичная обработка алертов и инцидентов",
+                list4: "Выявление подозрительной активности и эскалация",
+                list5: "Работа с инструментами мониторинга безопасности"
+            },
+            job3: {
+                role: "Участник проекта сетевой безопасности",
+                company: "Kazakhtelecom (Sapa+)",
+                date: "20 января 2025 – 20 июня 2025",
+                list1: "Участие в проекте сетевой безопасности",
+                list2: "Поддержка защищённой сетевой инфраструктуры",
+                list3: "Мониторинг и базовый анализ событий сетевой безопасности",
+                list4: "Работа в крупной телекоммуникационной компании"
+            }
+        },
         dash: { title: "LIVE SOC ДАШБОРД", threats: "УГРОЗ ОТРАЖЕНО", uptime: "АПТАЙМ" },
         mindset: { title: "КАК Я МЫШЛЮ", blue_h: "МЫШЛЕНИЕ BLUE TEAM", blue_desc: "Я фокусируюсь на видимости, логике обнаружения и понимании того, что является нормальным, а что подозрительным поведением в системах и сетях.", red_h: "МЫШЛЕНИЕ RED TEAM", red_desc: "Я анализирую системы с точки зрения атакующего, ищу ошибки конфигурации, слабые места и реалистичные пути атаки." },
         blue: { title: "НАВЫКИ BLUE TEAM", card1: { title: "SOC МОНИТОРИНГ", desc: "Анализ угроз в реальном времени и работа с логами." }, card2: { title: "ОБНАРУЖЕНИЕ ИНЦИДЕНТОВ", desc: "Три аж, расследование и анализ угроз." } },
