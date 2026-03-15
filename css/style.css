@@ -981,6 +981,17 @@ body.recruiter-mode .cert-preview {
     stroke: #d62976;
 }
 
+/* LinkedIn Card: Blue Glow */
+.linkedin-card:hover {
+    border-color: #0077b5;
+    box-shadow: 0 0 20px rgba(0, 119, 181, 0.4);
+    transform: scale(1.05);
+}
+
+.linkedin-card:hover .icon-wrapper svg {
+    stroke: #0077b5;
+}
+
 /* Mobile Contact Layout */
 @media (max-width: 768px) {
     .contact-methods {
@@ -1107,6 +1118,10 @@ body.recruiter-mode .telegram-card:hover .icon-wrapper svg {
 
 body.recruiter-mode .instagram-card:hover .icon-wrapper svg {
     stroke: #d62976;
+}
+
+body.recruiter-mode .linkedin-card:hover .icon-wrapper svg {
+    stroke: #0077b5;
 }
 
 /* Media Queries */
