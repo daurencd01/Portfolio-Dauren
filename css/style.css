@@ -2082,3 +2082,13 @@ body.intro-active {
         stroke-dashoffset: 0;
     }
 }
+/* ===== Security Tools CTA (добавлено) ===== */
+.hero-cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+.tools-btn { color: var(--neon-red); border-color: var(--neon-red); background: rgba(255, 0, 60, 0.06); }
+.tools-btn svg { width: 18px; height: 18px; }
+.tools-btn:hover { background: var(--neon-red); color: #050505; box-shadow: 0 0 25px rgba(255, 0, 60, 0.4); transform: translateY(-2px); }
+body.recruiter-mode .tools-btn { color: #b3003c; border-color: #b3003c; background: #fff; }
+.nav-tools { color: var(--neon-red) !important; text-shadow: 0 0 6px rgba(255, 0, 60, 0.4); }
+@media (max-width: 768px) {
+  .hero-cta { flex-direction: column; align-items: center; }
+}
