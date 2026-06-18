@@ -32,11 +32,9 @@ const SITES = [
     check: async u => (await tf(`https://dev.to/api/users/by_username?url=${u}`, 6000)).status === 200 },
   { name: 'Keybase', url: u => `https://keybase.io/${u}`,
     check: async u => { try { const r = await tf(`https://keybase.io/_/api/1.0/user/lookup.json?usernames=${u}`, 6000); const d = await r.json(); return !!(d.them && d.them[0]); } catch { return false; } } },
-  { name: 'GitLab', url: u => `https://gitlab.com/${u}`,
-    check: async u => { try { const r = await tf(`https://gitlab.com/${u}`, 6000); return r.status === 200; } catch { return false; } } },
-  { name: 'Replit', url: u => `https://replit.com/@${u}`,
-    check: async u => { try { const r = await tf(`https://replit.com/@${u}`, 6000); return r.status === 200; } catch { return false; } } },
 ];
+// Примечание: используем только источники с надёжными API (точное 200/404 или JSON),
+// чтобы избежать ложных срабатываний от сайтов, отдающих 200 на любой URL.
 async function usernameSearch(u) {
   const results = await Promise.all(SITES.map(async s => {
     try { return { site: s.name, url: s.url(u), found: await s.check(u) }; }
