@@ -22,7 +22,9 @@ async function emailBreaches(email) {
   return { found: list.length > 0, count: list.length, breaches: list.slice(0, 60) };
 }
 
-// ---------- Поиск ника по сайтам (Sherlock-стиль, надёжный набор) ----------
+// ---------- Поиск ника по сайтам (Sherlock-стиль) ----------
+const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36';
+// Авто-проверка: только источники с надёжной детекцией (API 200/404, JSON или маркер в HTML).
 const SITES = [
   { name: 'GitHub', url: u => `https://github.com/${u}`,
     check: async u => (await tf(`https://api.github.com/users/${u}`, 6000)).status === 200 },
@@ -32,15 +34,30 @@ const SITES = [
     check: async u => (await tf(`https://dev.to/api/users/by_username?url=${u}`, 6000)).status === 200 },
   { name: 'Keybase', url: u => `https://keybase.io/${u}`,
     check: async u => { try { const r = await tf(`https://keybase.io/_/api/1.0/user/lookup.json?usernames=${u}`, 6000); const d = await r.json(); return !!(d.them && d.them[0]); } catch { return false; } } },
+  { name: 'Telegram', url: u => `https://t.me/${u}`,
+    check: async u => { try { const r = await tf(`https://t.me/${u}`, 6000, { headers: { 'User-Agent': BROWSER_UA } }); return /tgme_page_title/.test(await r.text()); } catch { return false; } } },
+  { name: 'YouTube', url: u => `https://www.youtube.com/@${u}`,
+    check: async u => { try { return (await tf(`https://www.youtube.com/@${u}`, 6000, { headers: { 'User-Agent': BROWSER_UA } })).status === 200; } catch { return false; } } },
 ];
-// Примечание: используем только источники с надёжными API (точное 200/404 или JSON),
-// чтобы избежать ложных срабатываний от сайтов, отдающих 200 на любой URL.
+// Соцсети, блокирующие серверную проверку (login-стена / 200 на любой URL) —
+// для них честнее дать прямую ссылку «открыть и проверить вручную».
+const MANUAL = [
+  { name: 'Instagram', url: u => `https://www.instagram.com/${u}/` },
+  { name: 'X (Twitter)', url: u => `https://x.com/${u}` },
+  { name: 'TikTok', url: u => `https://www.tiktok.com/@${u}` },
+  { name: 'Facebook', url: u => `https://www.facebook.com/${u}` },
+  { name: 'Reddit', url: u => `https://www.reddit.com/user/${u}` },
+  { name: 'VK', url: u => `https://vk.com/${u}` },
+  { name: 'Twitch', url: u => `https://www.twitch.tv/${u}` },
+  { name: 'Pinterest', url: u => `https://www.pinterest.com/${u}/` },
+];
 async function usernameSearch(u) {
-  const results = await Promise.all(SITES.map(async s => {
+  const auto = await Promise.all(SITES.map(async s => {
     try { return { site: s.name, url: s.url(u), found: await s.check(u) }; }
     catch { return { site: s.name, url: s.url(u), found: false, error: true }; }
   }));
-  return results;
+  const manual = MANUAL.map(s => ({ site: s.name, url: s.url(u) }));
+  return { auto, manual };
 }
 
 // ---------- Телефон: базовая валидация + страна ----------
