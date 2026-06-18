@@ -76,30 +76,50 @@ async function ipInfo(ip) {
 }
 
 // ---------- Certificate Transparency (поддомены) ----------
+// certSpotter быстрее и надёжнее crt.sh; crt.sh — фолбэк.
 async function subdomains(domain) {
+  const collect = (names) => {
+    const set = new Set();
+    names.forEach(n => {
+      n = String(n || '').trim().toLowerCase().replace(/^\*\./, '');
+      if (n && n.endsWith(domain)) set.add(n);
+    });
+    return [...set].sort().slice(0, 100);
+  };
+  // 1) certSpotter
   try {
-    const r = await tf(`https://crt.sh/?q=%25.${domain}&output=json`, 9000);
+    const r = await tf(`https://api.certspotter.com/v1/issuances?domain=${domain}&include_subdomains=true&expand=dns_names`, 8000);
+    if (r.ok) {
+      const arr = await r.json();
+      const names = [];
+      arr.forEach(x => (x.dns_names || []).forEach(n => names.push(n)));
+      const res = collect(names);
+      if (res.length) return res;
+    }
+  } catch {}
+  // 2) crt.sh (фолбэк)
+  try {
+    const r = await tf(`https://crt.sh/?q=%25.${domain}&output=json`, 7000);
     if (!r.ok) return null;
     const arr = await r.json();
-    const set = new Set();
-    arr.forEach(x => String(x.name_value || '').split('\n').forEach(n => {
-      n = n.trim().toLowerCase().replace(/^\*\./, '');
-      if (n && n.endsWith(domain)) set.add(n);
-    }));
-    return [...set].sort().slice(0, 100);
+    const names = [];
+    arr.forEach(x => String(x.name_value || '').split('\n').forEach(n => names.push(n)));
+    return collect(names);
   } catch { return null; }
 }
 
-// ---------- Wayback Machine ----------
+// ---------- Wayback Machine (лёгкие запросы: первый + последний снимок) ----------
 async function wayback(domain) {
+  const base = `https://web.archive.org/cdx/search/cdx?url=${encodeURIComponent(domain)}&fl=timestamp&output=json`;
+  const fmt = (t) => t ? `${t.slice(0, 4)}-${t.slice(4, 6)}-${t.slice(6, 8)}` : null;
+  const one = async (extra) => {
+    try { const r = await tf(base + extra, 6000); if (!r.ok) return null; const rows = await r.json(); return rows && rows[1] ? rows[1][0] : null; }
+    catch { return null; }
+  };
   try {
-    const r = await tf(`https://web.archive.org/cdx/search/cdx?url=${domain}&output=json&fl=timestamp&collapse=timestamp:6&limit=5000`, 8000);
-    if (!r.ok) return null;
-    const rows = await r.json();
-    if (!rows || rows.length < 2) return { snapshots: 0, first: null, last: null };
-    const ts = rows.slice(1).map(x => x[0]).filter(Boolean).sort();
-    const fmt = (t) => `${t.slice(0, 4)}-${t.slice(4, 6)}-${t.slice(6, 8)}`;
-    return { snapshots: ts.length, first: fmt(ts[0]), last: fmt(ts[ts.length - 1]) };
+    const [first, last] = await Promise.all([one('&limit=1'), one('&limit=-1')]);
+    if (!first && !last) return null;
+    return { first: fmt(first), last: fmt(last), archived: true };
   } catch { return null; }
 }
 

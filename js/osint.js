@@ -63,8 +63,8 @@
       : (subs ? '<div class="muted">Поддомены не найдены</div>' : '');
     // Wayback
     const wb = d.wayback;
-    const wbInner = wb && wb.snapshots
-      ? `<div class="stats"><div class="stat"><b>${wb.snapshots.toLocaleString()}</b><span>снимков</span></div><div class="stat"><b>${esc(wb.first)}</b><span>первый</span></div><div class="stat"><b>${esc(wb.last)}</b><span>последний</span></div></div>`
+    const wbInner = wb && (wb.first || wb.last)
+      ? `<div class="stats"><div class="stat"><b>${esc(wb.first || '—')}</b><span>первый снимок</span></div><div class="stat"><b>${esc(wb.last || '—')}</b><span>последний снимок</span></div></div><div class="muted" style="margin-top:10px">Сайт присутствует в веб-архиве</div>`
       : (wb ? '<div class="muted">Архивных снимков нет</div>' : '');
 
     out.innerHTML = `
