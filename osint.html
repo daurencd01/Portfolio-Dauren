@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free passive OSINT lookup — WHOIS, DNS, subdomains, hosting and Wayback history for any domain. By Koshkenbek Dauren.">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-ancestors 'none';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>OSINT Lookup | KD_SEC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500;700;900&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/scanner.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="theme-color" content="#050505">
+</head>
+
+<body style="background: var(--bg-dark); color: var(--text-main); margin: 0; min-height: 100vh;">
+
+    <a href="index.html" class="scan-back">← Back to portfolio</a>
+
+    <main class="scan-wrap">
+        <div class="scan-head">
+            <h1>OSINT LOOKUP</h1>
+            <p>Пассивная разведка по открытым данным: WHOIS, DNS, поддомены из Certificate
+               Transparency, хостинг и история в Wayback Machine. Только публичные реестры.</p>
+            <div class="tool-switch">
+                <a href="scanner.html">🛡️ Security Scanner</a>
+                <a href="osint.html" class="active">🔎 OSINT Lookup</a>
+            </div>
+        </div>
+
+        <form class="scan-form" id="osintForm" autocomplete="off">
+            <input type="text" id="osintDomain" placeholder="example.com" aria-label="Домен" required>
+            <button type="submit" id="osintBtn">LOOKUP</button>
+        </form>
+        <div class="scan-hint">Только публичные данные. Проверяйте свои домены или те, на которые есть разрешение.</div>
+
+        <div class="scan-status" id="osintStatus"></div>
+        <div class="scan-results" id="osintResults"></div>
+    </main>
+
+    <script src="js/osint.js"></script>
+</body>
+
+</html>
