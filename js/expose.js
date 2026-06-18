@@ -49,17 +49,23 @@
     if (count === 0) return card('ok', `<h2>✅ Пароль не найден в утечках</h2><div class="muted">Это не гарантия надёжности, но в публичных базах его нет. Проверка прошла в браузере — пароль никуда не отправлялся.</div>`);
     return card('bad', `<h2>⚠️ Пароль скомпрометирован</h2><div class="muted">Встречается в утечках <b>${count.toLocaleString()}</b> раз. Немедленно прекратите его использовать. (Проверка в браузере по модели k-anonymity — сам пароль не передавался.)</div>`);
   }
-  function renderUsername(q, list) {
-    const found = list.filter(x => x.found);
+  function renderUsername(q, data) {
+    const auto = data.auto || [];
+    const manual = data.manual || [];
+    const found = auto.filter(x => x.found);
     const head = found.length
       ? `<h2>🔎 Найдено профилей: ${found.length}</h2>`
       : `<h2>🔎 Профили не найдены</h2>`;
-    const rows = list.map(x =>
+    const autoRows = auto.map(x =>
       `<div class="exp-row ${x.found ? 'f' : 'n'}">
          <span>${x.found ? '✅' : '◻️'} ${esc(x.site)}</span>
          ${x.found ? `<a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.url)}</a>` : '<span class="muted">не найден</span>'}
        </div>`).join('');
-    return card('', `${head}<div class="muted" style="margin-bottom:12px">Ник <b>${esc(q)}</b> · проверенный набор сайтов</div>${rows}`);
+    const manualLinks = manual.map(x =>
+      `<a class="sn-link" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.site)} ↗</a>`).join('');
+    const autoCard = card('', `${head}<div class="muted" style="margin-bottom:12px">Ник <b>${esc(q)}</b> · автопроверка по надёжным сайтам</div>${autoRows}`);
+    const manualCard = card('', `<h2>🌐 Соцсети — проверить вручную</h2><div class="muted" style="margin-bottom:14px">Эти сети блокируют автопроверку (нужен вход). Открой ссылку — профиль есть, если страница открывается:</div><div class="sn-grid">${manualLinks}</div>`);
+    return autoCard + '<div style="height:18px"></div>' + manualCard;
   }
   function renderPhone(r) {
     if (!r.valid) return card('bad', `<h2>❌ Невалидный номер</h2><div class="muted">${esc(r.reason)}</div>`);
