@@ -224,6 +224,16 @@
   .tag-list { max-height: 200px; }
 }
 
+/* ---- Legal / disclaimer ---- */
+.legal { margin: 46px 0 0; padding: 18px 20px; border: 1px solid rgba(255,255,255,.07);
+  border-radius: 12px; background: rgba(255,255,255,.015); color: var(--text-dim);
+  font-family: var(--font-body); font-size: .76rem; line-height: 1.65; }
+.legal strong { display: block; margin-bottom: 8px; color: var(--neon-blue);
+  font-family: var(--font-sub); font-size: .85rem; letter-spacing: .5px; }
+.legal p { margin: 0 0 8px; }
+.legal p:last-child { margin-bottom: 0; }
+.legal b { color: #cfe3ff; }
+
 /* ---- print / PDF ---- */
 @media print {
   body { background: #fff !important; color: #111 !important; }
