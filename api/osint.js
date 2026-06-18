@@ -108,16 +108,21 @@ async function subdomains(domain) {
   } catch { return null; }
 }
 
-// ---------- Wayback Machine (лёгкие запросы: первый + последний снимок) ----------
+// ---------- Wayback Machine (Availability API — быстрый и надёжный) ----------
 async function wayback(domain) {
-  const base = `https://web.archive.org/cdx/search/cdx?url=${encodeURIComponent(domain)}&fl=timestamp&output=json`;
   const fmt = (t) => t ? `${t.slice(0, 4)}-${t.slice(4, 6)}-${t.slice(6, 8)}` : null;
-  const one = async (extra) => {
-    try { const r = await tf(base + extra, 6000); if (!r.ok) return null; const rows = await r.json(); return rows && rows[1] ? rows[1][0] : null; }
-    catch { return null; }
+  const q = async (ts) => {
+    try {
+      const u = `https://archive.org/wayback/available?url=${encodeURIComponent(domain)}${ts ? `&timestamp=${ts}` : ''}`;
+      const r = await tf(u, 6000);
+      if (!r.ok) return null;
+      const d = await r.json();
+      const s = d && d.archived_snapshots && d.archived_snapshots.closest;
+      return (s && s.timestamp) ? s.timestamp : null;
+    } catch { return null; }
   };
   try {
-    const [first, last] = await Promise.all([one('&limit=1'), one('&limit=-1')]);
+    const [first, last] = await Promise.all([q('19960101'), q('29990101')]); // ближайший к 1996 = первый, к 2999 = последний
     if (!first && !last) return null;
     return { first: fmt(first), last: fmt(last), archived: true };
   } catch { return null; }
