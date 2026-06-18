@@ -104,6 +104,14 @@
         </div>`;
     }).join('');
 
+    // данные для встраиваемого бейджа
+    const origin = location.origin;
+    let host = data.finalUrl; try { host = new URL(data.finalUrl).hostname; } catch {}
+    const badgeUrl = `${origin}/api/badge?url=${encodeURIComponent(host)}`;
+    const scannerLink = `${origin}/scanner.html`;
+    const mdSnip = `[![Security](${badgeUrl})](${scannerLink})`;
+    const htmlSnip = `<a href="${scannerLink}"><img src="${badgeUrl}" alt="Security"></a>`;
+
     out.innerHTML = `
       <div class="score-card">
         <div class="gauge-wrap" style="color:${color}">
@@ -121,14 +129,25 @@
           <button class="dl-btn" id="dlBtn">⬇ Скачать отчёт (PDF)</button>
         </div>
       </div>
-      ${cats}`;
+      ${cats}
+      <div class="cat badge-card">
+        <div class="cat-head"><span class="cat-name">🏷️ Бейдж для сайта</span></div>
+        <div class="muted" style="margin-bottom:12px">Встрой на свой сайт или в README — бейдж показывает оценку и ведёт на этот сканер.</div>
+        <img class="badge-preview" src="${badgeUrl}" alt="security badge" width="90" height="20">
+        <div class="snip"><code>${esc(mdSnip)}</code><button class="copy-btn" data-c="md">Копировать MD</button></div>
+        <div class="snip"><code>${esc(htmlSnip)}</code><button class="copy-btn" data-c="html">Копировать HTML</button></div>
+      </div>`;
 
-    // PDF + Learn-mode (через делегирование — CSP запрещает инлайн-обработчики)
+    // PDF + Learn-mode + copy (через делегирование — CSP запрещает инлайн-обработчики)
     const dl = document.getElementById('dlBtn');
     if (dl) dl.addEventListener('click', () => window.print());
     out.querySelectorAll('.learn-btn').forEach(b => b.addEventListener('click', () => {
       const box = out.querySelector(`[data-learn-box="${b.dataset.learn}"]`);
       if (box) { box.hidden = !box.hidden; b.classList.toggle('open', !box.hidden); }
+    }));
+    out.querySelectorAll('.copy-btn').forEach(b => b.addEventListener('click', async () => {
+      const txt = b.dataset.c === 'md' ? mdSnip : htmlSnip;
+      try { await navigator.clipboard.writeText(txt); const o = b.textContent; b.textContent = '✓ Скопировано'; setTimeout(() => b.textContent = o, 1500); } catch {}
     }));
 
     // анимации
