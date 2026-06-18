@@ -77,7 +77,7 @@
       <div class="osint-head-card">
         <div class="dom">${esc(d.domain)}</div>
         <div class="sub">OSINT-сводка по открытым данным · ${d.durationMs} мс · ${new Date(d.scannedAt).toLocaleString()}</div>
-        <button class="dl-btn" onclick="window.print()">⬇ Скачать отчёт (PDF)</button>
+        <button class="dl-btn" id="dlBtnOsint">⬇ Скачать отчёт (PDF)</button>
       </div>
       <div class="osint-grid">
         ${card('🌐', 'WHOIS / Регистрация', whois)}
@@ -86,6 +86,8 @@
         ${card('🕰️', 'Wayback Machine', wbInner)}
       </div>
       ${card('🔎', 'Поддомены (Certificate Transparency)', subInner)}`;
+    const dl = document.getElementById('dlBtnOsint');
+    if (dl) dl.addEventListener('click', () => window.print());
     out.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 

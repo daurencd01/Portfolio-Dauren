@@ -8,6 +8,28 @@
   const out = document.getElementById('scanResults');
 
   const ICON = { pass: '✅', warn: '⚠️', fail: '❌', info: 'ℹ️' };
+
+  // Learn mode — объяснения простыми словами (по id проверки)
+  const LEARN = {
+    https: 'HTTPS шифрует данные между тобой и сайтом. Без него пароли и сообщения видны любому в той же сети (например в кафе по Wi-Fi).',
+    redirect: 'Если набрать сайт без https, браузер должен сам перекинуть на защищённую версию. Иначе первый запрос уходит открытым текстом.',
+    ssl: 'SSL-сертификат подтверждает, что сайт настоящий, и включает шифрование. Если он просрочен — браузер покажет страшное предупреждение.',
+    hsts: 'HSTS говорит браузеру «всегда заходи только по https». Защищает от подмены соединения на незащищённое (атака посередине).',
+    csp: 'Content-Security-Policy ограничивает, какой код может выполняться на странице. Главная защита от XSS — внедрения чужого скрипта.',
+    clickjacking: 'Запрет встраивать сайт в чужой <iframe>. Иначе мошенник может наложить невидимую кнопку поверх и обмануть клик («кликджекинг»).',
+    nosniff: 'Запрещает браузеру «угадывать» тип файла. Без этого картинку можно подсунуть как скрипт и выполнить вредоносный код.',
+    referrer: 'Контролирует, какой адрес страницы передаётся при переходе по ссылке. Защищает от утечки приватных URL чужим сайтам.',
+    permissions: 'Ограничивает доступ сайта к камере, микрофону, геолокации. Без политики встроенные скрипты могут запросить лишнее.',
+    cors: 'CORS определяет, кто может обращаться к API сайта из браузера. Значение «*» разрешает всем — это часто небезопасно.',
+    disclosure: 'Заголовки Server / X-Powered-By выдают версии ПО. Зная версию, злоумышленник ищет под неё готовый эксплойт.',
+    cookies: 'Флаги cookie: HttpOnly (скрипт не прочитает), Secure (только по https), SameSite (защита от CSRF). Без них куки легче украсть.',
+    spf: 'SPF — запись в DNS, где перечислены серверы, которым можно слать письма от твоего домена. Без неё проще подделать письмо от тебя.',
+    dmarc: 'DMARC говорит, что делать с поддельными письмами от домена (отклонить/в спам). Сильная защита от фишинга и подделки отправителя.',
+    mx: 'MX-записи показывают, какие серверы принимают почту домена. Это справочная информация, не уязвимость.',
+    files: 'Файлы вроде .env и .git содержат пароли, ключи и исходный код. Если они открыты в интернете — это критическая утечка.',
+    securitytxt: 'security.txt — файл с контактом для исследователей безопасности. Показывает зрелость: куда сообщить о найденной уязвимости.',
+  };
+
   const STEPS = [
     'Resolving DNS records',
     'Establishing TLS connection',
@@ -63,9 +85,10 @@
         <div class="check s-${c.status}">
           <div class="ico">${ICON[c.status] || '•'}</div>
           <div>
-            <h3>${esc(c.title)}</h3>
+            <h3>${esc(c.title)}${LEARN[c.id] ? ` <button class="learn-btn" data-learn="${esc(c.id)}" aria-label="Что это значит?">?</button>` : ''}</h3>
             <div class="detail">${esc(c.detail)}</div>
             ${c.recommendation && c.recommendation !== '—' && c.status !== 'pass' ? `<div class="rec">💡 ${esc(c.recommendation)}</div>` : ''}
+            ${LEARN[c.id] ? `<div class="learn-box" data-learn-box="${esc(c.id)}" hidden>📖 ${esc(LEARN[c.id])}</div>` : ''}
           </div>
         </div>`).join('');
       const sc = cat.score == null ? '—' : cat.score;
@@ -95,10 +118,18 @@
             <span class="pill w">${data.summary.warn} предупреждений</span>
             <span class="pill f">${data.summary.fail} проблем</span>
           </div>
-          <button class="dl-btn" onclick="window.print()">⬇ Скачать отчёт (PDF)</button>
+          <button class="dl-btn" id="dlBtn">⬇ Скачать отчёт (PDF)</button>
         </div>
       </div>
       ${cats}`;
+
+    // PDF + Learn-mode (через делегирование — CSP запрещает инлайн-обработчики)
+    const dl = document.getElementById('dlBtn');
+    if (dl) dl.addEventListener('click', () => window.print());
+    out.querySelectorAll('.learn-btn').forEach(b => b.addEventListener('click', () => {
+      const box = out.querySelector(`[data-learn-box="${b.dataset.learn}"]`);
+      if (box) { box.hidden = !box.hidden; b.classList.toggle('open', !box.hidden); }
+    }));
 
     // анимации
     requestAnimationFrame(() => {
