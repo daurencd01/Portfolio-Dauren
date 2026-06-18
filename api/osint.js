@@ -7,6 +7,7 @@
 
 const dns = require('dns').promises;
 const net = require('net');
+const guard = require('../lib/guard');
 
 function isPrivateIp(ip) {
   if (net.isIPv4(ip)) {
@@ -139,6 +140,11 @@ module.exports = async (req, res) => {
     if (!/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(raw)) return res.status(400).json({ error: 'Некорректный домен' });
     if (raw === 'localhost') return res.status(400).json({ error: 'Запрещённый хост' });
 
+    if (await guard.rateLimited(req)) return res.status(429).json({ error: 'Слишком много запросов. Подождите минуту.' });
+    const cacheKey = `osint:${raw}`;
+    const hit = await guard.cacheGet(cacheKey);
+    if (hit) return res.status(200).json({ ...hit, cached: true });
+
     // защита: домен должен резолвиться в публичный IP
     let firstIp = null;
     try {
@@ -154,10 +160,12 @@ module.exports = async (req, res) => {
     ]);
     const ip = firstIp ? await ipInfo(firstIp) : null;
 
-    return res.status(200).json({
+    const payload = {
       domain: raw, apex: d, scannedAt: new Date().toISOString(), durationMs: Date.now() - start,
       whois, dns: dnsRec, ip, subdomains: sub, wayback: wb,
-    });
+    };
+    await guard.cacheSet(cacheKey, payload, 600);
+    return res.status(200).json(payload);
   } catch (e) {
     return res.status(400).json({ error: e.message || 'Ошибка OSINT-запроса' });
   }

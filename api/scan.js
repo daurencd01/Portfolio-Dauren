@@ -8,6 +8,7 @@
 const dns = require('dns').promises;
 const net = require('net');
 const tls = require('tls');
+const guard = require('../lib/guard');
 
 // ---------- SSRF guard ----------
 function isPrivateIp(ip) {
@@ -140,6 +141,11 @@ module.exports = async (req, res) => {
     if (!['http:', 'https:'].includes(target.protocol)) return res.status(400).json({ error: 'Только http/https' });
     await assertSafeHost(target.hostname);
 
+    if (await guard.rateLimited(req)) return res.status(429).json({ error: 'Слишком много запросов. Подождите минуту.' });
+    const cacheKey = `scan:${target.href}`;
+    const cached = await guard.cacheGet(cacheKey);
+    if (cached) return res.status(200).json({ ...cached, cached: true });
+
     const start = Date.now();
     const [resp, cert, dnsInfo, redirects] = await Promise.all([
       timeoutFetch(target.href, { method: 'GET', headers: { 'User-Agent': 'KD-SEC-Scanner/2.0' } }),
@@ -204,7 +210,7 @@ module.exports = async (req, res) => {
     const pct = scoreOf(all);
     const grade = pct >= 95 ? 'A+' : pct >= 85 ? 'A' : pct >= 70 ? 'B' : pct >= 55 ? 'C' : pct >= 40 ? 'D' : 'F';
 
-    return res.status(200).json({
+    const payload = {
       target: target.href, finalUrl: resp.url, scannedAt: new Date().toISOString(),
       durationMs: Date.now() - start, grade, score: pct,
       summary: {
@@ -213,7 +219,9 @@ module.exports = async (req, res) => {
         fail: all.filter(c => c.status === 'fail').length,
       },
       categories, checks: all,
-    });
+    };
+    await guard.cacheSet(cacheKey, payload, 600);
+    return res.status(200).json(payload);
   } catch (e) {
     return res.status(400).json({ error: e.message || 'Ошибка сканирования' });
   }
