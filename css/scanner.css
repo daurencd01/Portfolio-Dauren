@@ -171,6 +171,16 @@
 .learn-box { margin-top: 8px; padding: 10px 12px; background: rgba(0,229,255,.06); border: 1px solid rgba(0,229,255,.18);
   border-radius: 8px; color: #cfe3ff; font-size: .85rem; line-height: 1.5; font-family: var(--font-body); }
 
+/* ---- Badge ---- */
+.badge-card { background: rgba(255,255,255,.02); border: 1px solid rgba(0,229,255,.18); border-radius: 12px; padding: 18px 20px; }
+.badge-preview { display: block; margin: 4px 0 16px; image-rendering: -webkit-optimize-contrast; }
+.snip { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.snip code { flex: 1; min-width: 0; background: #070b12; border: 1px solid rgba(255,255,255,.08); border-radius: 8px;
+  padding: 10px 12px; font-family: 'Space Grotesk', monospace; font-size: .78rem; color: #a7f3d0; overflow-x: auto; white-space: nowrap; }
+.copy-btn { flex: none; background: transparent; border: 1px solid var(--neon-blue); color: var(--neon-blue);
+  border-radius: 8px; padding: 9px 14px; font-family: var(--font-sub); font-size: .8rem; cursor: pointer; transition: all .2s; white-space: nowrap; }
+.copy-btn:hover { background: rgba(0,229,255,.1); box-shadow: 0 0 10px var(--theme-shadow); }
+
 /* ============ MOBILE (≤640px) ============ */
 @media (max-width: 640px) {
   .scan-wrap { padding: 70px 14px 60px; }
@@ -207,6 +217,9 @@
   .sn-link { flex: 1 1 calc(50% - 8px); text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
   .terminal { margin: 10px 0; }
   .term-body { font-size: .8rem; padding: 14px; }
+  .snip { flex-direction: column; align-items: stretch; }
+  .copy-btn { width: 100%; min-height: 44px; }
+  .badge-card { padding: 14px; }
   .exp-card h2, .osint-card h2 { font-size: 1.05rem; }
   .tag-list { max-height: 200px; }
 }
