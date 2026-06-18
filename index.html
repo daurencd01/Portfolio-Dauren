@@ -43,9 +43,29 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#050505">
 </head>
 
 <body class="theme-scroll">
+
+    <!-- Intro / boot animation -->
+    <div id="intro-screen">
+        <div class="intro-grid"></div>
+        <div class="intro-inner">
+            <div class="intro-shield">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+            </div>
+            <div class="intro-logo" data-text="KD_SEC">KD<span>_SEC</span></div>
+            <div class="intro-bar"><span class="intro-bar-fill"></span></div>
+            <div class="intro-status">INITIALIZING SECURE SESSION…</div>
+        </div>
+    </div>
 
     <canvas id="cyber-canvas"></canvas>
     <div class="scanline"></div>
@@ -749,6 +769,7 @@
     <script src="js/recruiter-mode.js"></script>
     <script src="js/script.js"></script>
     <script src="js/section-nav.js"></script>
+    <script src="js/intro.js"></script>
 </body>
 
 </html>
