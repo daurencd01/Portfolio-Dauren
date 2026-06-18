@@ -13,6 +13,23 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <title>Koshkenbek Dauren | Cybersecurity Specialist</title>
+
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Koshkenbek Dauren | Cybersecurity Specialist">
+    <meta property="og:description"
+        content="SOC Analyst L1 with Blue Team experience and a penetration testing focus. Astana IT University — Cybersecurity.">
+    <meta property="og:image" content="assets/photo/profile.png">
+    <meta property="og:url" content="https://portfolio-dauren.vercel.app/">
+    <meta property="og:site_name" content="KD_SEC Portfolio">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Koshkenbek Dauren | Cybersecurity Specialist">
+    <meta name="twitter:description"
+        content="SOC Analyst L1 with Blue Team experience and a penetration testing focus.">
+    <meta name="twitter:image" content="assets/photo/profile.png">
+
     <!-- Google Fonts: Orbitron, Space Grotesk, Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +57,9 @@
         <!-- Controls Container -->
         <div class="nav-controls">
             <!-- Recruiter Mode Toggle -->
-            <div class="hr-switch" id="hr-switch">
+            <div class="hr-switch" id="hr-switch" role="switch" aria-checked="false" tabindex="0"
+                title="Recruiter view — clean summary with CV, contacts & key facts"
+                data-i18n-title="hr.tooltip">
                 <span data-i18n="nav.hr">HR MODE</span>
                 <div class="toggle-box">
                     <div class="toggle-knob"></div>
@@ -58,8 +77,8 @@
         <ul class="nav-links">
             <li><a href="#about" data-i18n="nav.about">ABOUT</a></li>
             <li><a href="#experience" data-i18n="nav.exp">EXPERIENCE</a></li>
-            <li><a href="#dashboard" data-i18n="nav.dashboard">SOC-DASH</a></li>
-            <li><a href="#skills" data-i18n="nav.modules">MODULES</a></li>
+            <li><a href="#skills" data-i18n="nav.modules">SKILLS</a></li>
+            <li><a href="#extra" data-i18n="nav.projects">PROJECTS</a></li>
         </ul>
     </nav>
 
@@ -78,6 +97,17 @@
             </div>
             <p class="tagline" data-i18n="hero.tagline">"Defending systems. Simulating attacks. Securing the future."
             </p>
+            <div class="hero-cta">
+                <a href="assets/cv/Koshkenbek_Dauren_CV.pdf" download class="cv-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span data-i18n="hero.cv">DOWNLOAD CV</span>
+                </a>
+            </div>
         </div>
         <div class="scroll-indicator">
             <span data-i18n="hero.scroll">SCROLL_DOWN</span>
@@ -87,6 +117,48 @@
 
     <!-- Main Content -->
     <main>
+
+        <!-- Recruiter summary (only visible in HR mode) -->
+        <section class="hr-banner" aria-label="Recruiter summary">
+            <div class="hr-top">
+                <img class="hr-photo" src="assets/photo/profile.png" alt="Koshkenbek Dauren">
+                <div class="hr-id">
+                    <h1>Koshkenbek Dauren</h1>
+                    <p class="hr-role">Cybersecurity Specialist · SOC Analyst L1</p>
+                    <p class="hr-loc" data-i18n="hr.available">Open to work · Astana, Kazakhstan</p>
+                    <div class="hr-actions">
+                        <a class="hr-btn primary" href="assets/cv/Koshkenbek_Dauren_CV.pdf" download
+                            data-i18n="hero.cv">DOWNLOAD CV</a>
+                        <a class="hr-btn" href="mailto:daurencd@gmail.com">Email</a>
+                        <a class="hr-btn" href="https://www.linkedin.com/in/dauren-koshkenbek-6b90a9358/"
+                            target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a class="hr-btn" href="https://github.com/daurencd01" target="_blank"
+                            rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hr-facts">
+                <div class="hr-fact">
+                    <span class="hr-fact-label" data-i18n="hr.exp_label">Experience</span>
+                    <span class="hr-fact-val" data-i18n="hr.exp_val">SOC Analyst L1 · Blue Team — Sauyt Lab, Sr
+                        Holding</span>
+                </div>
+                <div class="hr-fact">
+                    <span class="hr-fact-label" data-i18n="hr.edu_label">Education</span>
+                    <span class="hr-fact-val" data-i18n="hr.edu_val">Astana IT University — Cybersecurity, 3rd
+                        year</span>
+                </div>
+                <div class="hr-fact">
+                    <span class="hr-fact-label" data-i18n="hr.cert_label">Certifications</span>
+                    <span class="hr-fact-val" data-i18n="hr.cert_val">Red Hat RH124 · CyberShield CSCSA (STS)</span>
+                </div>
+                <div class="hr-fact">
+                    <span class="hr-fact-label" data-i18n="hr.lang_label">Languages</span>
+                    <span class="hr-fact-val" data-i18n="hr.lang_val">Kazakh · Russian C1 · English B1 · Chinese
+                        HSK5</span>
+                </div>
+            </div>
+        </section>
 
         <!-- About (Intro) -->
         <section id="about" class="fade-in">
@@ -177,68 +249,6 @@
             </div>
         </section>
 
-        <!-- SOC Dashboard -->
-        <section id="dashboard" class="fade-in">
-            <div class="dashboard-container">
-                <div class="dash-header">
-                    <h3 data-i18n="dash.title">LIVE SOC DASHBOARD</h3>
-                    <div class="live-dot"></div>
-                </div>
-                <div class="dash-grid">
-                    <div class="dash-stat">
-                        <span class="stat-label" data-i18n="dash.threats">THREATS BLOCKED</span>
-                        <span class="stat-value" id="threat-count">12,408</span>
-                    </div>
-                    <div class="dash-stat">
-                        <span class="stat-label" data-i18n="dash.uptime">SYSTEM UPTIME</span>
-                        <span class="stat-value">99.9%</span>
-                    </div>
-                    <div class="dash-visual">
-                        <!-- Simulated Bar Chart -->
-                        <div class="bar-chart">
-                            <div class="bar-col">
-                                <div class="fill" style="height: 40%"></div>
-                            </div>
-                            <div class="bar-col">
-                                <div class="fill" style="height: 70%"></div>
-                            </div>
-                            <div class="bar-col">
-                                <div class="fill" style="height: 50%"></div>
-                            </div>
-                            <div class="bar-col">
-                                <div class="fill" style="height: 85%"></div>
-                            </div>
-                            <div class="bar-col">
-                                <div class="fill" style="height: 60%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dash-log">
-                    <span class="log-line" id="log-feed">Initializing monitoring protocols...</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- How I Think (Mindset) -->
-        <section id="mindset" class="fade-in">
-            <div class="section-title">
-                <h2 data-i18n="mindset.title">HOW I THINK</h2>
-            </div>
-            <div class="mindset-container">
-                <div class="mindset-card blue-card">
-                    <h3 data-i18n="mindset.blue_h">BLUE TEAM MINDSET</h3>
-                    <p data-i18n="mindset.blue_desc">I focus on visibility, detection logic, and understanding what is
-                        normal versus suspicious behavior in systems and networks.</p>
-                </div>
-                <div class="mindset-card red-card">
-                    <h3 data-i18n="mindset.red_h">RED TEAM MINDSET</h3>
-                    <p data-i18n="mindset.red_desc">I analyze systems from an attacker’s perspective, looking for
-                        misconfigurations, weak points, and realistic attack paths.</p>
-                </div>
-            </div>
-        </section>
-
         <!-- Dual Team Section (Skills Overview) -->
         <div class="dual-section-container">
             <!-- Blue Team -->
@@ -282,15 +292,97 @@
             <div class="section-title">
                 <h2 data-i18n="skills.title">TOOLS & TECHNOLOGIES</h2>
             </div>
-            <div class="tools-grid">
-                <div class="tool-item">KALI LINUX</div>
-                <div class="tool-item">WINDOWS OS</div>
-                <div class="tool-item">NMAP</div>
-                <div class="tool-item">WIRESHARK</div>
-                <div class="tool-item">BURP SUITE</div>
-                <div class="tool-item">METASPLOIT</div>
-                <div class="tool-item">SIEM CONCEPTS</div>
-                <div class="tool-item">GIT</div>
+            <div class="tools-groups">
+                <div class="tool-group">
+                    <h4 class="tool-group-title red-text" data-i18n="skills.offensive">OFFENSIVE</h4>
+                    <div class="tools-grid">
+                        <div class="tool-item">NMAP</div>
+                        <div class="tool-item">BURP SUITE</div>
+                        <div class="tool-item">METASPLOIT</div>
+                    </div>
+                </div>
+                <div class="tool-group">
+                    <h4 class="tool-group-title blue-text" data-i18n="skills.defensive">DEFENSIVE</h4>
+                    <div class="tools-grid">
+                        <div class="tool-item">WIRESHARK</div>
+                        <div class="tool-item">SIEM CONCEPTS</div>
+                        <div class="tool-item">LOG ANALYSIS</div>
+                    </div>
+                </div>
+                <div class="tool-group">
+                    <h4 class="tool-group-title purple-text" data-i18n="skills.platforms">OS &amp; TOOLS</h4>
+                    <div class="tools-grid">
+                        <div class="tool-item">KALI LINUX</div>
+                        <div class="tool-item">WINDOWS OS</div>
+                        <div class="tool-item">GIT</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages & Projects -->
+        <section id="extra" class="fade-in">
+            <div class="two-col-layout">
+                <div class="col">
+                    <h3 class="purple-text" data-i18n="projects.title">PROJECTS / INITIATIVES</h3>
+                    <div class="project-mini-list">
+                        <!-- Project 1: HackShield (Diploma Project) -->
+                        <a href="https://hackshield-play-nexus.vercel.app/auth" target="_blank"
+                            rel="noopener noreferrer" class="p-item">
+                            <div class="p-header">
+                                <div class="p-title-wrap">
+                                    <h4 data-i18n="projects.p1.title">HackShield</h4>
+                                    <span class="diploma-badge" data-i18n="projects.diploma">DIPLOMA</span>
+                                </div>
+                                <div class="external-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p data-i18n="projects.p1.desc">My graduation (diploma) project — a gamified cybersecurity
+                                training platform with interactive missions, challenges and a 2D game.</p>
+                        </a>
+
+                        <!-- Project 2: OYNA -->
+                        <a href="https://oyna-play.vercel.app/" target="_blank" rel="noopener noreferrer"
+                            class="p-item">
+                            <div class="p-header">
+                                <h4 data-i18n="projects.p2.title">OYNA</h4>
+                                <div class="external-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p data-i18n="projects.p2.desc">Kazakhstan’s first platform for amateur sports, enabling
+                                fair matchmaking by skill level.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <h3 class="purple-text" data-i18n="languages.title">LANGUAGES</h3>
+                    <ul class="lang-list">
+                        <li><span data-i18n="languages.kk">Kazakh — Native</span>
+                            <div class="bar full"></div>
+                        </li>
+                        <li><span data-i18n="languages.ru">Russian — C1</span>
+                            <div class="bar full"></div>
+                        </li>
+                        <li><span data-i18n="languages.en">English — B1</span>
+                            <div class="bar med-high"></div>
+                        </li>
+                        <li><span data-i18n="languages.zh">Chinese — HSK 5</span>
+                            <div class="bar high"></div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -314,22 +406,39 @@
         <!-- Featured Certification Section -->
         <section id="featured-cert" class="fade-in">
             <div class="section-title">
-                <h2 data-i18n="cert.featured_title">FEATURED CERTIFICATION</h2>
+                <h2 data-i18n="cert.featured_title">FEATURED CERTIFICATIONS</h2>
             </div>
             <div class="featured-cert-container">
                 <div class="featured-header">
                     <p data-i18n="cert.featured_subtitle">Industry-recognized professional training</p>
                 </div>
-                <div class="featured-card">
-                    <div class="featured-img-wrapper">
-                        <img src="assets/certificates/cert-5.png" alt="Red Hat System Administration I (RH124)"
-                            class="featured-img">
-                        <div class="glow-effect"></div>
+                <div class="featured-grid">
+                    <!-- Featured 1: CyberShield CSCSA (GTS) -->
+                    <div class="featured-card cscsa-card">
+                        <div class="featured-img-wrapper">
+                            <img src="assets/certificates/cert-cscsa.png"
+                                alt="CyberShield Certified SOC Analyst (CSCSA)" class="featured-img">
+                            <div class="glow-effect"></div>
+                        </div>
+                        <div class="featured-details">
+                            <h3 data-i18n="cert.cscsa.title">CyberShield Certified SOC Analyst (CSCSA)</h3>
+                            <p class="issuer cyan-issuer" data-i18n="cert.cscsa.issuer">CyberShield Academy · State Technical Service (STS)</p>
+                            <p class="holder">Issued to: <span class="white-text">Dauren Koshkenbek</span></p>
+                        </div>
                     </div>
-                    <div class="featured-details">
-                        <h3 data-i18n="cert.rh.title">Red Hat System Administration I (RH124)</h3>
-                        <p class="issuer" data-i18n="cert.rh.issuer">Red Hat Training and Certification</p>
-                        <p class="holder">Issued to: <span class="white-text">Dauren Koshkenbek</span></p>
+
+                    <!-- Featured 2: Red Hat RH124 -->
+                    <div class="featured-card">
+                        <div class="featured-img-wrapper">
+                            <img src="assets/certificates/cert-5.png" alt="Red Hat System Administration I (RH124)"
+                                class="featured-img">
+                            <div class="glow-effect"></div>
+                        </div>
+                        <div class="featured-details">
+                            <h3 data-i18n="cert.rh.title">Red Hat System Administration I (RH124)</h3>
+                            <p class="issuer" data-i18n="cert.rh.issuer">Red Hat Training and Certification</p>
+                            <p class="holder">Issued to: <span class="white-text">Dauren Koshkenbek</span></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -376,65 +485,67 @@
             </div>
         </section>
 
-        <!-- Languages & Projects -->
-        <section id="extra" class="fade-in">
-            <div class="two-col-layout">
-                <div class="col">
-                    <h3 class="purple-text" data-i18n="languages.title">LANGUAGES</h3>
-                    <ul class="lang-list">
-                        <li><span data-i18n="languages.kk">Kazakh — Native</span>
-                            <div class="bar full"></div>
-                        </li>
-                        <li><span data-i18n="languages.ru">Russian — C1</span>
-                            <div class="bar full"></div>
-                        </li>
-                        <li><span data-i18n="languages.en">English — B1</span>
-                            <div class="bar med-high"></div>
-                        </li>
-                        <li><span data-i18n="languages.zh">Chinese — HSK 5</span>
-                            <div class="bar high"></div>
-                        </li>
-                    </ul>
+        <!-- How I Think (Mindset) -->
+        <section id="mindset" class="fade-in">
+            <div class="section-title">
+                <h2 data-i18n="mindset.title">HOW I THINK</h2>
+            </div>
+            <div class="mindset-container">
+                <div class="mindset-card blue-card">
+                    <h3 data-i18n="mindset.blue_h">BLUE TEAM MINDSET</h3>
+                    <p data-i18n="mindset.blue_desc">I focus on visibility, detection logic, and understanding what is
+                        normal versus suspicious behavior in systems and networks.</p>
                 </div>
-                <div class="col">
-                    <h3 class="purple-text" data-i18n="projects.title">PROJECTS / INITIATIVES</h3>
-                    <div class="project-mini-list">
-                        <!-- Project 1: CyberQuest Arena -->
-                        <a href="https://cyberquest-arena.vercel.app/" target="_blank" rel="noopener noreferrer"
-                            class="p-item">
-                            <div class="p-header">
-                                <h4 data-i18n="projects.p1.title">CyberQuest Arena</h4>
-                                <div class="external-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                        <polyline points="15 3 21 3 21 9"></polyline>
-                                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                                    </svg>
-                                </div>
-                            </div>
-                            <p data-i18n="projects.p1.desc">Cybersecurity learning and challenge-based project aimed at
-                                developing practical security skills.</p>
-                        </a>
+                <div class="mindset-card red-card">
+                    <h3 data-i18n="mindset.red_h">RED TEAM MINDSET</h3>
+                    <p data-i18n="mindset.red_desc">I analyze systems from an attacker’s perspective, looking for
+                        misconfigurations, weak points, and realistic attack paths.</p>
+                </div>
+            </div>
+        </section>
 
-                        <!-- Project 2: OYNA -->
-                        <a href="https://oyna-play.vercel.app/" target="_blank" rel="noopener noreferrer"
-                            class="p-item">
-                            <div class="p-header">
-                                <h4 data-i18n="projects.p2.title">OYNA</h4>
-                                <div class="external-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                        <polyline points="15 3 21 3 21 9"></polyline>
-                                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                                    </svg>
-                                </div>
-                            </div>
-                            <p data-i18n="projects.p2.desc">Kazakhstan’s first platform for amateur sports, enabling
-                                fair matchmaking by skill level.</p>
-                        </a>
+        <!-- SOC Dashboard (demo visualization) -->
+        <section id="dashboard" class="fade-in">
+            <div class="dashboard-container">
+                <div class="dash-header">
+                    <h3 data-i18n="dash.title">SOC DASHBOARD</h3>
+                    <div class="dash-header-right">
+                        <span class="demo-tag" data-i18n="dash.demo">SIMULATION</span>
+                        <div class="live-dot"></div>
                     </div>
+                </div>
+                <div class="dash-grid">
+                    <div class="dash-stat">
+                        <span class="stat-label" data-i18n="dash.threats">THREATS BLOCKED</span>
+                        <span class="stat-value" id="threat-count">12,408</span>
+                    </div>
+                    <div class="dash-stat">
+                        <span class="stat-label" data-i18n="dash.uptime">SYSTEM UPTIME</span>
+                        <span class="stat-value">99.9%</span>
+                    </div>
+                    <div class="dash-visual">
+                        <!-- Simulated Bar Chart -->
+                        <div class="bar-chart">
+                            <div class="bar-col">
+                                <div class="fill" style="height: 40%"></div>
+                            </div>
+                            <div class="bar-col">
+                                <div class="fill" style="height: 70%"></div>
+                            </div>
+                            <div class="bar-col">
+                                <div class="fill" style="height: 50%"></div>
+                            </div>
+                            <div class="bar-col">
+                                <div class="fill" style="height: 85%"></div>
+                            </div>
+                            <div class="bar-col">
+                                <div class="fill" style="height: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-log">
+                    <span class="log-line" id="log-feed">Initializing monitoring protocols...</span>
                 </div>
             </div>
         </section>
@@ -462,6 +573,22 @@
                         <div class="card-details">
                             <h3>Email</h3>
                             <p>daurencd@gmail.com</p>
+                        </div>
+                    </a>
+
+                    <!-- GitHub Card -->
+                    <a href="https://github.com/daurencd01" target="_blank" rel="noopener noreferrer"
+                        class="contact-card github-card">
+                        <div class="icon-wrapper">
+                            <!-- GitHub SVG -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </div>
+                        <div class="card-details">
+                            <h3>GitHub</h3>
+                            <p>daurencd01</p>
                         </div>
                     </a>
 
@@ -523,6 +650,93 @@
 
     </main>
 
+    <!-- Floating Section Navigator (quick jump) -->
+    <nav class="section-rail" aria-label="Section quick navigation">
+        <button class="rail-dot" data-target="hero" aria-label="Top">
+            <span class="rail-label" data-i18n="nav.top">TOP</span>
+        </button>
+        <button class="rail-dot" data-target="about" aria-label="About">
+            <span class="rail-label" data-i18n="nav.about">ABOUT</span>
+        </button>
+        <button class="rail-dot" data-target="experience" aria-label="Experience">
+            <span class="rail-label" data-i18n="nav.exp">EXPERIENCE</span>
+        </button>
+        <button class="rail-dot" data-target="blue-team" aria-label="Skills">
+            <span class="rail-label" data-i18n="nav.modules">SKILLS</span>
+        </button>
+        <button class="rail-dot" data-target="extra" aria-label="Projects">
+            <span class="rail-label" data-i18n="nav.projects">PROJECTS</span>
+        </button>
+        <button class="rail-dot" data-target="featured-cert" aria-label="Certifications">
+            <span class="rail-label" data-i18n="nav.certs">CERTS</span>
+        </button>
+        <button class="rail-dot" data-target="contact" aria-label="Contact">
+            <span class="rail-label" data-i18n="nav.contact">CONTACT</span>
+        </button>
+    </nav>
+
+    <!-- Prev / Next section flip buttons -->
+    <div class="flip-nav">
+        <button class="flip-btn" id="flip-prev" aria-label="Previous section">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+        </button>
+        <button class="flip-btn" id="flip-next" aria-label="Next section">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile App-style Bottom Tab Bar -->
+    <nav class="bottom-tabs" aria-label="Mobile navigation">
+        <button class="tab-btn" data-target="about">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span class="tab-label" data-i18n="tab.about">About</span>
+        </button>
+        <button class="tab-btn" data-target="experience">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            <span class="tab-label" data-i18n="tab.exp">Work</span>
+        </button>
+        <button class="tab-btn" data-target="blue-team">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+            </svg>
+            <span class="tab-label" data-i18n="tab.skills">Skills</span>
+        </button>
+        <button class="tab-btn" data-target="extra">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span class="tab-label" data-i18n="tab.projects">Projects</span>
+        </button>
+        <button class="tab-btn" data-target="contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span class="tab-label" data-i18n="tab.contact">Contact</span>
+        </button>
+    </nav>
+
     <footer>
         <div class="footer-line"></div>
         <p>© 2026 CYBERSECURITY PORTFOLIO | <span class="blue-text" data-i18n="nav.blue">BLUE DEFENSE</span> • <span
@@ -534,6 +748,7 @@
     <script src="js/theme-switcher.js"></script>
     <script src="js/recruiter-mode.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/section-nav.js"></script>
 </body>
 
 </html>

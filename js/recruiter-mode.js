@@ -2,18 +2,29 @@ document.addEventListener('DOMContentLoaded', () => {
     let isRecruiterMode = false;
     const hrSwitch = document.getElementById('hr-switch');
 
-    if (hrSwitch) {
-        hrSwitch.addEventListener('click', () => {
-            isRecruiterMode = !isRecruiterMode;
-            document.body.classList.toggle('recruiter-mode', isRecruiterMode);
-            hrSwitch.classList.toggle('active', isRecruiterMode);
+    const toggle = () => {
+        isRecruiterMode = !isRecruiterMode;
+        document.body.classList.toggle('recruiter-mode', isRecruiterMode);
+        hrSwitch.classList.toggle('active', isRecruiterMode);
+        hrSwitch.setAttribute('aria-checked', isRecruiterMode ? 'true' : 'false');
 
-            // Reset color if HR mode ON
-            if (isRecruiterMode) {
-                document.documentElement.style.setProperty('--theme-color', '#333');
-            } else {
-                // Trigger scroll event to reset color to correct timeline point
-                window.dispatchEvent(new Event('scroll'));
+        if (isRecruiterMode) {
+            // Flatten the dynamic neon theme to a neutral print-friendly tone
+            document.documentElement.style.setProperty('--theme-color', '#333');
+            // Bring the recruiter straight to the summary card at the top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            // Restore the scroll-driven neon theme
+            window.dispatchEvent(new Event('scroll'));
+        }
+    };
+
+    if (hrSwitch) {
+        hrSwitch.addEventListener('click', toggle);
+        hrSwitch.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggle();
             }
         });
     }

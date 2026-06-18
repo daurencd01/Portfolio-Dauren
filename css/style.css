@@ -195,6 +195,50 @@ button:focus-visible,
     color: var(--text-dim);
 }
 
+/* Hero CTA - Download CV */
+.hero-cta {
+    margin-top: 35px;
+}
+
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--theme-color);
+    text-decoration: none;
+    border: 1px solid var(--theme-color);
+    border-radius: 4px;
+    background: rgba(0, 229, 255, 0.05);
+    transition: all 0.3s;
+}
+
+.cv-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.cv-btn:hover {
+    background: var(--theme-color);
+    color: #050505;
+    box-shadow: 0 0 25px var(--theme-shadow);
+    transform: translateY(-2px);
+}
+
+body.recruiter-mode .cv-btn {
+    color: #0056b3;
+    border-color: #0056b3;
+    background: #fff;
+}
+
+body.recruiter-mode .cv-btn:hover {
+    background: #0056b3;
+    color: #fff;
+}
+
 /* Sections General */
 main {
     max-width: 1200px;
@@ -322,6 +366,22 @@ section {
     border-bottom: 1px solid #333;
     padding-bottom: 10px;
     margin-bottom: 20px;
+}
+
+.dash-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.demo-tag {
+    font-family: var(--font-sub);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    border: 1px solid #444;
+    border-radius: 3px;
+    padding: 3px 8px;
 }
 
 .live-dot {
@@ -484,6 +544,20 @@ section {
     gap: 30px;
 }
 
+.tools-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tool-group-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+}
+
 .tools-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -491,6 +565,10 @@ section {
     background: rgba(20, 20, 20, 0.5);
     padding: 20px;
     border: 1px solid #333;
+}
+
+.tool-group .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .tool-item {
@@ -519,6 +597,55 @@ section {
     margin-bottom: 0;
     /* Handled by section spacing */
     text-align: center;
+}
+
+/* Two featured certificates side by side */
+.featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.featured-grid .featured-card {
+    max-width: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.featured-grid .featured-details {
+    flex: 1;
+}
+
+/* CyberShield (CSCSA) accent — blue instead of Red Hat red */
+.cscsa-card:hover {
+    border-color: #1a8fd1;
+    box-shadow: 0 0 30px rgba(26, 143, 209, 0.25);
+}
+
+.featured-details .issuer.cyan-issuer {
+    color: #1a8fd1;
+}
+
+body.recruiter-mode .cscsa-card:hover {
+    border-color: #bbb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.recruiter-mode .featured-details .issuer.cyan-issuer {
+    color: #0056b3;
+}
+
+/* Stack the two featured cards on smaller screens */
+@media (max-width: 768px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
 }
 
 .featured-header p {
@@ -843,6 +970,31 @@ body.recruiter-mode .cert-preview {
     margin-bottom: 8px;
 }
 
+.p-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.diploma-badge {
+    font-family: var(--font-heading);
+    font-size: 0.55rem;
+    letter-spacing: 1.5px;
+    color: var(--purple);
+    border: 1px solid var(--purple);
+    border-radius: 4px;
+    padding: 2px 7px;
+    text-shadow: 0 0 6px var(--purple);
+    white-space: nowrap;
+}
+
+body.recruiter-mode .diploma-badge {
+    color: #0056b3;
+    border-color: #0056b3;
+    text-shadow: none;
+}
+
 .p-item h4 {
     color: var(--text-main);
     font-family: var(--font-sub);
@@ -990,6 +1142,21 @@ body.recruiter-mode .cert-preview {
 
 .linkedin-card:hover .icon-wrapper svg {
     stroke: #0077b5;
+}
+
+/* GitHub Card: White Glow */
+.github-card:hover {
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+}
+
+.github-card:hover .icon-wrapper svg {
+    stroke: #fff;
+}
+
+body.recruiter-mode .github-card:hover .icon-wrapper svg {
+    stroke: #333;
 }
 
 /* Mobile Contact Layout */
@@ -1164,7 +1331,556 @@ body.recruiter-mode .linkedin-card:hover .icon-wrapper svg {
         grid-template-columns: 1fr;
     }
 
-    .tools-grid {
+    .tools-grid,
+    .tool-group .tools-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* --- Mobile spacing: tighten the big desktop gaps --- */
+    main {
+        padding: 24px 16px;
+    }
+
+    section {
+        margin-bottom: 70px;
+        scroll-margin-top: 80px;
+    }
+
+    .two-col-layout {
+        gap: 35px;
+    }
+
+    .section-title h2 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    /* Red team text alignment back to left on mobile */
+    .red-border {
+        text-align: left;
+        border-right: none;
+        border-left: 3px solid var(--neon-red);
+    }
+
+    /* --- Experience cards: stack logo above text, give text full width --- */
+    .exp-card {
+        padding: 20px;
+    }
+
+    .exp-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .exp-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .company-logo {
+        width: 50px;
+    }
+
+    .exp-list {
+        padding-left: 18px;
+    }
+
+    /* --- Dashboard bar chart a touch taller so it reads on mobile --- */
+    .dash-visual {
+        margin-top: 5px;
+    }
+
+    .bar-chart {
+        height: 70px;
+    }
+
+    /* CV button full-width tap target */
+    .hero-cta {
+        width: 100%;
+    }
+
+    .cv-btn {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+}
+
+/* --- Very small phones --- */
+@media (max-width: 480px) {
+
+    .nav-links {
+        gap: 10px 14px;
+        font-size: 0.8rem;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+
+    section {
+        margin-bottom: 55px;
+    }
+
+    /* One tool per row so labels never get cramped */
+    .tools-grid,
+    .tool-group .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tool-item {
+        padding: 14px;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .contact-card {
+        min-width: 0;
+        padding: 18px 20px;
+    }
+
+    .featured-details h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* ===================================================================
+   Floating Section Navigation (dot rail + prev/next flip buttons)
+   =================================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Dot rail */
+.section-rail {
+    position: fixed;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.rail-dot {
+    position: relative;
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--text-dim);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.rail-dot:hover {
+    border-color: var(--theme-color);
+    transform: scale(1.15);
+}
+
+.rail-dot.active {
+    background: var(--theme-color);
+    border-color: var(--theme-color);
+    box-shadow: 0 0 12px var(--theme-shadow);
+    transform: scale(1.2);
+}
+
+.rail-label {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%) translateX(6px);
+    white-space: nowrap;
+    font-family: var(--font-heading);
+    font-size: 0.62rem;
+    letter-spacing: 1px;
+    color: var(--theme-color);
+    background: rgba(5, 5, 5, 0.9);
+    border: 1px solid var(--theme-color);
+    border-radius: 4px;
+    padding: 4px 9px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s;
+}
+
+.rail-dot:hover .rail-label {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* Prev / Next flip buttons */
+.flip-nav {
+    position: fixed;
+    right: 22px;
+    bottom: 26px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.flip-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid var(--theme-color);
+    background: rgba(5, 5, 5, 0.8);
+    color: var(--theme-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: all 0.3s;
+}
+
+.flip-btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+.flip-btn:hover {
+    background: var(--theme-color);
+    color: #050505;
+    box-shadow: 0 0 18px var(--theme-shadow);
+    transform: translateY(-2px);
+}
+
+.flip-btn.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* Recruiter (HR) mode */
+body.recruiter-mode .rail-dot {
+    border-color: #999;
+}
+
+body.recruiter-mode .rail-dot.active {
+    background: #0056b3;
+    border-color: #0056b3;
+}
+
+body.recruiter-mode .rail-label {
+    color: #0056b3;
+    background: #fff;
+    border-color: #0056b3;
+}
+
+body.recruiter-mode .flip-btn {
+    border-color: #0056b3;
+    color: #0056b3;
+    background: #fff;
+}
+
+body.recruiter-mode .flip-btn:hover {
+    background: #0056b3;
+    color: #fff;
+}
+
+/* Hide the canvas particles glow under buttons isn't needed; keep accessible focus */
+.rail-dot:focus-visible,
+.flip-btn:focus-visible {
+    outline: 2px solid var(--theme-color);
+    outline-offset: 3px;
+}
+
+/* Responsive: keep it tidy on tablets / phones */
+@media (max-width: 900px) {
+    .section-rail {
+        right: 12px;
+        gap: 13px;
+    }
+
+    .rail-dot {
+        width: 11px;
+        height: 11px;
+    }
+
+    /* Labels can overlap content on small screens — show only on real hover devices */
+    .rail-label {
+        display: none;
+    }
+
+    .flip-nav {
+        right: 14px;
+        bottom: 18px;
+    }
+
+    .flip-btn {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* Very small phones: drop the dot rail, keep the flip arrows (core "перелистать") */
+@media (max-width: 520px) {
+    .section-rail {
+        display: none;
+    }
+}
+
+/* ===================================================================
+   Mobile App-style Bottom Tab Bar
+   =================================================================== */
+.bottom-tabs {
+    display: none;
+    /* shown only on mobile */
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1002;
+    justify-content: space-around;
+    align-items: stretch;
+    background: rgba(8, 8, 12, 0.96);
+    backdrop-filter: blur(14px);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 6px 4px;
+    padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px));
+}
+
+.tab-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    padding: 6px 2px;
+    font-family: var(--font-sub);
+    transition: color 0.25s, transform 0.15s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.tab-btn svg {
+    width: 23px;
+    height: 23px;
+    transition: filter 0.25s, transform 0.2s;
+}
+
+.tab-btn .tab-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.4px;
+    line-height: 1;
+}
+
+.tab-btn:active {
+    transform: scale(0.92);
+}
+
+.tab-btn.active {
+    color: var(--theme-color);
+}
+
+.tab-btn.active svg {
+    filter: drop-shadow(0 0 7px var(--theme-shadow));
+    transform: translateY(-1px);
+}
+
+/* HR (recruiter) mode */
+body.recruiter-mode .bottom-tabs {
+    background: #ffffff;
+    border-top: 1px solid #e0e0e0;
+}
+
+body.recruiter-mode .tab-btn {
+    color: #777;
+}
+
+body.recruiter-mode .tab-btn.active {
+    color: #0056b3;
+}
+
+/* Show the tab bar on mobile, hide the desktop floating nav, lift content above the bar */
+@media (max-width: 768px) {
+    .bottom-tabs {
+        display: flex;
+    }
+
+    .section-rail,
+    .flip-nav {
+        display: none !important;
+    }
+
+    body {
+        padding-bottom: 70px;
+    }
+
+    footer {
+        margin-bottom: 0;
+    }
+}
+
+/* Extra-tight phones: trim label size a touch so 5 tabs always fit */
+@media (max-width: 360px) {
+    .tab-btn .tab-label {
+        font-size: 0.55rem;
+    }
+
+    .tab-btn svg {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+/* ===================================================================
+   HR / Recruiter View — clean summary card (only shown in HR mode)
+   =================================================================== */
+.hr-banner {
+    display: none;
+    /* hidden in normal portfolio mode */
+}
+
+/* In HR mode: hide the flashy hero + decorative sections, show the summary */
+body.recruiter-mode #hero,
+body.recruiter-mode #dashboard,
+body.recruiter-mode #mindset {
+    display: none;
+}
+
+body.recruiter-mode .hr-banner {
+    display: block;
+    background: #ffffff;
+    border: 1px solid #e2e5ea;
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 60px;
+    margin-top: 10px;
+}
+
+.hr-top {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+}
+
+.hr-photo {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0056b3;
+    flex-shrink: 0;
+}
+
+.hr-id h1 {
+    font-size: 1.9rem;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+    line-height: 1.15;
+}
+
+.hr-role {
+    color: #0056b3;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+}
+
+.hr-loc {
+    color: #5a5f66;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+.hr-loc::before {
+    content: "📍 ";
+}
+
+.hr-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.hr-btn {
+    padding: 10px 18px;
+    border-radius: 7px;
+    border: 1px solid #0056b3;
+    color: #0056b3;
+    background: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.hr-btn:hover {
+    background: #eef4fb;
+}
+
+.hr-btn.primary {
+    background: #0056b3;
+    color: #ffffff;
+}
+
+.hr-btn.primary:hover {
+    background: #00408a;
+}
+
+.hr-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 32px;
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid #eceef1;
+}
+
+.hr-fact {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.hr-fact-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #8a909a;
+    font-weight: 600;
+}
+
+.hr-fact-val {
+    color: #20242b;
+    font-size: 0.92rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    body.recruiter-mode .hr-banner {
+        padding: 24px 18px;
+    }
+
+    .hr-top {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .hr-actions {
+        justify-content: center;
+    }
+
+    .hr-facts {
+        grid-template-columns: 1fr;
+        gap: 14px;
     }
 }
