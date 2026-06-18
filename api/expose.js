@@ -5,6 +5,8 @@
 // GET /api/expose?type=email|username|phone&q=<значение>
 'use strict';
 
+const guard = require('../lib/guard');
+
 function tf(url, ms = 7000, opts = {}) {
   const ac = new AbortController();
   const t = setTimeout(() => ac.abort(), ms);
@@ -87,6 +89,7 @@ module.exports = async (req, res) => {
     if (Array.isArray(q)) q = q[0];
     q = String(q).trim();
     if (!q) return res.status(400).json({ error: 'Параметр ?q= обязателен' });
+    if (await guard.rateLimited(req)) return res.status(429).json({ error: 'Слишком много запросов. Подождите минуту.' });
 
     if (type === 'email') {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(q)) return res.status(400).json({ error: 'Некорректный email' });
