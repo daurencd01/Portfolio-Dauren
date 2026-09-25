@@ -42,7 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function pushEvent(silent) {
         if (!feed) return;
         const kind = kinds[rand(0, kinds.length - 1)];
-        feed.prepend(row(kind, fmtHM.format(new Date()), !silent));
+        const li = row(kind, fmtHM.format(new Date()), !silent);
+        feed.prepend(li);
+        if (!silent) setTimeout(() => li.classList.remove('fresh'), 1400);
         while (feed.children.length > MAX_ROWS) feed.lastElementChild.remove();
         count += rand(1, 3);
         if (counter) counter.textContent = count.toLocaleString('en-US');
