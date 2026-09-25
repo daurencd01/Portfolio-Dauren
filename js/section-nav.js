@@ -1,7 +1,7 @@
 // Section navigation: numbered tabs, mobile tab bar and progress dots share one scroll-spy.
 document.addEventListener('DOMContentLoaded', () => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const ids = ['home', 'about', 'experience', 'projects', 'skills', 'certs', 'contact'];
+    const ids = ['home', 'about', 'experience', 'projects', 'skills', 'certs'];
 
     document.querySelectorAll('[data-target]').forEach((el) => {
         el.addEventListener('click', (e) => {
