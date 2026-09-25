@@ -1,17 +1,24 @@
 :root {
-    --bg-dark: #050505;
-    --neon-blue: #00e5ff;
-    --neon-red: #ff003c;
-    --purple: #7000ff;
-    --text-main: #ffffff;
-    --text-dim: #888888;
-    --font-heading: 'Orbitron', sans-serif;
-    --font-sub: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --bg-dark: #060b09;
+    --bg-dark-2: #08100d;
+    --bg-panel: #0a120f;
+    --bg-card: #09110e;
+    --border-color: #14302a;
+    --border-soft: rgba(38, 232, 132, 0.16);
+    --neon-blue: #26e884;
+    --neon-red: #ff4a4a;
+    --neon-green: #26e884;
+    --purple: #a78bfa;
+    --text-main: #d8e8e0;
+    --text-dim: #8aa398;
+    --font-heading: 'JetBrains Mono', ui-monospace, monospace;
+    --font-sub: 'JetBrains Mono', ui-monospace, monospace;
+    --font-body: 'JetBrains Mono', ui-monospace, monospace;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --radius: 4px;
 
-    /* Dynamic Theme Base */
-    --theme-color: #00e5ff;
-    --theme-shadow: rgba(0, 229, 255, 0.4);
+    --theme-color: #26e884;
+    --theme-shadow: rgba(38, 232, 132, 0.3);
 }
 
 /* Recruiter Mode Colors */
@@ -26,33 +33,33 @@ body.recruiter-mode {
 /* Typography Helpers - Colors */
 .blue-text {
     color: var(--neon-blue);
-    text-shadow: 0 0 5px var(--neon-blue);
 }
 
 .red-text {
     color: var(--neon-red);
-    text-shadow: 0 0 5px var(--neon-red);
 }
 
 .purple-text {
     color: var(--purple);
-    text-shadow: 0 0 5px var(--purple);
+}
+
+.green-text {
+    color: var(--neon-green);
 }
 
 .blue-glow {
     color: var(--neon-blue);
-    text-shadow: 0 0 10px var(--neon-blue);
 }
 
 .red-glow {
     color: var(--neon-red);
-    text-shadow: 0 0 10px var(--neon-red);
 }
 
 /* Theme Overrides for Recruiter Mode */
 body.recruiter-mode .blue-text,
 body.recruiter-mode .red-text,
 body.recruiter-mode .purple-text,
+body.recruiter-mode .green-text,
 body.recruiter-mode .blue-glow,
 body.recruiter-mode .red-glow {
     color: #0056b3;

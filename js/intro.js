@@ -1,35 +1,27 @@
-// Boot / intro animation shown once when the site opens
+// Boot animation shown once on open; when it ends the dashboard panels power on.
 (function () {
     const intro = document.getElementById('intro-screen');
-    if (!intro) return;
-
-    const dismiss = () => {
-        if (intro.classList.contains('hide')) return;
-        intro.classList.add('hide');
+    const boot = () => {
         document.body.classList.remove('intro-active');
+        document.body.classList.add('booted');
+        window.dispatchEvent(new Event('kd-booted'));
+    };
+    if (!intro) { boot(); return; }
+
+    let done = false;
+    const dismiss = () => {
+        if (done) return;
+        done = true;
+        intro.classList.add('hide');
+        boot();
         setTimeout(() => intro.remove(), 800);
     };
 
-    // Lock scroll while the intro is on screen
     document.body.classList.add('intro-active');
 
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce) {
-        dismiss();
-        return;
-    }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { dismiss(); return; }
 
-    let timer = setTimeout(dismiss, 2200);
-
-    // Let the visitor skip it
-    intro.addEventListener('click', () => {
-        clearTimeout(timer);
-        dismiss();
-    });
-
-    // Safety: never let it block the page if 'load' is slow
-    window.addEventListener('load', () => {
-        clearTimeout(timer);
-        timer = setTimeout(dismiss, 1400);
-    });
+    let timer = setTimeout(dismiss, 2300);
+    intro.addEventListener('click', () => { clearTimeout(timer); dismiss(); });
+    window.addEventListener('load', () => { clearTimeout(timer); timer = setTimeout(dismiss, 1500); });
 })();

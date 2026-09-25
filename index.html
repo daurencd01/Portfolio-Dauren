@@ -7,14 +7,12 @@
     <meta name="description"
         content="Cybersecurity portfolio of Koshkenbek Dauren — SOC Analyst L1 with Blue Team experience and penetration testing focus.">
 
-    <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none';">
+        content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <title>Koshkenbek Dauren | Cybersecurity Specialist</title>
 
-    <!-- Open Graph / Social Preview -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Koshkenbek Dauren | Cybersecurity Specialist">
     <meta property="og:description"
@@ -22,760 +20,633 @@
     <meta property="og:image" content="assets/photo/profile.png">
     <meta property="og:url" content="https://portfolio-dauren.vercel.app/">
     <meta property="og:site_name" content="KD_SEC Portfolio">
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Koshkenbek Dauren | Cybersecurity Specialist">
-    <meta name="twitter:description"
-        content="SOC Analyst L1 with Blue Team experience and a penetration testing focus.">
+    <meta name="twitter:description" content="SOC Analyst L1 with Blue Team experience and a penetration testing focus.">
     <meta name="twitter:image" content="assets/photo/profile.png">
 
-    <!-- Google Fonts: Orbitron, Space Grotesk, Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500;700;900&family=Space+Grotesk:wght@300;400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Tiny5&display=swap"
         rel="stylesheet">
-
-    <!-- Modular CSS Structure -->
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/portfolio.css">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <meta name="theme-color" content="#050505">
+    <meta name="theme-color" content="#060b09">
 </head>
 
-<body class="theme-scroll">
+<body>
+    <!-- icon sprite -->
+    <svg aria-hidden="true" style="position:absolute;width:0;height:0" focusable="false">
+        <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+        <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+        <symbol id="i-telegram" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+        <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+        <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+        <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="1" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="23" y2="12"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+        <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2c1 3-2 4-2 7a4 4 0 1 0 8 0c0-1-1-2-1-2 1 3-1 4-2 4a2.5 2.5 0 0 1-1-4.8C15 4.8 13.5 3 12 2z"/></symbol>
+        <symbol id="i-scan" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/></symbol>
+        <symbol id="i-external" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+        <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></symbol>
+        <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></symbol>
+        <symbol id="i-pause" viewBox="0 0 24 24"><line x1="8" y1="5" x2="8" y2="19"/><line x1="16" y1="5" x2="16" y2="19"/></symbol>
+        <symbol id="i-play" viewBox="0 0 24 24"><polygon points="7 4 20 12 7 20 7 4"/></symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+        <symbol id="i-minus" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+        <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+        <symbol id="i-brief" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+        <symbol id="i-term" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></symbol>
+        <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></symbol>
+        <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="4"/><line x1="12" y1="3" x2="12" y2="8"/><circle cx="9" cy="14" r="1.2"/><circle cx="15" cy="14" r="1.2"/></symbol>
+    </svg>
 
-    <!-- Intro / boot animation -->
+    <a class="skip" href="#home" data-i18n="a11y.skip">Skip to content</a>
+
+    <!-- boot / intro -->
     <div id="intro-screen">
-        <div class="intro-grid"></div>
         <div class="intro-inner">
-            <div class="intro-shield">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
+            <div class="intro-logo">KD<span>_SEC</span></div>
+            <div class="intro-lines">
+                <p>&gt; booting secure session…</p>
+                <p>&gt; loading operator profile</p>
+                <p>&gt; syncing threat feed (simulated)</p>
+                <p>&gt; access granted</p>
             </div>
-            <div class="intro-logo" data-text="KD_SEC">KD<span>_SEC</span></div>
             <div class="intro-bar"><span class="intro-bar-fill"></span></div>
-            <div class="intro-status">INITIALIZING SECURE SESSION…</div>
         </div>
     </div>
 
-    <canvas id="cyber-canvas"></canvas>
-    <div class="scanline"></div>
+    <div class="floor" aria-hidden="true"></div>
+    <div class="scan" aria-hidden="true"></div>
 
-    <!-- Navigation -->
-    <nav class="cyber-nav">
-        <div class="logo">KD_SEC</div>
+    <!-- top bar -->
+    <header class="topbar">
+        <a class="brand" href="#home" data-target="home" aria-label="KD_SEC">
+            <svg class="brand-chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="8 4 16 12 8 20"/></svg>
+            <span class="brand-txt"><b>KD_SEC</b><small data-i18n="brand.sub">DAUREN KOSHKENBEK</small></span>
+        </a>
 
-        <!-- Controls Container -->
-        <div class="nav-controls">
-            <!-- Recruiter Mode Toggle -->
-            <div class="hr-switch" id="hr-switch" role="switch" aria-checked="false" tabindex="0"
-                title="Recruiter view — clean summary with CV, contacts & key facts"
-                data-i18n-title="hr.tooltip">
-                <span data-i18n="nav.hr">HR MODE</span>
-                <div class="toggle-box">
-                    <div class="toggle-knob"></div>
-                </div>
+        <nav class="tabs" aria-label="Sections">
+            <a class="tab active" href="#home" data-target="home"><span data-i18n="nav.home">HOME</span></a>
+            <a class="tab" href="#about" data-target="about"><span data-i18n="nav.about">ABOUT</span></a>
+            <a class="tab" href="#experience" data-target="experience"><span data-i18n="nav.exp">EXPERIENCE</span></a>
+            <a class="tab" href="#projects" data-target="projects"><span data-i18n="nav.projects">PROJECTS</span></a>
+            <a class="tab" href="#skills" data-target="skills"><span data-i18n="nav.skills">SKILLS</span></a>
+            <a class="tab" href="#certs" data-target="certs"><span data-i18n="nav.certs">CERTS</span></a>
+            <a class="tab" href="#contact" data-target="contact"><span data-i18n="nav.contact">CONTACT</span></a>
+        </nav>
+
+        <div class="top-right">
+            <a class="open-pill" href="#contact" data-target="contact"><i class="pulse-dot"></i><span data-i18n="nav.open">OPEN TO WORK</span></a>
+            <button class="hr-switch" id="hr-switch" type="button" role="switch" aria-checked="false"
+                title="Recruiter view — clean summary with CV, contacts & key facts" data-i18n-title="hr.tooltip">
+                <span data-i18n="nav.hr">HR</span><i class="knob"></i>
+            </button>
+            <div class="lang-switch" id="lang-switch" role="group" aria-label="Language">
+                <button type="button" class="active" data-lang="en">EN</button>
+                <button type="button" data-lang="ru">RU</button>
             </div>
-
-            <!-- Language Switcher -->
-            <div class="lang-switch" id="lang-switch">
-                <span class="active" data-lang="en">EN</span>
-                <span class="divider">/</span>
-                <span data-lang="ru">RU</span>
-            </div>
+            <div class="clock" aria-hidden="true"><small data-i18n="nav.tz">ASTANA (UTC+5)</small><b id="clock">--:--:--</b></div>
         </div>
+    </header>
 
-        <ul class="nav-links">
-            <li><a href="#about" data-i18n="nav.about">ABOUT</a></li>
-            <li><a href="#experience" data-i18n="nav.exp">EXPERIENCE</a></li>
-            <li><a href="#skills" data-i18n="nav.modules">SKILLS</a></li>
-            <li><a href="#extra" data-i18n="nav.projects">PROJECTS</a></li>
-            <li><a href="scanner.html" class="nav-tools">TOOLS</a></li>
-        </ul>
-    </nav>
+    <main class="page" id="main">
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <!-- Profile Photo (PNG) -->
-        <img src="assets/photo/profile.png" alt="Koshkenbek Dauren profile photo" class="profile-photo">
+        <!-- ===================== HOME ===================== -->
+        <section id="home" class="home">
 
-        <div class="hero-content">
-            <h1 class="glitch-text" data-text="KOSHKENBEK DAUREN" data-i18n="hero.name">KOSHKENBEK DAUREN</h1>
-            <h2 class="subtitle" data-i18n="hero.title">CYBERSECURITY SPECIALIST</h2>
-            <div class="roles">
-                <span class="role blue-glow" data-i18n="hero.role1">SOC ANALYST L1</span>
-                <span class="separator">|</span>
-                <span class="role red-glow" data-i18n="hero.role2">PENTESTER (in training)</span>
-            </div>
-            <p class="tagline" data-i18n="hero.tagline">"Defending systems. Simulating attacks. Securing the future."
-            </p>
-            <div class="hero-cta">
-                <a href="assets/cv/Koshkenbek_Dauren_CV.pdf" download class="cv-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                    <span data-i18n="hero.cv">DOWNLOAD CV</span>
-                </a>
-                <a href="scanner.html" class="cv-btn tools-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    </svg>
-                    <span>SECURITY TOOLS</span>
-                </a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span data-i18n="hero.scroll">SCROLL_DOWN</span>
-            <div class="arrow"></div>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main>
-
-        <!-- Recruiter summary (only visible in HR mode) -->
-        <section class="hr-banner" aria-label="Recruiter summary">
-            <div class="hr-top">
-                <img class="hr-photo" src="assets/photo/profile.png" alt="Koshkenbek Dauren">
-                <div class="hr-id">
-                    <h1>Koshkenbek Dauren</h1>
-                    <p class="hr-role">Cybersecurity Specialist · SOC Analyst L1</p>
-                    <p class="hr-loc" data-i18n="hr.available">Open to work · Astana, Kazakhstan</p>
-                    <div class="hr-actions">
-                        <a class="hr-btn primary" href="assets/cv/Koshkenbek_Dauren_CV.pdf" download
-                            data-i18n="hero.cv">DOWNLOAD CV</a>
-                        <a class="hr-btn" href="mailto:daurencd@gmail.com">Email</a>
-                        <a class="hr-btn" href="https://www.linkedin.com/in/dauren-koshkenbek-6b90a9358/"
-                            target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a class="hr-btn" href="https://github.com/daurencd01" target="_blank"
-                            rel="noopener noreferrer">GitHub</a>
+            <!-- recruiter summary (HR mode only) -->
+            <section class="hr-banner panel" aria-label="Recruiter summary">
+                <div class="hr-top">
+                    <img class="hr-photo" src="assets/photo/profile.png" alt="Koshkenbek Dauren" width="132" height="132">
+                    <div class="hr-id">
+                        <h1>Koshkenbek Dauren</h1>
+                        <p class="hr-role">Cybersecurity Specialist · SOC Analyst L1</p>
+                        <p class="hr-loc" data-i18n="hr.available">Open to work · Astana, Kazakhstan</p>
+                        <div class="hr-actions">
+                            <a class="btn btn-primary" href="assets/cv/Koshkenbek_Dauren_CV.pdf" download><span data-i18n="hero.cv">DOWNLOAD CV</span></a>
+                            <a class="btn btn-ghost" href="mailto:daurencd@gmail.com">Email</a>
+                            <a class="btn btn-ghost" href="https://www.linkedin.com/in/dauren-koshkenbek-6b90a9358/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            <a class="btn btn-ghost" href="https://github.com/daurencd01" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="hr-facts">
-                <div class="hr-fact">
-                    <span class="hr-fact-label" data-i18n="hr.exp_label">Experience</span>
-                    <span class="hr-fact-val" data-i18n="hr.exp_val">SOC Analyst L1 · Blue Team — Sauyt Lab, Sr
-                        Holding</span>
-                </div>
-                <div class="hr-fact">
-                    <span class="hr-fact-label" data-i18n="hr.edu_label">Education</span>
-                    <span class="hr-fact-val" data-i18n="hr.edu_val">Astana IT University — Cybersecurity
-                        (graduated 2026)</span>
-                </div>
-                <div class="hr-fact">
-                    <span class="hr-fact-label" data-i18n="hr.cert_label">Certifications</span>
-                    <span class="hr-fact-val" data-i18n="hr.cert_val">Red Hat RH124 · CyberShield CSCSA (STS)</span>
-                </div>
-                <div class="hr-fact">
-                    <span class="hr-fact-label" data-i18n="hr.lang_label">Languages</span>
-                    <span class="hr-fact-val" data-i18n="hr.lang_val">Kazakh · Russian C1 · English B1 · Chinese
-                        HSK5</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- About (Intro) -->
-        <section id="about" class="fade-in">
-            <div class="section-title">
-                <h2 data-i18n="nav.about">ABOUT ME</h2>
-            </div>
-            <p class="about-text" data-i18n="about.desc">
-                Astana IT University graduate.
-            </p>
-
-            <!-- Career Goals -->
-            <div class="goals-container">
-                <div class="goal-item">
-                    <h4 data-i18n="goals.short_title">SHORT-TERM GOAL</h4>
-                    <p data-i18n="goals.short_desc">SOC Analyst L2 / Blue Team Engineer</p>
-                </div>
-                <div class="goal-item">
-                    <h4 data-i18n="goals.long_title">LONG-TERM GOAL</h4>
-                    <p data-i18n="goals.long_desc">Penetration Tester with strong defensive background</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="fade-in">
-            <div class="section-title">
-                <h2 data-i18n="exp.title">PROFESSIONAL EXPERIENCE</h2>
-            </div>
-            <!-- Job 1: GTS -->
-            <div class="exp-card">
-                <div class="exp-header-row">
-                    <!-- Company Logo -->
-                    <img src="assets/logos/sauytlab.png" alt="Sauyt Lab Logo" class="company-logo">
-                    <div class="exp-header">
-                        <h3 data-i18n="exp.job1.role">SOC Analyst L1</h3>
-                        <span class="exp-company" data-i18n="exp.job1.company">Sauyt Lab (Freedom)</span>
-                        <span class="exp-date" data-i18n="exp.job1.date">February 03, 2026 – Present</span>
-                    </div>
-                </div>
-                <ul class="exp-list">
-                    <li data-i18n="exp.job1.list1">Security event monitoring in SOC environment</li>
-                    <li data-i18n="exp.job1.list2">Log analysis from network, endpoint, and system sources</li>
-                    <li data-i18n="exp.job1.list3">Initial alert triage and incident investigation</li>
-                    <li data-i18n="exp.job1.list4">Identification of suspicious activity and escalation</li>
-                    <li data-i18n="exp.job1.list5">Working within a high-responsibility national security environment
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Job 2: Sr Holding -->
-            <div class="exp-card" style="margin-top: 30px;">
-                <div class="exp-header-row">
-                    <!-- Company Logo -->
-                    <img src="assets/logos/sr-holding.png" alt="Sr Holding Logo" class="company-logo">
-                    <div class="exp-header">
-                        <h3 data-i18n="exp.job2.role">SOC Analyst L1</h3>
-                        <span class="exp-company" data-i18n="exp.job2.company">Sr Holding (China)</span>
-                        <span class="exp-date" data-i18n="exp.job2.date">September 01, 2025 – February 01, 2026</span>
-                    </div>
-                </div>
-                <ul class="exp-list">
-                    <li data-i18n="exp.job2.list1">Security event monitoring in SOC environment</li>
-                    <li data-i18n="exp.job2.list2">Log analysis from network, endpoint, and system sources</li>
-                    <li data-i18n="exp.job2.list3">Initial incident triage and alert investigation</li>
-                    <li data-i18n="exp.job2.list4">Identification of suspicious activity and escalation when required
-                    </li>
-                    <li data-i18n="exp.job2.list5">Working with security monitoring tools and dashboards</li>
-                </ul>
-            </div>
-
-            <!-- Job 3: Kazakhtelecom -->
-            <div class="exp-card" style="margin-top: 30px;">
-                <div class="exp-header-row">
-                    <!-- Company Logo -->
-                    <img src="assets/logos/kazakhtelecom.png" alt="Kazakhtelecom Logo" class="company-logo">
-                    <div class="exp-header">
-                        <h3 data-i18n="exp.job3.role">Network Security Project Participant</h3>
-                        <span class="exp-company" data-i18n="exp.job3.company">Kazakhtelecom (Sapa+)</span>
-                        <span class="exp-date" data-i18n="exp.job3.date">January 20, 2025 – June 20, 2025</span>
-                    </div>
-                </div>
-                <ul class="exp-list">
-                    <li data-i18n="exp.job3.list1">Participation in a network security project</li>
-                    <li data-i18n="exp.job3.list2">Support of secure network infrastructure</li>
-                    <li data-i18n="exp.job3.list3">Monitoring and basic analysis of network security events</li>
-                    <li data-i18n="exp.job3.list4">Working within a large enterprise telecom environment</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Dual Team Section (Skills Overview) -->
-        <div class="dual-section-container">
-            <!-- Blue Team -->
-            <section id="blue-team" class="team-section blue-border fade-in">
-                <div class="section-header">
-                    <h2 class="blue-text" data-i18n="blue.title">BLUE TEAM SKILLS</h2>
-                </div>
-                <div class="card-grid">
-                    <div class="cyber-card">
-                        <h3 data-i18n="blue.card1.title">SOC MONITORING</h3>
-                        <p data-i18n="blue.card1.desc">Real-time analysis of security alerts and SIEM logs.</p>
-                    </div>
-                    <div class="cyber-card">
-                        <h3 data-i18n="blue.card2.title">INCIDENT DETECTION</h3>
-                        <p data-i18n="blue.card2.desc">Triage, investigation, and threat analysis.</p>
-                    </div>
+                <div class="hr-facts">
+                    <div class="hr-fact"><span class="hr-fact-label" data-i18n="hr.exp_label">Experience</span><span class="hr-fact-val" data-i18n="hr.exp_val">SOC Analyst L1 · Blue Team — Sauyt Lab, Sr Holding</span></div>
+                    <div class="hr-fact"><span class="hr-fact-label" data-i18n="hr.edu_label">Education</span><span class="hr-fact-val" data-i18n="hr.edu_val">Astana IT University — Cybersecurity (graduated 2026)</span></div>
+                    <div class="hr-fact"><span class="hr-fact-label" data-i18n="hr.cert_label">Certifications</span><span class="hr-fact-val" data-i18n="hr.cert_val">Red Hat RH124 · CyberShield CSCSA (STS)</span></div>
+                    <div class="hr-fact"><span class="hr-fact-label" data-i18n="hr.lang_label">Languages</span><span class="hr-fact-val" data-i18n="hr.lang_val">Kazakh · Russian C1 · English B1 · Chinese HSK5</span></div>
                 </div>
             </section>
 
-            <!-- Red Team -->
-            <section id="red-team" class="team-section red-border fade-in">
-                <div class="section-header">
-                    <h2 class="red-text" data-i18n="red.title">RED TEAM SKILLS</h2>
-                </div>
-                <div class="card-grid">
-                    <div class="cyber-card">
-                        <h3 data-i18n="red.card1.title">PENTESTING FUNDAMENTALS</h3>
-                        <p data-i18n="red.card1.desc">Web & Network security basics, ethical hacking mindset.</p>
-                    </div>
-                    <div class="cyber-card">
-                        <h3 data-i18n="red.card2.title">VULNERABILITY ASSESSMENT</h3>
-                        <p data-i18n="red.card2.desc">Systematic identification and prioritization of security
-                            weaknesses.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
+            <div class="wall">
 
-        <!-- Tools -->
-        <section id="skills" class="fade-in">
-            <div class="section-title">
-                <h2 data-i18n="skills.title">TOOLS & TECHNOLOGIES</h2>
-            </div>
-            <div class="tools-groups">
-                <div class="tool-group">
-                    <h4 class="tool-group-title red-text" data-i18n="skills.offensive">OFFENSIVE</h4>
-                    <div class="tools-grid">
-                        <div class="tool-item">NMAP</div>
-                        <div class="tool-item">BURP SUITE</div>
-                        <div class="tool-item">METASPLOIT</div>
+                <!-- hero -->
+                <article class="panel hero" style="--i:0" data-hero>
+                    <div class="hero-copy">
+                        <p class="whoami"><i class="chev"></i><span data-i18n="hero.whoami">WHOAMI</span></p>
+                        <h1 class="name"><span class="n1" data-i18n="hero.name1">DAUREN</span><span class="n2" data-i18n="hero.name2">KOSHKENBEK</span></h1>
+                        <p class="roles"><span data-i18n="hero.role1">SOC ANALYST L1</span><em>/</em><span data-i18n="hero.role2">PENTESTER (IN TRAINING)</span></p>
+                        <p class="blurb" data-i18n="hero.blurb">I'm a cybersecurity specialist focused on security monitoring, incident analysis and offensive security. I enjoy turning complex security data into clear insights and building practical solutions.</p>
+                        <div class="cta">
+                            <a class="btn btn-primary" href="#projects" data-target="projects"><span data-i18n="hero.work">VIEW MY WORK</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                            <a class="btn btn-ghost" href="assets/cv/Koshkenbek_Dauren_CV.pdf" download><svg aria-hidden="true"><use href="#i-download"/></svg><span data-i18n="hero.cv">DOWNLOAD CV</span></a>
+                        </div>
+                        <ul class="socials" aria-label="Profiles">
+                            <li><a href="https://www.linkedin.com/in/dauren-koshkenbek-6b90a9358/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a></li>
+                            <li><a href="https://github.com/daurencd01" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg><use href="#i-github"/></svg></a></li>
+                            <li><a href="https://t.me/yellowcd" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg><use href="#i-telegram"/></svg></a></li>
+                            <li><a href="mailto:daurencd@gmail.com" aria-label="Email"><svg><use href="#i-mail"/></svg></a></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="tool-group">
-                    <h4 class="tool-group-title blue-text" data-i18n="skills.defensive">DEFENSIVE</h4>
-                    <div class="tools-grid">
-                        <div class="tool-item">WIRESHARK</div>
-                        <div class="tool-item">SIEM CONCEPTS</div>
-                        <div class="tool-item">LOG ANALYSIS</div>
-                    </div>
-                </div>
-                <div class="tool-group">
-                    <h4 class="tool-group-title purple-text" data-i18n="skills.platforms">OS &amp; TOOLS</h4>
-                    <div class="tools-grid">
-                        <div class="tool-item">KALI LINUX</div>
-                        <div class="tool-item">WINDOWS OS</div>
-                        <div class="tool-item">GIT</div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Languages & Projects -->
-        <section id="extra" class="fade-in">
-            <div class="two-col-layout">
-                <div class="col">
-                    <h3 class="purple-text" data-i18n="projects.title">PROJECTS / INITIATIVES</h3>
-                    <div class="project-mini-list">
-                        <!-- Project 1: HackShield (Diploma Project) -->
-                        <a href="https://hackshield-play-nexus.vercel.app/auth" target="_blank"
-                            rel="noopener noreferrer" class="p-item">
-                            <div class="p-header">
-                                <div class="p-title-wrap">
-                                    <h4 data-i18n="projects.p1.title">HackShield</h4>
-                                    <span class="diploma-badge" data-i18n="projects.diploma">DIPLOMA</span>
-                                </div>
-                                <div class="external-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                        <polyline points="15 3 21 3 21 9"></polyline>
-                                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                                    </svg>
+                    <div class="idcard-wrap">
+                        <div class="idcard" id="idcard">
+                            <div class="idc-frame">
+                                <img src="assets/photo/profile.png" alt="Koshkenbek Dauren" width="500" height="500">
+                                <span class="idc-tint"></span>
+                                <span class="idc-fade"></span>
+                                <span class="idc-scan"></span>
+                                <span class="idc-sheen"></span>
+                                <i class="idc-cb tl"></i><i class="idc-cb tr"></i><i class="idc-cb bl"></i><i class="idc-cb br"></i>
+                            </div>
+                            <div class="idc-plate"><b>KOSHKENBEK D.</b><small>SOC L1 · ASTANA, KZ</small></div>
+                            <span class="chip chip-ok">ACCESS GRANTED</span>
+                            <span class="chip chip-hack">HACK<br>EXPLOIT<br>SECURE</span>
+                            <span class="chip chip-tag">BLUE + RED</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- right column: threats + status + mitre -->
+                <div class="col-right" style="--i:1">
+                    <section class="panel threats" data-tilt="2">
+                        <header class="ph">
+                            <span class="ph-t"><i class="chev"></i><span data-i18n="p.threats">LIVE_THREATS</span></span>
+                            <span class="ph-r"><i class="live-dot"></i><span data-i18n="p.sim">SIMULATED</span></span>
+                        </header>
+                        <div class="threats-body">
+                            <div class="globe-box">
+                                <canvas id="threat-globe" role="img" aria-label="Interactive 3D globe with simulated attack arcs"></canvas>
+                                <div class="globe-ctl">
+                                    <button class="gbtn" id="globe-toggle-rotation" type="button" aria-label="Pause globe rotation" title="Pause / resume"><svg><use href="#i-pause"/></svg></button>
+                                    <button class="gbtn" id="globe-zoom-out" type="button" aria-label="Zoom out" title="Zoom out"><svg><use href="#i-minus"/></svg></button>
+                                    <button class="gbtn" id="globe-zoom-in" type="button" aria-label="Zoom in" title="Zoom in"><svg><use href="#i-plus"/></svg></button>
                                 </div>
                             </div>
-                            <p data-i18n="projects.p1.desc">My graduation (diploma) project — a gamified cybersecurity
-                                training platform with interactive missions, challenges and a 2D game.</p>
-                        </a>
+                            <ol class="feed" id="threat-feed" aria-label="Simulated security events">
+                                <li><span class="arr">▸</span><span class="tm">08:21</span><span class="ev">Suspicious login attempt</span><span class="ip">203.0.113.18</span></li>
+                                <li><span class="arr">▸</span><span class="tm">08:17</span><span class="ev">PowerShell execution</span><span class="ip">endpoint-04</span></li>
+                                <li><span class="arr">▸</span><span class="tm">08:12</span><span class="ev">Port scan detected</span><span class="ip">198.51.100.7</span></li>
+                                <li><span class="arr">▸</span><span class="tm">08:10</span><span class="ev">Web shell upload</span><span class="ip">/wp-admin/</span></li>
+                            </ol>
+                        </div>
+                        <footer class="threats-foot"><span data-i18n="p.events">EVENTS (SIMULATED)</span><b id="threat-count">12,408</b></footer>
+                    </section>
 
-                        <!-- Project 2: OYNA -->
-                        <a href="https://oyna-play.vercel.app/" target="_blank" rel="noopener noreferrer"
-                            class="p-item">
-                            <div class="p-header">
-                                <h4 data-i18n="projects.p2.title">OYNA</h4>
-                                <div class="external-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                        <polyline points="15 3 21 3 21 9"></polyline>
-                                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                                    </svg>
-                                </div>
+                    <div class="duo">
+                        <section class="panel" data-tilt="3">
+                            <header class="ph"><span class="ph-t"><i class="chev"></i><span data-i18n="p.status">SYSTEM_STATUS</span></span></header>
+                            <ul class="st-list">
+                                <li class="st-row"><div><span data-i18n="st.siem">SIEM Monitoring</span><b>85%</b></div><span class="seg"><i style="--v:85%"></i></span></li>
+                                <li class="st-row"><div><span data-i18n="st.log">Log Analysis</span><b>85%</b></div><span class="seg"><i style="--v:85%"></i></span></li>
+                                <li class="st-row"><div><span data-i18n="st.ta">Threat Analysis</span><b>65%</b></div><span class="seg"><i style="--v:65%"></i></span></li>
+                                <li class="st-row"><div><span data-i18n="st.ir">Incident Response</span><b>70%</b></div><span class="seg"><i style="--v:70%"></i></span></li>
+                            </ul>
+                            <p class="note" data-i18n="p.self">Self-assessed proficiency, not telemetry.</p>
+                        </section>
+                        <section class="panel" data-tilt="3">
+                            <header class="ph">
+                                <span class="ph-t"><i class="chev"></i><span>MITRE ATT&amp;CK</span></span>
+                                <span class="ph-r"><a href="#skills" data-target="skills"><span data-i18n="p.viewall">VIEW ALL</span><svg class="ico" style="width:12px;height:12px"><use href="#i-arrow"/></svg></a></span>
+                            </header>
+                            <div class="mt-list">
+                                <a href="https://attack.mitre.org/techniques/T1190/" target="_blank" rel="noopener noreferrer"><span class="mt-id">T1190</span><span class="mt-n" data-i18n="mt.t1190">Exploit Public-Facing App</span></a>
+                                <a href="https://attack.mitre.org/techniques/T1110/" target="_blank" rel="noopener noreferrer"><span class="mt-id">T1110</span><span class="mt-n" data-i18n="mt.t1110">Brute Force</span></a>
+                                <a href="https://attack.mitre.org/techniques/T1059/" target="_blank" rel="noopener noreferrer"><span class="mt-id">T1059</span><span class="mt-n" data-i18n="mt.t1059">Command and Scripting Interpreter</span></a>
+                                <a href="https://attack.mitre.org/techniques/T1046/" target="_blank" rel="noopener noreferrer"><span class="mt-id">T1046</span><span class="mt-n" data-i18n="mt.t1046">Network Service Scanning</span></a>
+                                <a href="https://attack.mitre.org/techniques/T1071/" target="_blank" rel="noopener noreferrer"><span class="mt-id">T1071</span><span class="mt-n" data-i18n="mt.t1071">Application Layer Protocol</span></a>
                             </div>
-                            <p data-i18n="projects.p2.desc">Kazakhstan’s first platform for amateur sports, enabling
-                                fair matchmaking by skill level.</p>
-                        </a>
+                        </section>
                     </div>
                 </div>
-                <div class="col">
-                    <h3 class="purple-text" data-i18n="languages.title">LANGUAGES</h3>
-                    <ul class="lang-list">
-                        <li><span data-i18n="languages.kk">Kazakh — Native</span>
-                            <div class="bar full"></div>
-                        </li>
-                        <li><span data-i18n="languages.ru">Russian — C1</span>
-                            <div class="bar full"></div>
-                        </li>
-                        <li><span data-i18n="languages.en">English — B1</span>
-                            <div class="bar med-high"></div>
-                        </li>
-                        <li><span data-i18n="languages.zh">Chinese — HSK 5</span>
-                            <div class="bar high"></div>
-                        </li>
+
+                <!-- blue team -->
+                <section class="panel team blue" data-tilt="3" style="--i:2">
+                    <div class="team-head">
+                        <span class="team-ico"><svg><use href="#i-shield"/></svg></span>
+                        <div><h2 class="team-title"><span>//</span> <span data-i18n="p.blue" style="color:inherit">BLUE TEAM</span></h2><p class="team-sub" data-i18n="p.blue_sub">DETECT / ANALYZE / RESPOND</p></div>
+                        <a class="go" href="#experience" data-target="experience" aria-label="Experience"><svg><use href="#i-arrow"/></svg></a>
+                    </div>
+                    <ul class="checks">
+                        <li data-i18n="team.b1">Security monitoring (SIEM)</li>
+                        <li data-i18n="team.b2">Log analysis &amp; incident investigation</li>
+                        <li data-i18n="team.b3">Threat analysis</li>
+                        <li data-i18n="team.b4">Security reporting</li>
                     </ul>
+                </section>
+
+                <!-- red team -->
+                <section class="panel team red" data-tilt="3" style="--i:3">
+                    <div class="team-head">
+                        <span class="team-ico"><svg><use href="#i-target"/></svg></span>
+                        <div><h2 class="team-title"><span>//</span> <span data-i18n="p.red" style="color:inherit">RED TEAM</span></h2><p class="team-sub" data-i18n="p.red_sub">FIND / EXPLOIT / VALIDATE</p></div>
+                        <a class="go" href="#skills" data-target="skills" aria-label="Skills"><svg><use href="#i-arrow"/></svg></a>
+                    </div>
+                    <ul class="checks">
+                        <li data-i18n="team.r1">Reconnaissance &amp; enumeration</li>
+                        <li data-i18n="team.r2">Web application testing</li>
+                        <li data-i18n="team.r3">Network &amp; infrastructure testing</li>
+                        <li data-i18n="team.r4">Privilege escalation</li>
+                    </ul>
+                    <span class="tag tag-r" data-i18n="p.training">IN TRAINING</span>
+                </section>
+
+                <!-- terminal -->
+                <section class="panel term" id="terminal" style="--i:4">
+                    <header class="ph">
+                        <span class="ph-t"><i class="chev"></i><span data-i18n="p.term">TERMINAL</span></span>
+                        <span class="ph-r" data-i18n="p.term_hint">TYPE 'help'</span>
+                    </header>
+                    <div class="term-body" id="term-out" role="log" aria-live="polite"></div>
+                    <form class="term-form" id="term-form" autocomplete="off">
+                        <label class="term-ps" for="term-in">dauren@portfolio:~$</label>
+                        <input id="term-in" type="text" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Terminal command" data-i18n-placeholder="p.term_ph" placeholder="help">
+                    </form>
+                </section>
+
+                <!-- featured projects -->
+                <section class="panel pj-panel" data-tilt="1.5" style="--i:5">
+                    <header class="ph">
+                        <span class="ph-t"><i class="chev"></i><span data-i18n="p.featured">FEATURED_PROJECTS</span></span>
+                        <span class="ph-r"><a href="#projects" data-target="projects"><span data-i18n="p.viewall">VIEW ALL</span><svg class="ico" style="width:12px;height:12px"><use href="#i-arrow"/></svg></a></span>
+                    </header>
+                    <div class="pj-grid">
+                        <a class="pj" href="https://hackshield-play-nexus.vercel.app/auth" target="_blank" rel="noopener noreferrer">
+                            <div class="pj-thumb t1"><svg aria-hidden="true"><use href="#i-shield-check"/></svg><span class="tag tag-g pj-badge" data-i18n="projects.diploma">DIPLOMA</span></div>
+                            <div class="pj-body"><h3>HackShield</h3><div class="pj-tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Supabase</span></div><span class="pj-link"><span data-i18n="p.live">VIEW LIVE</span><svg><use href="#i-arrow"/></svg></span></div>
+                        </a>
+                        <a class="pj" href="https://oyna-play.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            <div class="pj-thumb t2"><svg aria-hidden="true"><use href="#i-flame"/></svg></div>
+                            <div class="pj-body"><h3>OYNA</h3><div class="pj-tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Mobile</span></div><span class="pj-link"><span data-i18n="p.live">VIEW LIVE</span><svg><use href="#i-arrow"/></svg></span></div>
+                        </a>
+                        <a class="pj" href="scanner.html">
+                            <div class="pj-thumb t3"><svg aria-hidden="true"><use href="#i-scan"/></svg></div>
+                            <div class="pj-body"><h3 data-i18n="tools.title">Security Tools</h3><div class="pj-tags"><span class="tag">JavaScript</span><span class="tag">Serverless</span><span class="tag">OSINT</span></div><span class="pj-link"><span data-i18n="p.live">VIEW LIVE</span><svg><use href="#i-arrow"/></svg></span></div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- skills & tools -->
+                <section class="panel sk-panel" data-tilt="2" style="--i:6">
+                    <header class="ph">
+                        <span class="ph-t"><i class="chev"></i><span data-i18n="p.tools">SKILLS &amp; TOOLS</span></span>
+                        <span class="ph-r"><a href="#skills" data-target="skills"><span data-i18n="p.viewall">VIEW ALL</span><svg class="ico" style="width:12px;height:12px"><use href="#i-arrow"/></svg></a></span>
+                    </header>
+                    <div class="sk-group"><h3 data-i18n="grp.off">Offensive Security</h3>
+                        <div class="sk-row">
+                            <div class="tile"><i class="ic" style="--ic:url(/assets/icons/kalilinux.svg)"></i><span>Kali</span></div>
+                            <div class="tile"><i class="ic" style="--ic:url(/assets/icons/burpsuite.svg)"></i><span>Burp</span></div>
+                            <div class="tile"><i class="ic" style="--ic:url(/assets/icons/metasploit.svg)"></i><span>Metasploit</span></div>
+                            <div class="tile"><i class="ic" style="--ic:url(/assets/icons/nmap.svg)"></i><span>Nmap</span></div>
+                            <div class="tile"><i class="ic" style="--ic:url(/assets/icons/sqlmap.svg)"></i><span>SQLMap</span></div>
+                        </div></div>
+                    <div class="sk-group"><h3 data-i18n="grp.def">Defensive Security</h3>
+                        <div class="sk-row">
+                            <div class="tile"><i class="ic" style="--ic:url(/assets/icons/splunk.svg)"></i><span>Splunk</span></div>
+                            <div class="tile"><i class="ic" style="--ic:url(/assets/icons/wireshark.svg)"></i><span>Wireshark</span></div>
+                            <div class="tile"><i class="ic" style="--ic:url(/assets/icons/linux.svg)"></i><span>Linux</span></div>
+                        </div></div>
+                    <div class="sk-group"><h3 data-i18n="grp.dev">Development</h3>
+                        <div class="sk-row">
+                            <div class="tile"><i class="ic" style="--ic:url(/assets/icons/python.svg)"></i><span>Python</span></div>
+                            <div class="tile"><i class="ic" style="--ic:url(/assets/icons/react.svg)"></i><span>React</span></div>
+                            <div class="tile"><i class="ic" style="--ic:url(/assets/icons/typescript.svg)"></i><span>TypeScript</span></div>
+                            <div class="tile"><i class="ic" style="--ic:url(/assets/icons/docker.svg)"></i><span>Docker</span></div>
+                            <div class="tile"><i class="ic" style="--ic:url(/assets/icons/git.svg)"></i><span>Git</span></div>
+                        </div></div>
+                </section>
+
+                <!-- certifications -->
+                <section class="panel ct-panel" data-tilt="2" style="--i:7">
+                    <header class="ph">
+                        <span class="ph-t"><i class="chev"></i><span data-i18n="p.certs">CERTIFICATIONS</span></span>
+                        <span class="ph-r"><a href="#certs" data-target="certs"><span data-i18n="p.viewall">VIEW ALL</span><svg class="ico" style="width:12px;height:12px"><use href="#i-arrow"/></svg></a></span>
+                    </header>
+                    <div class="cert-list">
+                        <div class="cert-row"><span class="cert-ico c-g"><svg><use href="#i-shield-check"/></svg></span><div><b>CyberShield CSCSA</b><small data-i18n="cert.cscsa.issuer">CyberShield Academy · State Technical Service (STS)</small></div></div>
+                        <div class="cert-row"><span class="cert-ico c-r"><svg><use href="#i-award"/></svg></span><div><b>Red Hat RH124</b><small data-i18n="cert.rh.issuer">Red Hat Training and Certification</small></div></div>
+                        <div class="cert-row"><span class="cert-ico c-p"><svg><use href="#i-cap"/></svg></span><div><b data-i18n="cert.diploma.short">Bachelor's — Cybersecurity</b><small>Astana IT University · 2026</small></div></div>
+                        <div class="cert-row"><span class="cert-ico c-a"><svg><use href="#i-target"/></svg></span><div><b data-i18n="goals.long_desc">Penetration Tester with strong defensive background</b><span class="st st-goal" data-i18n="p.goal">GOAL</span></div></div>
+                    </div>
+                </section>
+
+                <!-- footer strip -->
+                <div class="panel strip" style="--i:8">
+                    <div class="strip-q">
+                        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20"/><ellipse cx="24" cy="24" rx="9" ry="20"/><line x1="4" y1="24" x2="44" y2="24"/><path d="M8 14h32M8 34h32"/></svg>
+                        <p><span data-i18n="contact.quote">Security is not a product, but a process.</span><small data-i18n="contact.quote_author">— Bruce Schneier</small></p>
+                    </div>
+                    <nav class="pdots" aria-label="Progress">
+                        <a class="pdot active" href="#home" data-target="home" aria-label="Home">01</a>
+                        <a class="pdot" href="#about" data-target="about" aria-label="About">02</a>
+                        <a class="pdot" href="#experience" data-target="experience" aria-label="Experience">03</a>
+                        <a class="pdot" href="#projects" data-target="projects" aria-label="Projects">04</a>
+                        <a class="pdot" href="#skills" data-target="skills" aria-label="Skills">05</a>
+                        <a class="pdot" href="#certs" data-target="certs" aria-label="Certifications">06</a>
+                        <a class="pdot" href="#contact" data-target="contact" aria-label="Contact">07</a>
+                    </nav>
+                    <div class="strip-cta"><a class="btn" href="#contact" data-target="contact"><span data-i18n="p.cta">LET'S WORK TOGETHER</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
                 </div>
             </div>
         </section>
 
-        <!-- Education -->
-        <section id="education" class="fade-in">
-            <div class="section-title">
-                <h2 data-i18n="archives.edu">EDUCATION</h2>
+        <!-- ===================== ABOUT ===================== -->
+        <section id="about" class="sec">
+            <header class="sec-h reveal"><h2><i class="chev"></i><span data-i18n="sec.about">ABOUT</span></h2><span class="sec-tag" data-i18n="sec.about_tag">OPERATOR DOSSIER</span></header>
+            <div class="about-grid">
+                <article class="panel reveal" data-tilt="1.2">
+                    <header class="ph"><span class="ph-t"><i class="chev"></i><span>cat about.md</span></span></header>
+                    <p class="prose" data-i18n="about.desc">I am Koshkenbek Dauren, a Cybersecurity graduate of Astana IT University and a SOC Analyst L1.</p>
+                    <div class="goals">
+                        <div class="goal"><h3 data-i18n="goals.short_title">SHORT-TERM GOAL</h3><p data-i18n="goals.short_desc">SOC Analyst L2 / Blue Team Engineer</p></div>
+                        <div class="goal"><h3 data-i18n="goals.long_title">LONG-TERM GOAL</h3><p data-i18n="goals.long_desc">Penetration Tester with strong defensive background</p></div>
+                    </div>
+                </article>
+                <aside class="stack">
+                    <div class="panel reveal" data-tilt="2">
+                        <header class="ph"><span class="ph-t"><i class="chev"></i><span data-i18n="focus.title">FOCUS AREAS</span></span></header>
+                        <div class="focus-grid">
+                            <div class="focus c-r"><h3 data-i18n="focus.offensive.title">OFFENSIVE SECURITY</h3><ul><li data-i18n="focus.offensive.l1">Web Pentesting</li><li data-i18n="focus.offensive.l2">Network Security</li><li data-i18n="focus.offensive.l3">Vulnerability Research</li></ul></div>
+                            <div class="focus c-b"><h3 data-i18n="focus.defensive.title">DEFENSIVE SECURITY</h3><ul><li data-i18n="focus.defensive.l1">SOC Monitoring</li><li data-i18n="focus.defensive.l2">Log Analysis</li><li data-i18n="focus.defensive.l3">Incident Response</li></ul></div>
+                            <div class="focus c-p"><h3 data-i18n="focus.development.title">DEVELOPMENT</h3><ul><li data-i18n="focus.development.l1">Web Applications</li><li data-i18n="focus.development.l2">Security Tools</li><li data-i18n="focus.development.l3">Automation</li></ul></div>
+                            <div class="focus c-g"><h3 data-i18n="focus.research.title">RESEARCH</h3><ul><li data-i18n="focus.research.l1">Threat Analysis</li><li data-i18n="focus.research.l2">Security Education</li><li data-i18n="focus.research.l3">New Technologies</li></ul></div>
+                        </div>
+                    </div>
+                    <div class="panel reveal" data-tilt="2">
+                        <header class="ph"><span class="ph-t"><i class="chev"></i><span data-i18n="languages.title">LANGUAGES</span></span></header>
+                        <ul class="lang-list">
+                            <li><span data-i18n="languages.kk">Kazakh — Native</span><span class="seg"><i style="--v:100%"></i></span></li>
+                            <li><span data-i18n="languages.ru">Russian — C1</span><span class="seg"><i style="--v:92%"></i></span></li>
+                            <li><span data-i18n="languages.en">English — B1</span><span class="seg"><i style="--v:62%"></i></span></li>
+                            <li><span data-i18n="languages.zh">Chinese — HSK 5</span><span class="seg"><i style="--v:78%"></i></span></li>
+                        </ul>
+                    </div>
+                </aside>
             </div>
-            <div class="archives-grid">
-                <div class="archive-card education-card">
-                    <div class="card-top" data-i18n="archives.edu">EDUCATION</div>
-                    <!-- University Logo (PNG) -->
-                    <img src="assets/logos/aitu.png" alt="Astana IT University Logo" class="university-logo">
-                    <h4 data-i18n="archives.e1.title">Astana IT University</h4>
-                    <p data-i18n="archives.e1.time">Graduated in 2026</p>
-                    <p data-i18n="archives.e1.desc">Bachelor’s Degree — Cybersecurity</p>
+            <div class="mind">
+                <div class="panel blue reveal" data-tilt="2"><h3 data-i18n="mindset.blue_h">BLUE TEAM MINDSET</h3><p data-i18n="mindset.blue_desc">I focus on visibility, detection logic, and understanding what is normal versus suspicious behavior in systems and networks.</p></div>
+                <div class="panel red reveal" data-tilt="2"><h3 data-i18n="mindset.red_h">RED TEAM MINDSET</h3><p data-i18n="mindset.red_desc">I analyze systems from an attacker’s perspective, looking for misconfigurations, weak points, and realistic attack paths.</p></div>
+            </div>
+        </section>
+
+        <!-- ===================== EXPERIENCE ===================== -->
+        <section id="experience" class="sec">
+            <header class="sec-h reveal"><h2><i class="chev"></i><span data-i18n="exp.title">EXPERIENCE</span></h2><span class="sec-tag" data-i18n="sec.exp_tag">REAL SOC WORK</span></header>
+            <div class="timeline">
+                <article class="tl-item now reveal">
+                    <div class="panel" data-tilt="1.5">
+                        <div class="exp-head">
+                            <span class="logo-tile"><img src="assets/logos/sauytlab.png" alt="Sauyt Lab logo" ></span>
+                            <div><h3 data-i18n="exp.job1.role">SOC Analyst L1</h3><span class="exp-co" data-i18n="exp.job1.company">Sauyt Lab (Freedom)</span></div>
+                            <span class="exp-date" data-i18n="exp.job1.date">February 03, 2026 – Present</span>
+                        </div>
+                        <ul class="bullets">
+                            <li data-i18n="exp.job1.list1">Security event monitoring in SOC environment</li>
+                            <li data-i18n="exp.job1.list2">Log analysis from network, endpoint, and system sources</li>
+                            <li data-i18n="exp.job1.list3">Initial alert triage and incident investigation</li>
+                            <li data-i18n="exp.job1.list4">Identification of suspicious activity and escalation</li>
+                            <li data-i18n="exp.job1.list5">Working within a high-responsibility national security environment</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="tl-item reveal">
+                    <div class="panel" data-tilt="1.5">
+                        <div class="exp-head">
+                            <span class="logo-tile"><img src="assets/logos/sr-holding.png" alt="Sr Holding logo"></span>
+                            <div><h3 data-i18n="exp.job2.role">SOC Analyst L1</h3><span class="exp-co" data-i18n="exp.job2.company">Sr Holding (China)</span></div>
+                            <span class="exp-date" data-i18n="exp.job2.date">September 01, 2025 – February 01, 2026</span>
+                        </div>
+                        <ul class="bullets">
+                            <li data-i18n="exp.job2.list1">Security event monitoring in SOC environment</li>
+                            <li data-i18n="exp.job2.list2">Log analysis from network, endpoint, and system sources</li>
+                            <li data-i18n="exp.job2.list3">Initial incident triage and alert investigation</li>
+                            <li data-i18n="exp.job2.list4">Identification of suspicious activity and escalation when required</li>
+                            <li data-i18n="exp.job2.list5">Working with security monitoring tools and dashboards</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="tl-item reveal">
+                    <div class="panel" data-tilt="1.5">
+                        <div class="exp-head">
+                            <span class="logo-tile"><img src="assets/logos/kazakhtelecom.png" alt="Kazakhtelecom logo"></span>
+                            <div><h3 data-i18n="exp.job3.role">Network Security Project Participant</h3><span class="exp-co" data-i18n="exp.job3.company">Kazakhtelecom (Sapa+)</span></div>
+                            <span class="exp-date" data-i18n="exp.job3.date">January 20, 2025 – June 20, 2025</span>
+                        </div>
+                        <ul class="bullets">
+                            <li data-i18n="exp.job3.list1">Participation in a network security project</li>
+                            <li data-i18n="exp.job3.list2">Support of secure network infrastructure</li>
+                            <li data-i18n="exp.job3.list3">Monitoring and basic analysis of network security events</li>
+                            <li data-i18n="exp.job3.list4">Working within a large enterprise telecom environment</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===================== PROJECTS ===================== -->
+        <section id="projects" class="sec">
+            <header class="sec-h reveal"><h2><i class="chev"></i><span data-i18n="projects.title">PROJECTS</span></h2><span class="sec-tag" data-i18n="projects.tag">REAL PROJECTS. REAL IMPACT.</span></header>
+            <div class="pj-big">
+                <a class="pj panel reveal" href="https://hackshield-play-nexus.vercel.app/auth" target="_blank" rel="noopener noreferrer" data-tilt="2.5" style="padding:0">
+                    <div class="pj-thumb t1">
+                        <div class="chrome"><i></i><i></i><i></i><span>hackshield-play-nexus.vercel.app</span></div>
+                        <div class="thumb-brand"><svg aria-hidden="true"><use href="#i-bot"/></svg><b>HackShield Nexus</b></div>
+                        <span class="tag tag-g pj-badge" style="top:34px" data-i18n="projects.diploma">DIPLOMA</span>
+                    </div>
+                    <div class="pj-body">
+                        <h3 data-i18n="projects.p1.title">HackShield</h3>
+                        <p data-i18n="projects.p1.desc">My graduation (diploma) project — a gamified cybersecurity training platform with interactive missions, challenges and a 2D game for practical skill-building.</p>
+                        <div class="pj-tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Supabase</span></div>
+                        <span class="pj-link"><span data-i18n="p.live">VIEW LIVE</span><svg><use href="#i-external"/></svg></span>
+                    </div>
+                </a>
+                <a class="pj panel reveal" href="https://oyna-play.vercel.app/" target="_blank" rel="noopener noreferrer" data-tilt="2.5" style="padding:0">
+                    <div class="pj-thumb t2">
+                        <div class="chrome"><i></i><i></i><i></i><span>oyna-play.vercel.app</span></div>
+                        <div class="thumb-brand"><svg aria-hidden="true"><use href="#i-flame"/></svg><b>OYNA</b><small>SPORTS COMMUNITY</small></div>
+                    </div>
+                    <div class="pj-body">
+                        <h3 data-i18n="projects.p2.title">OYNA</h3>
+                        <p data-i18n="projects.p2.desc">Kazakhstan’s first platform for amateur sports, enabling fair matchmaking by skill level and connecting verified organizers and players.</p>
+                        <div class="pj-tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Mobile</span></div>
+                        <span class="pj-link"><span data-i18n="p.live">VIEW LIVE</span><svg><use href="#i-external"/></svg></span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="tools-h reveal">
+                <h3><i class="chev"></i><span data-i18n="tools.title">Security Tools</span></h3>
+                <p data-i18n="tools.disclaimer">Passive checks only — for assets you own or are authorized to test.</p>
+            </div>
+            <div class="tool-grid">
+                <a class="panel tool reveal" href="scanner.html" data-tilt="3">
+                    <span class="path"><b>/scanner</b><svg class="ico" style="width:14px;height:14px"><use href="#i-scan"/></svg></span>
+                    <h4 data-i18n="tools.scanner.n">Web Security Scanner</h4>
+                    <p data-i18n="tools.scanner.d">TLS, HTTP security headers, cookies, CORS and exposed files, scored A–F with a downloadable PDF report.</p>
+                    <code class="cmd">scan example.com</code>
+                    <span class="pj-link"><span data-i18n="p.open">OPEN TOOL</span><svg><use href="#i-arrow"/></svg></span>
+                </a>
+                <a class="panel tool reveal" href="osint.html" data-tilt="3">
+                    <span class="path"><b>/osint</b><svg class="ico" style="width:14px;height:14px"><use href="#i-search"/></svg></span>
+                    <h4 data-i18n="tools.osint.n">OSINT Lookup</h4>
+                    <p data-i18n="tools.osint.d">Passive reconnaissance from public sources: WHOIS/RDAP, DNS, certificate-transparency subdomains and Wayback history.</p>
+                    <code class="cmd">whois example.com</code>
+                    <span class="pj-link"><span data-i18n="p.open">OPEN TOOL</span><svg><use href="#i-arrow"/></svg></span>
+                </a>
+                <a class="panel tool reveal" href="exposure.html" data-tilt="3">
+                    <span class="path"><b>/exposure</b><svg class="ico" style="width:14px;height:14px"><use href="#i-flame"/></svg></span>
+                    <h4 data-i18n="tools.exposure.n">Exposure Check</h4>
+                    <p data-i18n="tools.exposure.d">Email breach exposure, username footprint and a client-side k-anonymity password check. The password never leaves your browser.</p>
+                    <code class="cmd">check --email you@example.com</code>
+                    <span class="pj-link"><span data-i18n="p.open">OPEN TOOL</span><svg><use href="#i-arrow"/></svg></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ===================== SKILLS ===================== -->
+        <section id="skills" class="sec">
+            <header class="sec-h reveal"><h2><i class="chev"></i><span data-i18n="chain.title">ATTACK CHAIN &amp; SKILLS</span></h2><span class="sec-tag" data-i18n="chain.tag">TOOLS. MINDSET. RESULTS.</span></header>
+            <div class="chain reveal">
+                <div class="step"><span class="step-n">01</span><h3 data-i18n="chain.s1.title">RECON</h3><ul><li>Nmap</li><li>Amass</li><li>Subfinder</li><li>Shodan</li></ul></div>
+                <div class="step"><span class="step-n">02</span><h3 data-i18n="chain.s2.title">ENUMERATION</h3><ul><li>Burp Suite</li><li>Nuclei</li><li>Gobuster</li><li>Nikto</li></ul></div>
+                <div class="step"><span class="step-n">03</span><h3 data-i18n="chain.s3.title">EXPLOITATION</h3><ul><li>Metasploit</li><li>SQLMap</li><li>Custom Scripts</li></ul></div>
+                <div class="step"><span class="step-n">04</span><h3 data-i18n="chain.s4.title">PRIVILEGE ESCALATION</h3><ul><li>Linux</li><li>Windows</li><li>BloodHound</li><li>PowerShell</li></ul></div>
+                <div class="step"><span class="step-n">05</span><h3 data-i18n="chain.s5.title">POST-EXPLOITATION</h3><ul><li>Lateral Movement</li><li>Persistence</li><li>Data Extraction</li></ul></div>
+                <div class="step"><span class="step-n">06</span><h3 data-i18n="chain.s6.title">REPORTING</h3><ul><li>Documentation</li><li>Risk Analysis</li><li>Recommendations</li></ul></div>
+            </div>
+            <p class="note reveal" data-i18n="chain.note">The offensive part of this chain is what I am training toward; the defensive side is what I do at work.</p>
+
+            <div class="arsenal">
+                <div class="panel reveal" data-tilt="2.5">
+                    <header class="ph"><span class="ph-t c-r"><i class="chev" style="border-color:var(--red)"></i><span data-i18n="grp.off">Offensive Security</span></span></header>
+                    <div class="sk-row">
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/kalilinux.svg)"></i><span>Kali Linux</span></div>
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/burpsuite.svg)"></i><span>Burp Suite</span></div>
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/metasploit.svg)"></i><span>Metasploit</span></div>
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/nmap.svg)"></i><span>Nmap</span></div>
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/sqlmap.svg)"></i><span>SQLMap</span></div>
+                    </div>
+                </div>
+                <div class="panel reveal" data-tilt="2.5">
+                    <header class="ph"><span class="ph-t c-b"><i class="chev" style="border-color:var(--blue)"></i><span data-i18n="grp.def">Defensive Security</span></span></header>
+                    <div class="sk-row">
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/splunk.svg)"></i><span>Splunk</span></div>
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/wireshark.svg)"></i><span>Wireshark</span></div>
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/linux.svg)"></i><span>Linux</span></div>
+                    </div>
+                </div>
+                <div class="panel reveal" data-tilt="2.5">
+                    <header class="ph"><span class="ph-t"><i class="chev"></i><span data-i18n="grp.dev">Development</span></span></header>
+                    <div class="sk-row">
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/python.svg)"></i><span>Python</span></div>
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/react.svg)"></i><span>React</span></div>
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/typescript.svg)"></i><span>TypeScript</span></div>
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/nextdotjs.svg)"></i><span>Next.js</span></div>
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/supabase.svg)"></i><span>Supabase</span></div>
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/docker.svg)"></i><span>Docker</span></div>
+                        <div class="tile"><i class="ic" style="--ic:url(/assets/icons/git.svg)"></i><span>Git</span></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Featured Certification Section -->
-        <section id="featured-cert" class="fade-in">
-            <div class="section-title">
-                <h2 data-i18n="cert.featured_title">FEATURED CERTIFICATIONS</h2>
+        <!-- ===================== CERTS ===================== -->
+        <section id="certs" class="sec">
+            <header class="sec-h reveal"><h2><i class="chev"></i><span data-i18n="cert.featured_title">CERTIFICATION VAULT</span></h2><span class="sec-tag" data-i18n="cert.verified_tag">VERIFIED CREDENTIALS</span></header>
+            <div class="vault">
+                <article class="panel vc reveal" data-tilt="3">
+                    <div class="vc-img"><img src="assets/certificates/cert-cscsa.png" alt="CyberShield Certified SOC Analyst (CSCSA)" loading="lazy"></div>
+                    <div><h3 data-i18n="cert.cscsa.title">CyberShield Certified SOC Analyst (CSCSA)</h3><p data-i18n="cert.cscsa.issuer">CyberShield Academy · State Technical Service (STS)</p></div>
+                    <span class="verified" data-i18n="cert.verified">VERIFIED</span>
+                </article>
+                <a class="panel vc reveal" href="assets/certificates/050614501880-20260813153532211.pdf" target="_blank" rel="noopener noreferrer" data-tilt="3">
+                    <div class="vc-img"><img src="assets/certificates/diploma.png" alt="Bachelor's Diploma — Cybersecurity, Astana IT University" loading="lazy"></div>
+                    <div><h3 data-i18n="cert.diploma.title">Bachelor's Diploma — Cybersecurity</h3><p data-i18n="cert.diploma.issuer">Astana IT University · BD № 00040351726</p></div>
+                    <span class="verified" data-i18n="cert.verified">VERIFIED</span>
+                </a>
+                <article class="panel vc reveal" data-tilt="3">
+                    <div class="vc-img"><img src="assets/certificates/cert-5.png" alt="Red Hat System Administration I (RH124)" loading="lazy"></div>
+                    <div><h3 data-i18n="cert.rh.title">Red Hat System Administration I (RH124)</h3><p data-i18n="cert.rh.issuer">Red Hat Training and Certification</p></div>
+                    <span class="verified" data-i18n="cert.verified">VERIFIED</span>
+                </article>
             </div>
-            <div class="featured-cert-container">
-                <div class="featured-header">
-                    <p data-i18n="cert.featured_subtitle">Industry-recognized professional training</p>
-                </div>
-                <div class="featured-grid">
-                    <!-- Featured 1: CyberShield CSCSA (GTS) -->
-                    <div class="featured-card cscsa-card">
-                        <div class="featured-img-wrapper">
-                            <img src="assets/certificates/cert-cscsa.png"
-                                alt="CyberShield Certified SOC Analyst (CSCSA)" class="featured-img">
-                            <div class="glow-effect"></div>
-                        </div>
-                        <div class="featured-details">
-                            <h3 data-i18n="cert.cscsa.title">CyberShield Certified SOC Analyst (CSCSA)</h3>
-                            <p class="issuer cyan-issuer" data-i18n="cert.cscsa.issuer">CyberShield Academy · State Technical Service (STS)</p>
-                            <p class="holder">Issued to: <span class="white-text">Dauren Koshkenbek</span></p>
-                        </div>
-                    </div>
 
-                    <!-- Featured 2: Red Hat RH124 -->
-                    <div class="featured-card">
-                        <div class="featured-img-wrapper">
-                            <img src="assets/certificates/cert-5.png" alt="Red Hat System Administration I (RH124)"
-                                class="featured-img">
-                            <div class="glow-effect"></div>
-                        </div>
-                        <div class="featured-details">
-                            <h3 data-i18n="cert.rh.title">Red Hat System Administration I (RH124)</h3>
-                            <p class="issuer" data-i18n="cert.rh.issuer">Red Hat Training and Certification</p>
-                            <p class="holder">Issued to: <span class="white-text">Dauren Koshkenbek</span></p>
-                        </div>
-                    </div>
-                </div>
+            <div class="panel edu reveal" data-tilt="1.5">
+                <span class="logo-tile"><img src="assets/logos/aitu.png" alt="Astana IT University logo"></span>
+                <div><h3 data-i18n="archives.e1.title">Astana IT University</h3><p data-i18n="archives.e1.desc">Bachelor’s Degree — Cybersecurity</p><p data-i18n="archives.e1.time">Graduated in 2026</p></div>
+            </div>
+
+            <div class="archive">
+                <article class="panel arc reveal" data-tilt="3"><div class="arc-img"><img src="assets/certificates/cert-1.png" alt="IBM certificate" loading="lazy"></div><h3 data-i18n="archives.c1.title">Exploratory Data Analysis for Machine Learning</h3><p>IBM • ID: <span class="mono">4E0CCP2N8JEO</span></p></article>
+                <article class="panel arc reveal" data-tilt="3"><div class="arc-img"><img src="assets/certificates/cert-2.png" alt="LearnQuest certificate" loading="lazy"></div><h3 data-i18n="archives.c2.title">Securing Cloud and Hybrid Networks</h3><p>LearnQuest • ID: <span class="mono">C6973UXET7O5</span></p></article>
+                <article class="panel arc reveal" data-tilt="3"><div class="arc-img"><img src="assets/certificates/cert-3.png" alt="LearnQuest certificate" loading="lazy"></div><h3 data-i18n="archives.c3.title">Next-Generation Firewalls and Intrusion Prevention</h3><p>LearnQuest • ID: <span class="mono">UVZK33SZYZ2E</span></p></article>
+                <article class="panel arc reveal" data-tilt="3"><div class="arc-img"><img src="assets/certificates/cert-4.png" alt="IBM certificate" loading="lazy"></div><h3 data-i18n="archives.c4.title">Supervised Machine Learning: Regression</h3><p>IBM • ID: <span class="mono">WGFI25H8VBDH</span></p></article>
             </div>
         </section>
 
-        <!-- General Certifications Section -->
-        <section id="certificates" class="fade-in">
-            <div class="section-title">
-                <h2 data-i18n="archives.title">CERTIFICATIONS</h2>
-            </div>
-            <div class="cert-grid">
-                <!-- Cert 1 -->
-                <div class="cert-item">
-                    <div class="cert-preview">
-                        <img src="assets/certificates/cert-1.png" alt="IBM EDA Certificate">
-                    </div>
-                    <h4 data-i18n="archives.c1.title">Exploratory Data Analysis for Machine Learning</h4>
-                    <p>IBM • ID: <span class="mono">4E0CCP2N8JEO</span></p>
+        <!-- ===================== CONTACT ===================== -->
+        <section id="contact" class="sec">
+            <header class="sec-h reveal"><h2><i class="chev"></i><span data-i18n="contact.title">CONTACT</span></h2><span class="sec-tag" data-i18n="contact.tag">LET'S CONNECT</span></header>
+            <div class="contact-grid">
+                <div class="c-list">
+                    <a class="c-row reveal" href="mailto:daurencd@gmail.com"><span class="c-ico"><svg class="ico"><use href="#i-mail"/></svg></span><span><b>Email</b><small>daurencd@gmail.com</small></span><svg class="arrow"><use href="#i-arrow"/></svg></a>
+                    <a class="c-row reveal" href="https://www.linkedin.com/in/dauren-koshkenbek-6b90a9358/" target="_blank" rel="noopener noreferrer"><span class="c-ico"><svg class="ico"><use href="#i-linkedin"/></svg></span><span><b>LinkedIn</b><small>dauren-koshkenbek</small></span><svg class="arrow"><use href="#i-arrow"/></svg></a>
+                    <a class="c-row reveal" href="https://github.com/daurencd01" target="_blank" rel="noopener noreferrer"><span class="c-ico"><svg class="ico"><use href="#i-github"/></svg></span><span><b>GitHub</b><small>daurencd01</small></span><svg class="arrow"><use href="#i-arrow"/></svg></a>
+                    <a class="c-row reveal" href="https://t.me/yellowcd" target="_blank" rel="noopener noreferrer"><span class="c-ico"><svg class="ico"><use href="#i-telegram"/></svg></span><span><b>Telegram</b><small>@yellowcd</small></span><svg class="arrow"><use href="#i-arrow"/></svg></a>
+                    <a class="c-row reveal" href="https://www.instagram.com/dauren_cd" target="_blank" rel="noopener noreferrer"><span class="c-ico"><svg class="ico"><use href="#i-instagram"/></svg></span><span><b>Instagram</b><small>dauren_cd</small></span><svg class="arrow"><use href="#i-arrow"/></svg></a>
                 </div>
-                <!-- Cert 2 -->
-                <div class="cert-item">
-                    <div class="cert-preview">
-                        <img src="assets/certificates/cert-2.png" alt="Cloud Security Certificate">
+                <aside class="panel c-side reveal" data-tilt="2">
+                    <div>
+                        <h3><span data-i18n="c.head1">Let's build</span> <span data-i18n="c.head2">secure things</span></h3>
+                        <p data-i18n="contact.subtitle">Open to cybersecurity opportunities and collaboration</p>
                     </div>
-                    <h4 data-i18n="archives.c2.title">Securing Cloud and Hybrid Networks</h4>
-                    <p>LearnQuest • ID: <span class="mono">C6973UXET7O5</span></p>
-                </div>
-                <!-- Cert 3 -->
-                <div class="cert-item">
-                    <div class="cert-preview">
-                        <img src="assets/certificates/cert-3.png" alt="Firewalls Certificate">
-                    </div>
-                    <h4 data-i18n="archives.c3.title">Next-Generation Firewalls and Intrusion Prevention</h4>
-                    <p>LearnQuest • ID: <span class="mono">UVZK33SZYZ2E</span></p>
-                </div>
-                <!-- Cert 4 -->
-                <div class="cert-item">
-                    <div class="cert-preview">
-                        <img src="assets/certificates/cert-4.png" alt="ML Regression Certificate">
-                    </div>
-                    <h4 data-i18n="archives.c4.title">Supervised Machine Learning: Regression</h4>
-                    <p>IBM • ID: <span class="mono">WGFI25H8VBDH</span></p>
-                </div>
+                    <a class="btn btn-primary" href="assets/cv/Koshkenbek_Dauren_CV.pdf" download style="width:fit-content"><svg aria-hidden="true"><use href="#i-download"/></svg><span data-i18n="hero.cv">DOWNLOAD CV</span></a>
+                    <p class="quote"><span data-i18n="contact.quote">Security is not a product, but a process.</span><small data-i18n="contact.quote_author">— Bruce Schneier</small></p>
+                </aside>
             </div>
         </section>
 
-        <!-- How I Think (Mindset) -->
-        <section id="mindset" class="fade-in">
-            <div class="section-title">
-                <h2 data-i18n="mindset.title">HOW I THINK</h2>
-            </div>
-            <div class="mindset-container">
-                <div class="mindset-card blue-card">
-                    <h3 data-i18n="mindset.blue_h">BLUE TEAM MINDSET</h3>
-                    <p data-i18n="mindset.blue_desc">I focus on visibility, detection logic, and understanding what is
-                        normal versus suspicious behavior in systems and networks.</p>
-                </div>
-                <div class="mindset-card red-card">
-                    <h3 data-i18n="mindset.red_h">RED TEAM MINDSET</h3>
-                    <p data-i18n="mindset.red_desc">I analyze systems from an attacker’s perspective, looking for
-                        misconfigurations, weak points, and realistic attack paths.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SOC Dashboard (demo visualization) -->
-        <section id="dashboard" class="fade-in">
-            <div class="dashboard-container">
-                <div class="dash-header">
-                    <h3 data-i18n="dash.title">SOC DASHBOARD</h3>
-                    <div class="dash-header-right">
-                        <span class="demo-tag" data-i18n="dash.demo">SIMULATION</span>
-                        <div class="live-dot"></div>
-                    </div>
-                </div>
-                <div class="dash-grid">
-                    <div class="dash-stat">
-                        <span class="stat-label" data-i18n="dash.threats">THREATS BLOCKED</span>
-                        <span class="stat-value" id="threat-count">12,408</span>
-                    </div>
-                    <div class="dash-stat">
-                        <span class="stat-label" data-i18n="dash.uptime">SYSTEM UPTIME</span>
-                        <span class="stat-value">99.9%</span>
-                    </div>
-                    <div class="dash-visual">
-                        <!-- Simulated Bar Chart -->
-                        <div class="bar-chart">
-                            <div class="bar-col">
-                                <div class="fill" style="height: 40%"></div>
-                            </div>
-                            <div class="bar-col">
-                                <div class="fill" style="height: 70%"></div>
-                            </div>
-                            <div class="bar-col">
-                                <div class="fill" style="height: 50%"></div>
-                            </div>
-                            <div class="bar-col">
-                                <div class="fill" style="height: 85%"></div>
-                            </div>
-                            <div class="bar-col">
-                                <div class="fill" style="height: 60%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dash-log">
-                    <span class="log-line" id="log-feed">Initializing monitoring protocols...</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="fade-in">
-            <div class="contact-container">
-                <h2 class="glitch-text" data-text="CONTACT ME" data-i18n="contact.title">CONTACT ME</h2>
-                <p class="subtitle" data-i18n="contact.subtitle">
-                    Open to cybersecurity opportunities and collaboration
-                </p>
-
-                <div class="contact-methods">
-                    <!-- Email Card -->
-                    <a href="mailto:daurencd@gmail.com" class="contact-card email-card">
-                        <div class="icon-wrapper">
-                            <!-- Helper SVG Envelope -->
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </div>
-                        <div class="card-details">
-                            <h3>Email</h3>
-                            <p>daurencd@gmail.com</p>
-                        </div>
-                    </a>
-
-                    <!-- GitHub Card -->
-                    <a href="https://github.com/daurencd01" target="_blank" rel="noopener noreferrer"
-                        class="contact-card github-card">
-                        <div class="icon-wrapper">
-                            <!-- GitHub SVG -->
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                            </svg>
-                        </div>
-                        <div class="card-details">
-                            <h3>GitHub</h3>
-                            <p>daurencd01</p>
-                        </div>
-                    </a>
-
-                    <!-- Telegram Card -->
-                    <a href="https://t.me/yellowcd" target="_blank" rel="noopener noreferrer"
-                        class="contact-card telegram-card">
-                        <div class="icon-wrapper">
-                            <!-- Telegram Paper Plane SVG -->
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="22" y1="2" x2="11" y2="13"></line>
-                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                            </svg>
-                        </div>
-                        <div class="card-details">
-                            <h3>Telegram</h3>
-                            <p>@yellowcd</p>
-                        </div>
-                    </a>
-
-                    <!-- Instagram Card -->
-                    <a href="https://www.instagram.com/dauren_cd" target="_blank" rel="noopener noreferrer"
-                        class="contact-card instagram-card">
-                        <div class="icon-wrapper">
-                            <!-- Instagram Camera/Logo SVG -->
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
-                        </div>
-                        <div class="card-details">
-                            <h3>Instagram</h3>
-                            <p>dauren_cd</p>
-                        </div>
-                    </a>
-
-                    <!-- LinkedIn Card -->
-                    <a href="https://www.linkedin.com/in/dauren-koshkenbek-6b90a9358/" target="_blank" rel="noopener noreferrer"
-                        class="contact-card linkedin-card">
-                        <div class="icon-wrapper">
-                            <!-- LinkedIn SVG -->
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                        </div>
-                        <div class="card-details">
-                            <h3>LinkedIn</h3>
-                            <p>dauren-koshkenbek</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
+        <footer class="foot">
+            <span>© 2026 KD_SEC · KOSHKENBEK DAUREN</span>
+            <span><span class="b" data-i18n="foot.blue">BLUE DEFENSE</span> • <span class="r" data-i18n="foot.red">RED OFFENSE</span></span>
+        </footer>
     </main>
 
-    <!-- Floating Section Navigator (quick jump) -->
-    <nav class="section-rail" aria-label="Section quick navigation">
-        <button class="rail-dot" data-target="hero" aria-label="Top">
-            <span class="rail-label" data-i18n="nav.top">TOP</span>
-        </button>
-        <button class="rail-dot" data-target="about" aria-label="About">
-            <span class="rail-label" data-i18n="nav.about">ABOUT</span>
-        </button>
-        <button class="rail-dot" data-target="experience" aria-label="Experience">
-            <span class="rail-label" data-i18n="nav.exp">EXPERIENCE</span>
-        </button>
-        <button class="rail-dot" data-target="blue-team" aria-label="Skills">
-            <span class="rail-label" data-i18n="nav.modules">SKILLS</span>
-        </button>
-        <button class="rail-dot" data-target="extra" aria-label="Projects">
-            <span class="rail-label" data-i18n="nav.projects">PROJECTS</span>
-        </button>
-        <button class="rail-dot" data-target="featured-cert" aria-label="Certifications">
-            <span class="rail-label" data-i18n="nav.certs">CERTS</span>
-        </button>
-        <button class="rail-dot" data-target="contact" aria-label="Contact">
-            <span class="rail-label" data-i18n="nav.contact">CONTACT</span>
-        </button>
-    </nav>
-
-    <!-- Prev / Next section flip buttons -->
-    <div class="flip-nav">
-        <button class="flip-btn" id="flip-prev" aria-label="Previous section">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="18 15 12 9 6 15"></polyline>
-            </svg>
-        </button>
-        <button class="flip-btn" id="flip-next" aria-label="Next section">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-        </button>
-    </div>
-
-    <!-- Mobile App-style Bottom Tab Bar -->
+    <!-- mobile bottom tabs -->
     <nav class="bottom-tabs" aria-label="Mobile navigation">
-        <button class="tab-btn" data-target="about">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-            <span class="tab-label" data-i18n="tab.about">About</span>
-        </button>
-        <button class="tab-btn" data-target="experience">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-            </svg>
-            <span class="tab-label" data-i18n="tab.exp">Work</span>
-        </button>
-        <button class="tab-btn" data-target="blue-team">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="4 17 10 11 4 5"></polyline>
-                <line x1="12" y1="19" x2="20" y2="19"></line>
-            </svg>
-            <span class="tab-label" data-i18n="tab.skills">Skills</span>
-        </button>
-        <button class="tab-btn" data-target="extra">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="7" height="7"></rect>
-                <rect x="14" y="3" width="7" height="7"></rect>
-                <rect x="14" y="14" width="7" height="7"></rect>
-                <rect x="3" y="14" width="7" height="7"></rect>
-            </svg>
-            <span class="tab-label" data-i18n="tab.projects">Projects</span>
-        </button>
-        <button class="tab-btn" data-target="contact">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-            <span class="tab-label" data-i18n="tab.contact">Contact</span>
-        </button>
+        <button class="tab-btn active" type="button" data-target="home"><svg><use href="#i-user"/></svg><span data-i18n="tab.home">Home</span></button>
+        <button class="tab-btn" type="button" data-target="experience"><svg><use href="#i-brief"/></svg><span data-i18n="tab.exp">Work</span></button>
+        <button class="tab-btn" type="button" data-target="skills"><svg><use href="#i-term"/></svg><span data-i18n="tab.skills">Skills</span></button>
+        <button class="tab-btn" type="button" data-target="projects"><svg><use href="#i-grid"/></svg><span data-i18n="tab.projects">Projects</span></button>
+        <button class="tab-btn" type="button" data-target="contact"><svg><use href="#i-mail"/></svg><span data-i18n="tab.contact">Contact</span></button>
     </nav>
 
-    <footer>
-        <div class="footer-line"></div>
-        <p>© 2026 CYBERSECURITY PORTFOLIO | <span class="blue-text" data-i18n="nav.blue">BLUE DEFENSE</span> • <span
-                class="red-text" data-i18n="nav.red">RED OFFENSE</span></p>
-    </footer>
-
-    <!-- Modular JS Structure -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <script src="js/globe.js"></script>
     <script src="js/language-switcher.js"></script>
-    <script src="js/theme-switcher.js"></script>
     <script src="js/recruiter-mode.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/terminal.js"></script>
+    <script src="js/dashboard.js"></script>
     <script src="js/section-nav.js"></script>
     <script src="js/intro.js"></script>
 </body>

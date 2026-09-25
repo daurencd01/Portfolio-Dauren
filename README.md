@@ -23,6 +23,17 @@ Checks email breach exposure, username footprint across sites, and phone lookup.
 
 JavaScript, Vercel Serverless Functions, Upstash Redis
 
+## Local Development
+
+```bash
+npm start
+# or
+node server.js
+```
+
+Dev server with static hosting and full API emulation runs at `http://localhost:3000`.
+
+
 ## Disclaimer
 
 All tools are for educational purposes and authorized use only (your own assets, or assets you have explicit permission to test). No active exploitation or attacks are performed - checks rely exclusively on public data and passive requests.
