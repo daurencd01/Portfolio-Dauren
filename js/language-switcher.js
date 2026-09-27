@@ -360,7 +360,7 @@ const translations = {
         },
         "term": {
             "help_h": "Available commands:",
-            "help": "whoami  role  skills  experience  projects  certs  education  tools  contact  cv  lang  clear",
+            "help": "whoami  role  skills  experience  projects  certs  education  tools  contact  cv [en|ru|kz]  lang  clear",
             "notfound": "command not found. type \"help\".",
             "role": "SOC Analyst L1 | Pentester (in training)",
             "motto": "Blue Team visibility. Red Team validation.",
@@ -737,7 +737,7 @@ const translations = {
         },
         "term": {
             "help_h": "Доступные команды:",
-            "help": "whoami  role  skills  experience  projects  certs  education  tools  contact  cv  lang  clear",
+            "help": "whoami  role  skills  experience  projects  certs  education  tools  contact  cv [en|ru|kz]  lang  clear",
             "notfound": "команда не найдена. введите \"help\".",
             "role": "SOC-аналитик L1 | Пентестер (в обучении)",
             "motto": "Blue Team — видимость. Red Team — проверка.",

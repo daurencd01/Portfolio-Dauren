@@ -45,14 +45,16 @@
         education: () => [T('term.education')],
         tools: () => [T('term.tools')],
         contact: () => [T('term.contact')],
-        cv: () => {
+        cv: (arg) => {
+            const lang = ['en', 'ru', 'kz'].includes(arg) ? arg : (window.KDCv ? window.KDCv.get() : 'en');
+            const files = { en: 'Koshkenbek_Dauren_CV_EN.pdf', ru: 'Koshkenbek_Dauren_CV_RU.pdf', kz: 'Koshkenbek_Dauren_CV_KZ.pdf' };
             setTimeout(() => {
                 const a = document.createElement('a');
-                a.href = 'assets/cv/Koshkenbek_Dauren_CV.pdf';
-                a.download = '';
+                a.href = 'assets/cv/' + files[lang];
+                a.download = files[lang];
                 document.body.appendChild(a); a.click(); a.remove();
             }, 350);
-            return [T('term.cv')];
+            return [T('term.cv') + ' (' + lang.toUpperCase() + ')'];
         },
         lang: () => {
             const next = (typeof currentLang !== 'undefined' && currentLang === 'ru') ? 'en' : 'ru';
@@ -88,7 +90,8 @@
 
         const fn = commands[key];
         if (!fn) { line(key + ': ' + T('term.notfound')); return; }
-        const res = fn();
+        const arg = cmd.split(/\s+/)[1];
+        const res = fn(arg);
         if (res) res.forEach((l) => line(l));
     }
 

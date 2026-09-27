@@ -159,6 +159,15 @@ svg { display: block; }
 .lang-switch button.active { background: var(--g); color: var(--g-ink); font-weight: 700; }
 .lang-switch button:not(.active):hover { color: var(--tx); }
 
+.cv-lang { display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; }
+.cv-lang-label { font-size: 10.5px; letter-spacing: 0.12em; color: var(--tx-mute); }
+.cv-lang-group { display: inline-flex; font-size: 11px; letter-spacing: 0.08em; border: 1px solid var(--line-hi); border-radius: 2px; overflow: hidden; }
+.cv-lang-group button { padding: 5px 9px; color: var(--tx-dim); transition: color 0.2s, background 0.2s; }
+.cv-lang-group button.active { background: var(--g); color: var(--g-ink); font-weight: 700; }
+.cv-lang-group button:not(.active):hover { color: var(--tx); }
+.hr-actions .cv-lang { margin-top: 0; margin-left: 2px; }
+
+
 .clock { display: grid; text-align: right; line-height: 1.2; min-width: 110px; }
 .clock small { font-size: 11px; letter-spacing: 0.12em; color: var(--tx-dim); }
 .clock b { font: 600 16px/1.2 var(--f-ui); color: var(--g); letter-spacing: 0.06em; }

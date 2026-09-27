@@ -132,7 +132,15 @@
                         <p class="hr-role">Cybersecurity Specialist · SOC Analyst L1</p>
                         <p class="hr-loc" data-i18n="hr.available">Open to work · Astana, Kazakhstan</p>
                         <div class="hr-actions">
-                            <a class="btn btn-primary" href="assets/cv/Koshkenbek_Dauren_CV.pdf" download><span data-i18n="hero.cv">DOWNLOAD CV</span></a>
+                            <a class="btn btn-primary js-cv-link" href="assets/cv/Koshkenbek_Dauren_CV.pdf" download><span data-i18n="hero.cv">DOWNLOAD CV</span></a>
+                            <div class="cv-lang">
+                            <span class="cv-lang-label">CV</span>
+                            <span class="cv-lang-group" id="cv-lang-hr" role="group" aria-label="CV language">
+                                <button type="button" data-cvlang="en" class="active">EN</button>
+                                <button type="button" data-cvlang="ru">RU</button>
+                                <button type="button" data-cvlang="kz">KZ</button>
+                            </span>
+                        </div>
                             <a class="btn btn-ghost" href="mailto:daurencd@gmail.com">Email</a>
                             <a class="btn btn-ghost" href="https://www.linkedin.com/in/dauren-koshkenbek-6b90a9358/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                             <a class="btn btn-ghost" href="https://github.com/daurencd01" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -158,7 +166,15 @@
                         <p class="blurb" data-i18n="hero.blurb">I'm a cybersecurity specialist focused on security monitoring, incident analysis and offensive security. I enjoy turning complex security data into clear insights and building practical solutions.</p>
                         <div class="cta">
                             <a class="btn btn-primary" href="#projects" data-target="projects"><span data-i18n="hero.work">VIEW MY WORK</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                            <a class="btn btn-ghost" href="assets/cv/Koshkenbek_Dauren_CV.pdf" download><svg aria-hidden="true"><use href="#i-download"/></svg><span data-i18n="hero.cv">DOWNLOAD CV</span></a>
+                            <a class="btn btn-ghost js-cv-link" href="assets/cv/Koshkenbek_Dauren_CV.pdf" download><svg aria-hidden="true"><use href="#i-download"/></svg><span data-i18n="hero.cv">DOWNLOAD CV</span></a>
+                        </div>
+                        <div class="cv-lang">
+                            <span class="cv-lang-label">CV</span>
+                            <span class="cv-lang-group" id="cv-lang-hero" role="group" aria-label="CV language">
+                                <button type="button" data-cvlang="en" class="active">EN</button>
+                                <button type="button" data-cvlang="ru">RU</button>
+                                <button type="button" data-cvlang="kz">KZ</button>
+                            </span>
                         </div>
                         <ul class="socials" aria-label="Profiles">
                             <li><a href="https://www.linkedin.com/in/dauren-koshkenbek-6b90a9358/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a></li>
@@ -622,6 +638,7 @@
     <script src="js/globe.js"></script>
     <script src="js/language-switcher.js"></script>
     <script src="js/recruiter-mode.js"></script>
+    <script src="js/cv-lang.js"></script>
     <script src="js/terminal.js"></script>
     <script src="js/dashboard.js"></script>
     <script src="js/section-nav.js"></script>
