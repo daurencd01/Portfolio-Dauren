@@ -3,27 +3,10 @@
 // Лёгкая проверка заголовков (быстро + кэшируется), чтобы бейдж можно было встроить на любой сайт.
 'use strict';
 
-const dns = require('dns').promises;
-const net = require('net');
-
-function isPrivateIp(ip) {
-  if (net.isIPv4(ip)) {
-    const p = ip.split('.').map(Number);
-    return (p[0] === 10 || p[0] === 127 || p[0] === 0 || (p[0] === 169 && p[1] === 254) ||
-      (p[0] === 172 && p[1] >= 16 && p[1] <= 31) || (p[0] === 192 && p[1] === 168) || (p[0] === 100 && p[1] >= 64 && p[1] <= 127));
-  }
-  const v = ip.toLowerCase();
-  return v === '::1' || v.startsWith('fc') || v.startsWith('fd') || v.startsWith('fe80') || v === '::';
-}
-async function assertSafeHost(h) {
-  if (!h || h === 'localhost') throw new Error('bad host');
-  const addrs = await dns.lookup(h, { all: true });
-  for (const a of addrs) if (isPrivateIp(a.address)) throw new Error('private');
-}
+const { safeFetch } = require('../lib/network');
+const guard = require('../lib/guard');
 function tf(url, ms = 6000) {
-  const ac = new AbortController();
-  const t = setTimeout(() => ac.abort(), ms);
-  return fetch(url, { redirect: 'follow', signal: ac.signal, headers: { 'User-Agent': 'KD-SEC-Badge/1.0' } }).finally(() => clearTimeout(t));
+  return safeFetch(url, { headers: { 'User-Agent': 'KD-SEC-Badge/3.0' } }, ms);
 }
 
 function quickGrade(resp) {
@@ -76,10 +59,10 @@ module.exports = async (req, res) => {
     if (!raw) { res.status(200).send(svg('security', 'no url', '#9e9e9e')); return; }
     if (!/^https?:\/\//i.test(raw)) raw = 'https://' + raw;
     const target = new URL(raw);
-    await assertSafeHost(target.hostname);
+    if (await guard.rateLimited(req)) { res.status(200).send(svg('headers', 'limit', '#9e9e9e')); return; }
     const resp = await tf(target.href);
     const { grade } = quickGrade(resp);
-    res.status(200).send(svg('security', grade, COLORS[grade] || '#9e9e9e'));
+    res.status(200).send(svg('headers', grade, COLORS[grade] || '#9e9e9e'));
   } catch (e) {
     res.status(200).send(svg('security', 'n/a', '#9e9e9e'));
   }

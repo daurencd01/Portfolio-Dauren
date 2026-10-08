@@ -1,0 +1,107 @@
+.koz-page { background:var(--bg-dark); color:var(--text-main); margin:0; min-height:100vh; }
+.koz-wrap { max-width:1080px; padding-top:85px; }
+.koz-kicker { font-size:.72rem; letter-spacing:.16em; color:var(--text-dim); }
+.koz-head .koz-logo { font-family:var(--font-body); font-weight:700; font-size:clamp(4.5rem,14vw,7.4rem); line-height:1.2; letter-spacing:.02em; margin:8px 0; }
+.koz-logo span { color:var(--text-main); text-shadow:0 0 30px var(--theme-shadow); }
+.koz-pills { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:22px 0; }
+.koz-pills span { font-size:.7rem; padding:6px 10px; border:1px solid rgba(0,255,157,.18); border-radius:30px; color:var(--text-dim); }
+.koz-bot-shortcut { display:inline-block; margin-top:16px; color:var(--neon-blue); font-size:.76rem; text-underline-offset:4px; }
+.koz-bot-cta { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:24px; margin:24px 0; border:1px solid rgba(0,255,157,.3); border-radius:12px; background:linear-gradient(120deg,rgba(0,255,157,.06),rgba(0,255,157,.015)); }
+.koz-bot-label { color:var(--neon-blue); font-size:.66rem; letter-spacing:.15em; }
+.koz-bot-cta h2 { font-size:1.05rem; margin:8px 0; }
+.koz-bot-cta p { font-size:.8rem; line-height:1.6; color:var(--text-dim); margin:0; }
+.koz-bot-button { display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; padding:13px 18px; min-height:46px; border-radius:8px; background:var(--neon-blue); color:var(--bg-dark); text-decoration:none; font-size:.8rem; font-weight:700; text-align:center; }
+.koz-bot-button:hover { box-shadow:0 0 20px var(--theme-shadow); }
+:is(.koz-bot-shortcut,.koz-bot-button):focus-visible { outline:2px solid var(--neon-blue); outline-offset:4px; }
+.koz-modes { gap:8px; margin-bottom:18px; }
+.koz-modes button { min-height:44px; flex:1; font-family:var(--font-body); font-size:.85rem; }
+.koz-input-panel { border:1px solid rgba(0,255,157,.25); padding:26px; border-radius:14px; background:rgba(0,255,157,.025); margin-bottom:20px; }
+.koz-input-panel h2 { font-size:1.05rem; margin:0 0 8px; }
+.koz-input-panel > p { font-size:.82rem; margin:0 0 20px; }
+.koz-input-panel .scan-form { max-width:none; margin-bottom:0; }
+.koz-input-panel .scan-form input:not([type=checkbox]) { min-width:0; }
+.koz-input-panel .scan-form button.copy-btn { background:transparent; color:var(--text-main); border:1px solid rgba(0,255,157,.25); font-family:var(--font-body); font-size:.8rem; }
+.koz-consent { width:100%; display:flex; align-items:flex-start; gap:10px; font-size:.77rem; color:var(--text-dim); margin-top:12px; line-height:1.6; }
+.koz-consent input[type=checkbox] { flex:none; min-width:0; width:18px; height:18px; margin-top:3px; accent-color:var(--neon-blue); }
+.koz-input-panel > .koz-privacy { margin:18px 0 0; font-size:.73rem; color:var(--neon-blue); }
+.koz-options { width:100%; display:flex; gap:12px; align-items:center; flex-wrap:wrap; font-size:.8rem; }
+.koz-options select, .koz-filter select, .koz-filter input { background:#0b1711; color:var(--text-main); border:1px solid rgba(0,255,157,.25); border-radius:7px; padding:10px; font:inherit; min-height:44px; max-width:100%; }
+.koz-report-head { display:flex; justify-content:space-between; gap:20px; align-items:center; margin-bottom:20px; }
+.koz-report-head h2 { margin:0 0 8px; font-size:1.35rem; }
+.koz-report-head p { margin:0; font-size:.76rem; color:var(--text-dim); overflow-wrap:anywhere; }
+.koz-report-tools { display:flex; gap:8px; flex-wrap:wrap; }
+.koz-report-tools button { min-height:44px; }
+.koz-export-privacy { font-size:.76rem; display:flex; align-items:center; gap:9px; color:var(--text-dim); margin:0 0 24px; }
+.koz-export-privacy input { width:17px; height:17px; accent-color:var(--neon-blue); }
+.koz-card { border:1px solid rgba(255,255,255,.09); border-left:2px solid var(--neon-blue); border-radius:10px; padding:22px; margin-bottom:20px; background:rgba(0,255,157,.025); min-width:0; }
+.koz-card h2 { font-size:.95rem; margin:0 0 15px; text-transform:uppercase; letter-spacing:.04em; }
+.koz-card h3 { margin:0 0 10px; font-size:.95rem; overflow-wrap:anywhere; }
+.koz-card p { font-size:.8rem; line-height:1.7; overflow-wrap:anywhere; }
+.koz-card.warn { border-left-color:#ffcb6b; }
+.koz-card.bad { border-left-color:#ff647c; }
+.koz-card .info-row { font-size:.8rem; }
+.koz-banner { font-size:.8rem; padding:12px 15px; border-radius:8px; background:rgba(255,203,107,.07); border:1px solid rgba(255,203,107,.2); color:#ffdb9f; margin-bottom:20px; }
+.koz-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.koz-grid .koz-card { margin:0; }
+.koz-filter { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; font-size:.8rem; }
+.koz-filter input { flex:1; min-width:180px; }
+.koz-filter-count { display:block; margin:12px 0; color:var(--text-dim); font-size:.75rem; }
+.koz-breach { padding:16px; border:1px solid rgba(255,255,255,.1); border-radius:9px; margin-bottom:10px; break-inside:avoid; }
+.koz-breach summary { display:flex; justify-content:space-between; gap:12px; cursor:pointer; font-size:.86rem; align-items:flex-start; }
+.koz-breach summary span { color:var(--text-dim); font-size:.75rem; flex-shrink:0; }
+.koz-breach > p { color:var(--text-dim); font-size:.8rem; }
+.koz-tags { display:flex; flex-wrap:wrap; gap:7px; margin:12px 0; }
+.koz-tags span { font-size:.7rem; padding:5px 8px; border:1px solid rgba(0,255,157,.17); border-radius:5px; color:var(--text-dim); }
+.koz-tags span.risk { color:#ffcb6b; border-color:rgba(255,203,107,.3); }
+.koz-timeline { display:flex; gap:8px; align-items:flex-end; overflow-x:auto; padding:15px 0 5px; }
+.koz-year { flex:1 0 45px; text-align:center; font-size:.68rem; color:var(--text-dim); }
+.koz-year i { display:block; background:var(--neon-blue); opacity:.65; border-radius:4px 4px 0 0; margin:8px 8px 0; min-height:4px; }
+.koz-year button { width:100%; padding:4px 0; margin-top:4px; font:inherit; background:transparent; color:var(--text-main); border:1px solid transparent; cursor:pointer; min-height:35px; }
+.koz-year button:hover, .koz-year button:focus-visible { border-color:var(--neon-blue); border-radius:4px; }
+.koz-profile-head { display:flex; justify-content:space-between; gap:10px; font-size:.74rem; margin-bottom:16px; }
+.koz-profile .state { font-size:.68rem; }
+.koz-profile a, .koz-breach a, .koz-card a, .legal a { color:var(--neon-blue); overflow-wrap:anywhere; }
+.koz-profile p { color:var(--text-dim); }
+.koz-profile dl { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin:16px 0; }
+.koz-profile dt { color:var(--text-dim); font-size:.66rem; }
+.koz-profile dd { margin:5px 0; font-size:1rem; }
+.koz-source { font-size:.72rem; color:var(--text-dim); margin-top:14px; }
+.koz-checklist { display:grid; gap:12px; }
+.koz-checklist label { display:flex; gap:10px; font-size:.82rem; align-items:flex-start; }
+.koz-checklist input { width:18px; height:18px; flex:none; accent-color:var(--neon-blue); margin-top:2px; }
+.koz-checklist label:has(input:checked) span { text-decoration:line-through; color:var(--text-dim); }
+.koz-strength { display:flex; gap:7px; margin:20px 0 10px; }
+.koz-strength i { height:8px; flex:1; border-radius:8px; background:rgba(255,255,255,.1); }
+.koz-strength i.filled { background:var(--neon-blue); }
+.koz-card.bad .koz-strength i.filled { background:#ff647c; }
+.koz-empty { padding:25px 0; text-align:center; color:var(--text-dim); font-size:.85rem; }
+.koz-page [hidden] { display:none !important; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+@media(max-width:640px) {
+  .koz-bot-cta { flex-direction:column; align-items:stretch; padding:18px; gap:16px; }
+  .koz-wrap { padding-top:85px; }
+  .koz-input-panel, .koz-card { padding:18px; }
+  .koz-modes button { flex:1 0 28%; }
+  .koz-grid { grid-template-columns:1fr; }
+  .koz-report-head { display:block; }
+  .koz-report-tools { margin-top:16px; }
+  .koz-report-tools button { flex:1; }
+  .koz-filter > * { width:100%; min-width:0; }
+  .koz-input-panel .scan-form > input:not([type=checkbox]) { flex-basis:100%; }
+  .koz-input-panel .scan-form > button { flex:1; }
+}
+@media print {
+  .koz-bot-shortcut, .koz-bot-cta { display:none !important; }
+  .koz-print-private .koz-identity, .koz-print-private .koz-identity * { visibility:hidden; }
+  .koz-print-private .koz-identity::after { content:'[скрыто]'; font-size:10pt; color:#333; visibility:visible; }
+  .koz-input-panel, .koz-modes, .koz-pills, .tool-switch, .koz-report-tools, .koz-filter, .koz-export-privacy, .koz-checklist input, .legal { display:none !important; }
+  .koz-wrap { padding:0; }
+  .koz-head { margin-bottom:15px; }
+  .koz-head .koz-logo { font-size:35px; color:#111; }
+  .koz-logo span { color:#111; text-shadow:none; }
+  .koz-card, .koz-breach { background:#fff; border-color:#aaa; color:#111; }
+  .koz-card p, .koz-source, .koz-report-head p, .koz-tags span, .koz-breach summary span { color:#333; }
+  .koz-grid { display:block; }
+  .koz-grid .koz-card { margin-bottom:15px; }
+  .koz-year i { print-color-adjust:exact; }
+}

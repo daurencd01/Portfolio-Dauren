@@ -341,8 +341,8 @@ const translations = {
                 "d": "Passive reconnaissance from public sources: WHOIS/RDAP, DNS, certificate-transparency subdomains and Wayback history."
             },
             "exposure": {
-                "n": "Exposure Check",
-                "d": "Email breach exposure, username footprint and a client-side k-anonymity password check. The password never leaves your browser."
+                "n": "KØZ",
+                "d": "Breach intelligence, public profiles, local password and phone analysis. Explore incidents, filter evidence and export a private report."
             }
         },
         "sec": {
@@ -366,7 +366,7 @@ const translations = {
             "motto": "Blue Team visibility. Red Team validation.",
             "skills": "SIEM · Log analysis · Linux · Windows · Networking · Web pentesting basics",
             "experience": "Sauyt Lab (Freedom) · SOC Analyst L1 · 2026-now\nSr Holding (China) · SOC Analyst L1 · 2025-2026\nKazakhtelecom (Sapa+) · Network Security Project · 2025",
-            "projects": "HackShield · gamified cybersecurity training (diploma project)\nOYNA · amateur sports matchmaking platform\nSecurity Tools · scanner, OSINT lookup, exposure check",
+            "projects": "HackShield · gamified cybersecurity training (diploma project)\nOYNA · amateur sports matchmaking platform\nSecurity Tools · scanner, OSINT lookup, KØZ",
             "certs": "CyberShield CSCSA · Red Hat RH124 · Bachelor in Cybersecurity (AITU)",
             "education": "Astana IT University · Cybersecurity · graduated 2026",
             "tools": "scanner.html  osint.html  exposure.html  (passive checks only)",
@@ -718,8 +718,8 @@ const translations = {
                 "d": "Пассивная разведка по открытым источникам: WHOIS/RDAP, DNS, поддомены из Certificate Transparency и история Wayback."
             },
             "exposure": {
-                "n": "Exposure Check",
-                "d": "Утечки email, следы username и проверка пароля по k-anonymity на стороне клиента. Пароль не покидает браузер."
+                "n": "KØZ",
+                "d": "Аналитика утечек, публичные профили, локальный разбор паролей и телефонов. Каталог инцидентов, фильтры и экспорт отчёта."
             }
         },
         "sec": {

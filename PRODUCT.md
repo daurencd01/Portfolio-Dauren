@@ -50,7 +50,7 @@ Confirmed: a SOC/Blue Team practitioner actively leveling up into Red Team/offen
 - Real education: Bachelor's degree, Cybersecurity (6B06106), Astana IT University, awarded 2026-06-30, BD № 00040351726 — diploma PDF on file at `assets/certificates/050614501880-20260813153532211.pdf`, rendered to `assets/certificates/diploma.png` for display.
 - Real certifications: CyberShield Certified SOC Analyst (CSCSA) via CyberShield Academy/State Technical Service; Red Hat System Administration I (RH124). Plus a general archive of IBM/LearnQuest course certificates.
 - Real self-built projects: HackShield (diploma/graduation project, gamified cybersecurity training platform, live at hackshield-play-nexus.vercel.app) and OYNA (amateur sports matchmaking platform, live at oyna-play.vercel.app).
-- Real, live, functioning tools built by the user: Web Security Scanner, OSINT Lookup, Exposure Check (see README.md for their actual mechanisms — TLS/header scoring, WHOIS/DNS/CT-log/Wayback recon, k-anonymity breach checks).
+- Real, live, functioning tools built by the user: Web Security Scanner, OSINT Lookup, KØZ (see README.md for their actual mechanisms — TLS/header scoring, WHOIS/DNS/CT-log/Wayback recon, k-anonymity breach checks).
 - Languages: Kazakh (native), Russian (C1), English (B1), Chinese (HSK5).
 - No testimonials, press, case studies, or benchmark numbers exist — the SOC dashboard's "threats blocked" counter and the hero's "active scans / vulnerabilities" stat tiles are explicitly labeled simulation/decoration and must stay labeled as such; they are not real telemetry and must never be presented as real.
 

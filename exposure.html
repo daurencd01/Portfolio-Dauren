@@ -1,70 +1,79 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free exposure check — find out if your email, password, username or phone was leaked. By Koshkenbek Dauren.">
-    <!-- connect-src разрешает HIBP для проверки пароля прямо в браузере (k-anonymity) -->
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.pwnedpasswords.com; object-src 'none';">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>Exposure Check | KD_SEC</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Tiny5&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="css/scanner.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta name="theme-color" content="#060b09">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KØZ — проверка цифрового следа: утечки email, публичные профили, локальная оценка пароля и номера телефона. Бесплатные источники.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.pwnedpasswords.com; object-src 'none'; base-uri 'self';">
+  <meta name="referrer" content="no-referrer">
+  <title>KØZ | Digital Exposure Intelligence · KD_SEC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Tiny5&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/scanner.css">
+  <link rel="stylesheet" href="css/koz.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="theme-color" content="#060b09">
 </head>
-
-<body style="background: var(--bg-dark); color: var(--text-main); margin: 0; min-height: 100vh;">
-
-    <a href="index.html" class="scan-back">← Back to portfolio</a>
-
-    <main class="scan-wrap">
-        <div class="scan-head">
-            <h1>EXPOSURE CHECK</h1>
-            <p>Проверь, не утекли ли <b>твои</b> данные: email в базах утечек, пароль (проверка
-               прямо в браузере — пароль не покидает устройство), никнейм по сайтам, телефон.</p>
-            <div class="tool-switch">
-                <a href="scanner.html">🛡️ Scanner</a>
-                <a href="osint.html">🔎 OSINT</a>
-                <a href="exposure.html" class="active">🔥 Exposure</a>
-            </div>
-        </div>
-
-        <div class="mode-row">
-            <button class="mode-btn active" data-mode="email">📧 Email</button>
-            <button class="mode-btn" data-mode="password">🔑 Пароль</button>
-            <button class="mode-btn" data-mode="username">👤 Никнейм</button>
-            <button class="mode-btn" data-mode="phone">📱 Телефон</button>
-        </div>
-
-        <form class="scan-form" id="expForm" autocomplete="off">
-            <input type="text" id="expInput" placeholder="you@example.com" aria-label="Значение для проверки" required>
-            <button type="submit" id="expBtn">CHECK</button>
-        </form>
-        <div class="scan-hint">Проверяйте только свои данные. Пароли проверяются по модели k-anonymity и не передаются целиком.</div>
-
-        <div class="scan-status" id="expStatus"></div>
-        <div class="scan-results" id="expResults"></div>
-
-        <footer class="legal">
-            <strong>⚖️ Условия использования и отказ от ответственности</strong>
-            <p>Инструмент предоставляется «как есть» (as is), исключительно в образовательных и
-               ознакомительных целях. Проверка по <b>публичным базам утечек</b> и открытым источникам;
-               пароль проверяется <b>в вашем браузере</b> (модель k-anonymity) и не передаётся на сервер.</p>
-            <p>Предназначен для проверки <b>собственных данных</b>. Не используйте его для сбора информации
-               о других людях без их согласия. Вся ответственность за использование и его последствия
-               лежит <b>на пользователе</b>. Автор не несёт ответственности за любой ущерб, неправомерное
-               использование или нарушение законодательства и приватности третьими лицами.</p>
-            <p>Используя инструмент, вы подтверждаете, что действуете законно и этично.</p>
-        </footer>
-    </main>
-
-    <script src="js/expose.js"></script>
+<body class="koz-page">
+  <a href="index.html" class="scan-back">← Портфолио</a>
+  <main class="scan-wrap koz-wrap">
+    <header class="scan-head koz-head">
+      <div class="koz-kicker">KD_SEC / DIGITAL EXPOSURE INTELLIGENCE</div>
+      <h1 class="koz-logo" aria-label="KØZ">K<span>Ø</span>Z</h1>
+      <p>Узнай, где виден твой цифровой след.<br>Утечки данных, публичные профили и инструменты для защиты аккаунтов.</p>
+      <div class="koz-pills"><span>Бесплатные источники</span><span>5 режимов</span><span>Без сохранения личной истории</span></div>
+      <nav class="tool-switch" aria-label="Инструменты">
+        <a href="scanner.html">🛡️ Scanner</a><a href="osint.html">🔎 OSINT</a><a href="exposure.html" class="active" aria-current="page">◉ KØZ</a>
+      </nav>
+      <a class="koz-bot-shortcut" href="https://t.me/mzxcd_bot" target="_blank" rel="noopener noreferrer">Подробнее в Telegram · @mzxcd_bot ↗</a>
+    </header>
+    <div class="mode-row koz-modes" role="group" aria-label="Режим проверки">
+      <button type="button" class="mode-btn active" data-mode="email" aria-pressed="true">Email</button>
+      <button type="button" class="mode-btn" data-mode="password" aria-pressed="false">Пароль</button>
+      <button type="button" class="mode-btn" data-mode="username" aria-pressed="false">Никнейм</button>
+      <button type="button" class="mode-btn" data-mode="phone" aria-pressed="false">Телефон</button>
+      <button type="button" class="mode-btn" data-mode="breaches" aria-pressed="false">Каталог утечек</button>
+    </div>
+    <section class="koz-input-panel" aria-labelledby="modeTitle">
+      <h2 id="modeTitle">Email в известных утечках</h2>
+      <p id="modeDescription" class="muted">История инцидентов, типы раскрытых данных и DNS-настройки почтового домена.</p>
+      <form class="scan-form" id="expForm" autocomplete="off">
+        <label class="sr-only" for="expInput" id="inputLabel">Email для проверки</label>
+        <input type="email" id="expInput" placeholder="you@example.com" maxlength="254" spellcheck="false" required autocomplete="off" aria-describedby="modePrivacy">
+        <button type="button" class="copy-btn" id="showPassword" hidden aria-pressed="false">Показать</button>
+        <button type="submit" id="expBtn">ПРОВЕРИТЬ</button>
+        <button type="button" class="copy-btn" id="cancelCheck" hidden>Отменить</button>
+        <div id="phoneOptions" class="koz-options" hidden><label for="phoneCountry">Регион для номера без +</label>
+          <select id="phoneCountry"><option value="KZ">Казахстан (+7)</option><option value="RU">Россия (+7)</option><option value="US">США (+1)</option><option value="GB">Великобритания (+44)</option><option value="DE">Германия (+49)</option><option value="UA">Украина (+380)</option><option value="KG">Кыргызстан (+996)</option><option value="UZ">Узбекистан (+998)</option><option value="TR">Турция (+90)</option><option value="IN">Индия (+91)</option></select></div>
+        <label class="koz-consent" id="emailConsentRow"><input type="checkbox" id="emailConsent" required> Я проверяю свои данные и согласен передать полный email в XposedOrNot для поиска утечек.</label>
+        <label class="koz-consent" id="passwordOnlineRow" hidden><input type="checkbox" id="passwordOnline" checked> Проверить утечки через Pwned Passwords (передаются только первые 5 символов SHA-1).</label>
+      </form>
+      <p id="modePrivacy" class="koz-privacy">Email отправляется в XposedOrNot. Результат не сохраняется в истории KØZ.</p>
+    </section>
+    <div class="scan-status" id="expStatus" role="status" aria-live="polite"></div>
+    <div class="scan-results" id="expResults" aria-busy="false"></div>
+    <aside class="koz-bot-cta" aria-labelledby="botTitle">
+      <div>
+        <span class="koz-bot-label">TELEGRAM BOT</span>
+        <h2 id="botTitle">Хочешь узнать подробнее?</h2>
+        <p>За дополнительной информацией переходи в мой Telegram-бот <b>@mzxcd_bot</b>.</p>
+      </div>
+      <a class="koz-bot-button" href="https://t.me/mzxcd_bot" target="_blank" rel="noopener noreferrer">Открыть Telegram-бота ↗</a>
+    </aside>
+    <footer class="legal">
+      <strong>Об источниках и границах проверки</strong>
+      <p>KØZ использует публичные API и локальные библиотеки. У источников есть лимиты, пропуски и задержки. Отсутствие совпадений не доказывает отсутствие утечки. Совпадение ника не устанавливает личность владельца.</p>
+      <p>Проверяйте собственные данные или данные с разрешения владельца. Проверка телефона сообщает формат и сведения из плана нумерации; она не определяет владельца, местоположение, действующего оператора или наличие номера в утечках.</p>
+      <p>Полный пароль и полный хеш не передаются с устройства. При включённой онлайн-проверке сервис получает префикс хеша. KØZ не сохраняет личные отчёты в localStorage или облачной базе; результат доступен в текущей вкладке и в файле, если вы его скачали.</p>
+      <a href="https://xposedornot.com/api_doc" target="_blank" rel="noopener noreferrer">XposedOrNot</a> · <a href="https://haveibeenpwned.com/API/v3#PwnedPasswords" target="_blank" rel="noopener noreferrer">Pwned Passwords</a>
+    </footer>
+  </main>
+  <script src="js/vendor/libphonenumber-max.js" defer></script>
+  <script src="js/vendor/zxcvbn.js" defer></script>
+  <script src="js/tool-report.js" defer></script>
+  <script src="js/koz-local.js" defer></script>
+  <script src="js/koz.js" defer></script>
 </body>
-
 </html>

@@ -1,5 +1,6 @@
 /* Web Security Scanner — styles v2 (matches portfolio theme) */
-.scan-wrap { max-width: 920px; margin: 0 auto; padding: 120px 20px 80px; }
+.scan-wrap { max-width: 920px; margin: 0 auto; padding: 120px 20px 80px; font-family:var(--font-body); line-height:1.5; }
+.scan-wrap, .scan-wrap * { box-sizing:border-box; }
 .scan-head { text-align: center; margin-bottom: 40px; }
 .scan-head h1 {
   font-family: 'Tiny5', var(--font-heading); font-weight: 400; font-size: clamp(2.2rem, 6vw, 3.6rem);
@@ -235,10 +236,78 @@
 .legal b { color: #cfe3ff; }
 
 /* ---- print / PDF ---- */
+.report-actions { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:16px; }
+.report-actions .dl-btn { margin-top:0; }
+.intel-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:20px 0; }
+.intel-stats div { padding:18px 12px; text-align:center; border:1px solid rgba(0,229,255,.18); background:rgba(0,229,255,.035); border-radius:10px; }
+.intel-stats b { display:block; font-size:1.8rem; color:var(--neon-blue); }
+.intel-stats span { color:var(--text-dim); font-size:.78rem; }
+.scan-results > .osint-card, .history-card { margin-bottom:20px; }
+.history-card p, .technical-card p, .csp-card p { line-height:1.6; }
+.report-select-label { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:14px 0; color:var(--text-dim); }
+.inventory-controls { display:flex; gap:12px; flex-wrap:wrap; margin:16px 0; align-items:center; }
+.inventory-controls input { flex:1; min-width:200px; }
+.inventory-controls input, .inventory-controls select, .report-select-label select, .report-search {
+  background:#0b1420; border:1px solid rgba(0,229,255,.25); padding:12px; border-radius:8px; color:var(--text-main); font:inherit; font-size:.85rem;
+}
+.report-search { width:100%; box-sizing:border-box; }
+.table-scroll { overflow:auto; max-height:480px; margin-top:12px; }
+.intel-table { width:100%; border-collapse:collapse; font-size:.8rem; text-align:left; }
+.intel-table th { position:sticky; top:0; background:#101a26; color:var(--neon-blue); z-index:1; }
+.intel-table td, .intel-table th { padding:12px 10px; border-bottom:1px solid rgba(255,255,255,.07); }
+.intel-table td { overflow-wrap:anywhere; min-width:110px; vertical-align:top; }
+.intel-table small { display:block; margin-top:5px; color:var(--text-dim); }
+.asset-link { border:0; background:transparent; color:var(--neon-blue); font:inherit; text-align:left; padding:5px 0; cursor:pointer; overflow-wrap:anywhere; }
+.asset-link:hover { text-decoration:underline; }
+.state { font-size:.72rem; padding:4px 6px; border-radius:5px; background:rgba(255,255,255,.05); white-space:nowrap; color:var(--text-dim); }
+.state-resolved, .state-ok { color:#00ff9d; background:rgba(0,255,157,.07); }
+.state-limited, .state-unavailable { color:#ffd400; }
+.source-row { display:flex; gap:12px; align-items:center; flex-wrap:wrap; border-bottom:1px solid rgba(255,255,255,.06); padding:10px 0; }
+.source-row > span:first-child { flex:1; }
+.source-row time { font-size:.75rem; color:var(--text-dim); }
+.source-row a, .cert-card a { color:var(--neon-blue); }
+.network-detail { margin-bottom:16px; }
+.infra-root { text-align:center; border:1px solid var(--neon-blue); padding:12px; border-radius:8px; color:var(--neon-blue); overflow-wrap:anywhere; }
+.infra-groups { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:22px; }
+.infra-group { position:relative; padding:16px; border:1px solid rgba(0,229,255,.2); border-radius:8px; }
+.infra-group::before { content:''; position:absolute; width:1px; height:22px; top:-23px; left:50%; background:rgba(0,229,255,.3); }
+.infra-group > b, .infra-group > span { display:block; margin-bottom:8px; overflow-wrap:anywhere; }
+.infra-group .asset-link { display:block; }
+.asset-detail { margin-top:18px; padding:18px; background:rgba(0,229,255,.05); border-radius:8px; border:1px solid rgba(0,229,255,.2); }
+.asset-detail h3 { margin-top:0; overflow-wrap:anywhere; }
+.tool-link { display:inline-block; text-decoration:none; margin-top:14px; }
+.cert-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:12px; }
+.cert-card { padding:14px; border:1px solid rgba(255,255,255,.1); border-radius:8px; min-width:0; }
+.cert-card summary { cursor:pointer; display:flex; flex-direction:column; gap:6px; }
+.cert-card summary span { color:var(--text-dim); font-size:.8rem; }
+.cert-card .info-row { grid-template-columns:1fr; gap:4px; }
+.cert-card a { display:inline-block; margin-top:14px; font-size:.85rem; }
+.diff-item { padding:12px 0; border-top:1px solid rgba(255,255,255,.07); overflow-wrap:anywhere; }
+.diff-added { color:#00ff9d; margin-top:6px; font-size:.85rem; }
+.diff-removed { color:#ff8a9d; margin-top:6px; font-size:.85rem; }
+.technical-card h3 { font-size:.95rem; margin:14px 0; }
+.headers-detail { margin-top:18px; }
+.headers-detail summary, .csp-card summary { color:var(--neon-blue); cursor:pointer; padding:10px 0; }
+.redirect-hop { padding:10px 0; font-size:.8rem; overflow-wrap:anywhere; color:var(--text-dim); }
+.csp-issue { margin-top:10px; padding:10px; border-left:2px solid #ffd400; background:rgba(255,212,0,.04); color:#ffe58f; font-size:.85rem; }
+.csp-card code { overflow-wrap:anywhere; }
+.check[hidden] { display:none; }
+:is(.copy-btn,.asset-link,summary,input,select):focus-visible { outline:2px solid var(--neon-blue); outline-offset:4px; }
+@media (max-width:640px) {
+  .intel-stats { grid-template-columns:repeat(2,1fr); }
+  .cert-grid, .infra-groups { grid-template-columns:1fr; }
+  .report-actions { justify-content:center; }
+  .report-actions > button { width:100%; min-height:44px; }
+  .inventory-controls > input, .inventory-controls > select { width:100%; min-width:0; }
+}
 @media print {
   body { background: #fff !important; color: #111 !important; }
   .scan-back, .scan-form, .scan-hint, .scan-head p, .dl-btn, .terminal { display: none !important; }
   .scan-head h1 { color: #111 !important; text-shadow: none !important; }
   .score-card, .check { border-color: #ccc !important; background: #fff !important; }
   .check .detail, .score-meta .sub, .cat-name { color: #333 !important; }
+  .report-actions, .inventory-controls, .report-search, .history-card button, .report-select-label { display:none !important; }
+  .osint-card, .infra-group, .cert-card, .intel-stats div { background:#fff !important; border-color:#bbb !important; color:#111 !important; }
+  .muted, .ik, .iv, .source-row, .intel-table, .asset-link, .state, .osint-card h2 { color:#222 !important; }
+  .table-scroll { max-height:none; overflow:visible; }
 }

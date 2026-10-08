@@ -169,7 +169,7 @@ server.listen(PORT, () => {
   console.log(`  ➜ Main Portfolio:  http://localhost:${PORT}/`);
   console.log(`  ➜ Security Scanner: http://localhost:${PORT}/scanner.html`);
   console.log(`  ➜ OSINT Lookup:    http://localhost:${PORT}/osint.html`);
-  console.log(`  ➜ Exposure Check:  http://localhost:${PORT}/exposure.html`);
+  console.log(`  ➜ KØZ:             http://localhost:${PORT}/exposure.html`);
   console.log('====================================================');
 });
 

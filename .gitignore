@@ -1,2 +1,3 @@
 .legacy/
 .build/
+node_modules/
