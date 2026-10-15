@@ -2,11 +2,11 @@
 
 Personal cybersecurity portfolio (live at daurencd.xyz) with three self-built, publicly usable security tools.
 
-## Interactive Lab
+## Interactive Feature
 
-### Prompt Boundary Lab (/prompt-lab.html)
+### Ghost Packet / Signal Hunt
 
-A bilingual EN/RU, browser-only exercise with three synthetic prompt-injection scenarios. Visitors identify where untrusted source material tries to become an instruction, see an explanation, and copy or download a reproducible YAML test case. It is a local simulation: no LLM, target system, or external API is contacted, and the scenarios do not represent discovered vulnerabilities.
+A bilingual EN/RU mini-game integrated into the portfolio's simulated threat panel. Visitors time an interception as a rogue packet moves along a network route, see a fictional incident trace, and quarantine it across three rounds. The game runs entirely in the browser: there are no real detections, target systems, or network requests. The old `/prompt-lab.html` link redirects to this feature.
 
 ## Live Tools
 

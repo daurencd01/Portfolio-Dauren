@@ -44,6 +44,14 @@
         certs: () => [T('term.certs')],
         education: () => [T('term.education')],
         tools: () => [T('term.tools')],
+        hunt: () => {
+            setTimeout(() => {
+                document.querySelector('[data-ghost-open]')?.click();
+                const dialog = document.querySelector('.gp-dialog');
+                if (dialog?.open) dialog.addEventListener('close', () => input.focus(), { once: true });
+            }, 180);
+            return [T('term.hunt')];
+        },
         contact: () => [T('term.contact')],
         cv: (arg) => {
             const lang = ['en', 'ru', 'kz'].includes(arg) ? arg : (window.KDCv ? window.KDCv.get() : 'en');
@@ -68,7 +76,8 @@
 
     const aliases = {
         ls: 'help', 'cat role.txt': 'role', 'skills --list': 'skills', 'cat about.md': 'role',
-        'cat contact.txt': 'contact', 'ls tools': 'tools', 'sudo su': 'sudo', 'sudo rm -rf /': 'sudo'
+        'cat contact.txt': 'contact', 'ls tools': 'tools', ghost: 'hunt', intercept: 'hunt',
+        'sudo su': 'sudo', 'sudo rm -rf /': 'sudo'
     };
 
     function run(raw, opts) {
