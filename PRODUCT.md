@@ -48,7 +48,7 @@ Confirmed: a SOC/Blue Team practitioner actively leveling up into Red Team/offen
 
 - Real employers/roles: SOC Analyst L1 at Sauyt Lab (Freedom, Feb 2026–present) and Sr Holding (China, Sep 2025–Feb 2026); Network Security Project Participant at Kazakhtelecom (Sapa+, Jan–Jun 2025).
 - Real education: Bachelor's degree, Cybersecurity (6B06106), Astana IT University, awarded 2026-06-30, BD № 00040351726 — diploma PDF on file at `assets/certificates/050614501880-20260813153532211.pdf`, rendered to `assets/certificates/diploma.png` for display.
-- Real certifications: CyberShield Certified SOC Analyst (CSCSA) via CyberShield Academy/State Technical Service; Red Hat System Administration I (RH124). Plus a general archive of IBM/LearnQuest course certificates.
+- Documented credentials and training: CyberShield Certified SOC Analyst (CSCSA) via CyberShield Academy/State Technical Service; DarkControl Certify's Certified Practitioner in Prompt Injection and Input Integrity (issued 2026-10-15); AI Security University's Introduction to AI Security completion certificate (2026-09-29, two training hours); Red Hat System Administration I (RH124) certificate of attendance (2025-07-11). Plus a general archive of IBM/LearnQuest course certificates.
 - Real self-built projects: HackShield (diploma/graduation project, gamified cybersecurity training platform, live at hackshield-play-nexus.vercel.app) and OYNA (amateur sports matchmaking platform, live at oyna-play.vercel.app).
 - Real, live, functioning tools built by the user: Web Security Scanner, OSINT Lookup, KØZ (see README.md for their actual mechanisms — TLS/header scoring, WHOIS/DNS/CT-log/Wayback recon, k-anonymity breach checks).
 - Languages: Kazakh (native), Russian (C1), English (B1), Chinese (HSK5).

@@ -27,8 +27,8 @@ const translations = {
             "exp_val": "SOC Analyst L1 · Blue Team — Sauyt Lab, Sr Holding",
             "edu_label": "Education",
             "edu_val": "Astana IT University — Cybersecurity (graduated 2026)",
-            "cert_label": "Certifications",
-            "cert_val": "Red Hat RH124 · CyberShield CSCSA (STS)",
+            "cert_label": "Certifications & Training",
+            "cert_val": "DarkControl Prompt Injection · AI Security University · CyberShield CSCSA · Red Hat RH124 attendance",
             "lang_label": "Languages",
             "lang_val": "Kazakh · Russian C1 · English B1 · Chinese HSK5"
         },
@@ -236,22 +236,35 @@ const translations = {
         },
         "cert": {
             "eyebrow": "// 06",
-            "featured_title": "CERTIFICATION VAULT",
-            "verified_tag": "VERIFIED CREDENTIALS",
-            "verified": "VERIFIED",
+            "featured_title": "CREDENTIAL VAULT",
+            "collection_tag": "CREDENTIALS & TRAINING",
             "featured_subtitle": "Industry-recognized professional training",
+            "darkcontrol": {
+                "title": "Certified Practitioner in Prompt Injection and Input Integrity",
+                "short": "Prompt Injection & Input Integrity",
+                "issuer": "DarkControl Certify · 15 Oct 2026",
+                "badge": "PRACTITIONER CERTIFICATE"
+            },
+            "aisec": {
+                "title": "Introduction to AI Security",
+                "issuer": "AI Security University · 29 Sep 2026 · 2 hours",
+                "badge": "COURSE COMPLETION"
+            },
             "cscsa": {
                 "title": "CyberShield Certified SOC Analyst (CSCSA)",
-                "issuer": "CyberShield Academy · State Technical Service (STS)"
+                "issuer": "CyberShield Academy · State Technical Service (STS)",
+                "badge": "CERTIFICATION"
             },
             "rh": {
                 "title": "Red Hat System Administration I (RH124)",
-                "issuer": "Red Hat Training and Certification"
+                "issuer": "Red Hat Training and Certification · 11 Jul 2025",
+                "badge": "ATTENDANCE CERTIFICATE"
             },
             "diploma": {
                 "title": "Bachelor's Diploma — Cybersecurity",
-                "issuer": "Astana IT University · BD № 00040351726",
-                "short": "Bachelor's degree, Cybersecurity"
+                "issuer": "Astana IT University · 30 Jun 2026 · BD № 00040351726",
+                "short": "Bachelor's degree, Cybersecurity",
+                "badge": "BACHELOR'S DEGREE"
             }
         },
         "contact": {
@@ -286,7 +299,7 @@ const translations = {
             "term_ph": "help",
             "featured": "FEATURED_PROJECTS",
             "tools": "SKILLS & TOOLS",
-            "certs": "CERTIFICATIONS",
+            "certs": "CERTIFICATES & TRAINING",
             "live": "VIEW LIVE",
             "open": "OPEN TOOL",
             "cta": "LET'S WORK TOGETHER",
@@ -367,7 +380,7 @@ const translations = {
             "skills": "SIEM · Log analysis · Linux · Windows · Networking · Web pentesting basics",
             "experience": "Sauyt Lab (Freedom) · SOC Analyst L1 · 2026-now\nSr Holding (China) · SOC Analyst L1 · 2025-2026\nKazakhtelecom (Sapa+) · Network Security Project · 2025",
             "projects": "HackShield · gamified cybersecurity training (diploma project)\nOYNA · amateur sports matchmaking platform\nSecurity Tools · scanner, OSINT lookup, KØZ",
-            "certs": "CyberShield CSCSA · Red Hat RH124 · Bachelor in Cybersecurity (AITU)",
+            "certs": "DarkControl Prompt Injection & Input Integrity · AI Security University: Introduction to AI Security · CyberShield CSCSA · Red Hat RH124 (course attendance) · Bachelor in Cybersecurity (AITU)",
             "education": "Astana IT University · Cybersecurity · graduated 2026",
             "tools": "scanner.html  osint.html  exposure.html  (passive checks only)",
             "contact": "daurencd@gmail.com · t.me/yellowcd · github.com/daurencd01",
@@ -404,8 +417,8 @@ const translations = {
             "exp_val": "SOC-аналитик L1 · Blue Team — Sauyt Lab, Sr Holding",
             "edu_label": "Образование",
             "edu_val": "Astana IT University — Кибербезопасность (выпуск 2026)",
-            "cert_label": "Сертификаты",
-            "cert_val": "Red Hat RH124 · CyberShield CSCSA (STS)",
+            "cert_label": "Сертификаты и обучение",
+            "cert_val": "DarkControl Prompt Injection · AI Security University · CyberShield CSCSA · Red Hat RH124 (участие в курсе)",
             "lang_label": "Языки",
             "lang_val": "Казахский · Русский C1 · Английский B1 · Китайский HSK5"
         },
@@ -613,22 +626,35 @@ const translations = {
         },
         "cert": {
             "eyebrow": "// 06",
-            "featured_title": "ХРАНИЛИЩЕ СЕРТИФИКАТОВ",
-            "verified_tag": "ПОДТВЕРЖДЁННЫЕ СЕРТИФИКАТЫ",
-            "verified": "ПОДТВЕРЖДЕНО",
+            "featured_title": "ХРАНИЛИЩЕ КВАЛИФИКАЦИЙ",
+            "collection_tag": "КВАЛИФИКАЦИИ И ОБУЧЕНИЕ",
             "featured_subtitle": "Профессиональное обучение с международным признанием",
+            "darkcontrol": {
+                "title": "Certified Practitioner in Prompt Injection and Input Integrity",
+                "short": "Prompt Injection & Input Integrity",
+                "issuer": "DarkControl Certify · 15 окт 2026",
+                "badge": "СЕРТИФИКАТ ПРАКТИКА"
+            },
+            "aisec": {
+                "title": "Introduction to AI Security",
+                "issuer": "AI Security University · 29 сен 2026 · 2 часа",
+                "badge": "ПРОЙДЕН КУРС"
+            },
             "cscsa": {
                 "title": "CyberShield Certified SOC Analyst (CSCSA)",
-                "issuer": "CyberShield Academy · State Technical Service (STS)"
+                "issuer": "CyberShield Academy · State Technical Service (STS)",
+                "badge": "СЕРТИФИКАЦИЯ"
             },
             "rh": {
                 "title": "Red Hat System Administration I (RH124)",
-                "issuer": "Red Hat Training and Certification"
+                "issuer": "Red Hat Training and Certification · 11 июл 2025",
+                "badge": "СЕРТИФИКАТ ОБ УЧАСТИИ"
             },
             "diploma": {
                 "title": "Диплом бакалавра — Кибербезопасность",
-                "issuer": "Astana IT University · BD № 00040351726",
-                "short": "Бакалавр, Кибербезопасность"
+                "issuer": "Astana IT University · 30 июн 2026 · BD № 00040351726",
+                "short": "Бакалавр, Кибербезопасность",
+                "badge": "ДИПЛОМ БАКАЛАВРА"
             }
         },
         "contact": {
@@ -663,7 +689,7 @@ const translations = {
             "term_ph": "help",
             "featured": "ПРОЕКТЫ",
             "tools": "НАВЫКИ И ИНСТРУМЕНТЫ",
-            "certs": "СЕРТИФИКАТЫ",
+            "certs": "СЕРТИФИКАТЫ И ОБУЧЕНИЕ",
             "live": "ОТКРЫТЬ",
             "open": "ОТКРЫТЬ",
             "cta": "ДАВАЙТЕ РАБОТАТЬ ВМЕСТЕ",
@@ -744,7 +770,7 @@ const translations = {
             "skills": "SIEM · Анализ логов · Linux · Windows · Сети · Основы веб-пентеста",
             "experience": "Sauyt Lab (Freedom) · SOC Analyst L1 · 2026-наст. время\nSr Holding (Китай) · SOC Analyst L1 · 2025-2026\nKazakhtelecom (Sapa+) · проект сетевой безопасности · 2025",
             "projects": "HackShield · геймифицированное обучение кибербезопасности (диплом)\nOYNA · платформа для любительского спорта\nИнструменты · сканер, OSINT, проверка утечек",
-            "certs": "CyberShield CSCSA · Red Hat RH124 · Бакалавр кибербезопасности (AITU)",
+            "certs": "DarkControl Prompt Injection & Input Integrity · AI Security University: Introduction to AI Security · CyberShield CSCSA · Red Hat RH124 (участие в курсе) · Бакалавр кибербезопасности (AITU)",
             "education": "Astana IT University · Кибербезопасность · выпуск 2026",
             "tools": "scanner.html  osint.html  exposure.html  (только пассивные проверки)",
             "contact": "daurencd@gmail.com · t.me/yellowcd · github.com/daurencd01",
