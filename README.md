@@ -2,6 +2,12 @@
 
 Personal cybersecurity portfolio (live at daurencd.xyz) with three self-built, publicly usable security tools.
 
+## Interactive Lab
+
+### Prompt Boundary Lab (/prompt-lab.html)
+
+A bilingual EN/RU, browser-only exercise with three synthetic prompt-injection scenarios. Visitors identify where untrusted source material tries to become an instruction, see an explanation, and copy or download a reproducible YAML test case. It is a local simulation: no LLM, target system, or external API is contacted, and the scenarios do not represent discovered vulnerabilities.
+
 ## Live Tools
 
 ### Web Security Scanner (/scanner.html)
