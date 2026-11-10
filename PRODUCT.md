@@ -46,7 +46,7 @@ As of the LinkedIn profile review on 2026-11-10, Dauren holds both a Penetration
 
 ## Evidence on Hand
 
-- Current LinkedIn employers/roles (reviewed 2026-11-10): Penetration Tester at Jupiter SR (remote contract, Jun 2026–present); SOC Analyst L1 at Freedom Cloud Kazakhstan (Feb 2026–present); previous SOC Analyst L1 at Jupiter SR (remote contract, Sep 2025–Jun 2026); Network Specialist at Kazakhtelecom JSC (Jan–Jun 2025).
+- Current LinkedIn employers/roles (reviewed 2026-11-10): Jupiter SR (remote contract, Sep 2025–present), where Dauren was promoted from SOC Analyst L1 (Sep 2025–Jun 2026) to Penetration Tester (Jun 2026–present); SOC Analyst L1 at Freedom Cloud Kazakhstan (Feb 2026–present); Network Specialist at Kazakhtelecom JSC (Jan–Jun 2025).
 - Real education: Bachelor's degree, Cybersecurity (6B06106), Astana IT University, awarded 2026-06-30, BD № 00040351726 — diploma PDF on file at `assets/certificates/050614501880-20260813153532211.pdf`, rendered to `assets/certificates/diploma.png` for display.
 - Documented credentials and training: CyberShield Certified SOC Analyst (CSCSA) via CyberShield Academy/State Technical Service; DarkControl Certify's Certified Practitioner in Prompt Injection and Input Integrity (issued 2026-10-15); AI Security University's Introduction to AI Security completion certificate (2026-09-29, two training hours); Red Hat System Administration I (RH124) certificate of attendance (2025-07-11). Plus a general archive of IBM/LearnQuest course certificates.
 - Projects: HackShield (diploma/graduation project, gamified cybersecurity training platform, live at hackshield-play-nexus.vercel.app); Dauren contributed to OYNA (amateur sports matchmaking platform, live at oyna-play.vercel.app).

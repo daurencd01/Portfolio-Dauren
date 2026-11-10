@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title">
+  <title id="title">Freedom Cloud</title>
+  <rect width="200" height="200" fill="#10151b"/>
+  <path fill="#005d35" d="M41 42h118v14c0 12-9 19-21 19H87v27h46v16c0 23-8 42-27 56-39-10-65-43-65-91V42Z"/>
+  <path fill="#08b63e" d="M41 42h118v14c0 12-9 19-21 19H87v27h46v14c0 20-9 37-27 52-38-12-65-43-65-85V42Z"/>
+  <path fill="#004e32" d="M87 102h46v14c0 20-9 37-27 52l-19-8v-58Z"/>
+  <path fill="#08b63e" d="M87 102h46v14c0 9-2 17-6 24H87v-38Z"/>
+  <rect x="91" y="137" width="68" height="31" rx="11" fill="#495550"/>
+  <rect x="94" y="139" width="65" height="27" rx="10" fill="#5b6660"/>
+  <text x="126" y="158" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">Cloud</text>
+</svg>

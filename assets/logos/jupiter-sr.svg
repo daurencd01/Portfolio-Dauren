@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title">
+  <title id="title">Jupiter SR</title>
+  <rect width="200" height="200" fill="#121212"/>
+  <path fill="#ff5b0b" d="M57 38h38c7 0 13 3 18 8l43 43c5 5 8 11 8 18v27c0 18-13 30-31 30h-15c-9 0-16-3-23-10l-51-32h37l30 28c7 7 17 2 17-8V85c0-8-4-12-12-12h-8c-5 0-10-2-13-6L57 42c-2-2-1-4 0-4Z"/>
+  <circle cx="150" cy="51" r="13" fill="#ff5b0b"/>
+</svg>

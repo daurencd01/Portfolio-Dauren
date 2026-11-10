@@ -116,6 +116,11 @@ const translations = {
         },
         "exp": {
             "title": "EXPERIENCE",
+            "group": {
+                "company": "Jupiter SR",
+                "note": "Career progression: SOC Analyst L1 → Penetration Tester",
+                "date": "September 2025 – Present"
+            },
             "job1": {
                 "role": "Penetration Tester",
                 "company": "Jupiter SR",
@@ -391,7 +396,7 @@ const translations = {
             "role": "Penetration Tester | SOC Analyst L1",
             "motto": "Blue Team visibility. Red Team validation.",
             "skills": "SIEM · Log analysis · Linux · Windows · Networking · Web pentesting basics",
-            "experience": "Jupiter SR · Penetration Tester · Jun 2026–present\nFreedom Cloud Kazakhstan · SOC Analyst L1 · Feb 2026–present\nJupiter SR · SOC Analyst L1 · Sep 2025–Jun 2026\nKazakhtelecom JSC · Network Specialist · Jan–Jun 2025",
+            "experience": "Jupiter SR · Sep 2025–present\n  ↳ Penetration Tester · promoted Jun 2026\n  ↳ SOC Analyst L1 · Sep 2025–Jun 2026\nFreedom Cloud Kazakhstan · SOC Analyst L1 · Feb 2026–present\nKazakhtelecom JSC · Network Specialist · Jan–Jun 2025",
             "projects": "HackShield · gamified cybersecurity training (diploma project)\nOYNA · amateur sports matchmaking platform\nSecurity Tools · scanner, OSINT lookup, KØZ\nGhost Packet · interactive simulated signal hunt",
             "certs": "DarkControl Prompt Injection & Input Integrity · AI Security University: Introduction to AI Security · CyberShield CSCSA · Red Hat RH124 (course attendance) · Bachelor in Cybersecurity (AITU)",
             "education": "Astana IT University · Cybersecurity · graduated 2026",
@@ -519,6 +524,11 @@ const translations = {
         },
         "exp": {
             "title": "ОПЫТ РАБОТЫ",
+            "group": {
+                "company": "Jupiter SR",
+                "note": "Карьерный рост: SOC-аналитик L1 → пентестер",
+                "date": "Сентябрь 2025 – настоящее время"
+            },
             "job1": {
                 "role": "Пентестер",
                 "company": "Jupiter SR",
@@ -794,7 +804,7 @@ const translations = {
             "role": "Пентестер | SOC-аналитик L1",
             "motto": "Blue Team — видимость. Red Team — проверка.",
             "skills": "SIEM · Анализ логов · Linux · Windows · Сети · Основы веб-пентеста",
-            "experience": "Jupiter SR · пентестер · июн 2026–наст. время\nFreedom Cloud Kazakhstan · SOC-аналитик L1 · фев 2026–наст. время\nJupiter SR · SOC-аналитик L1 · сен 2025–июн 2026\nKazakhtelecom JSC · сетевой специалист · янв–июн 2025",
+            "experience": "Jupiter SR · сен 2025–наст. время\n  ↳ Пентестер · повышение в июне 2026\n  ↳ SOC-аналитик L1 · сен 2025–июн 2026\nFreedom Cloud Kazakhstan · SOC-аналитик L1 · фев 2026–наст. время\nKazakhtelecom JSC · сетевой специалист · янв–июн 2025",
             "projects": "HackShield · геймифицированное обучение кибербезопасности (диплом)\nOYNA · платформа для любительского спорта\nИнструменты · сканер, OSINT, проверка утечек\nGhost Packet · игровая охота за сигналом",
             "certs": "DarkControl Prompt Injection & Input Integrity · AI Security University: Introduction to AI Security · CyberShield CSCSA · Red Hat RH124 (участие в курсе) · Бакалавр кибербезопасности (AITU)",
             "education": "Astana IT University · Кибербезопасность · выпуск 2026",
