@@ -24,7 +24,7 @@ const translations = {
             "tooltip": "Recruiter view — clean summary with CV, contacts & key facts",
             "available": "Open to work · Astana, Kazakhstan",
             "exp_label": "Experience",
-            "exp_val": "SOC Analyst L1 · Blue Team — Sauyt Lab, Sr Holding",
+            "exp_val": "Penetration Tester — Jupiter SR · SOC Analyst L1 — Freedom Cloud Kazakhstan",
             "edu_label": "Education",
             "edu_val": "Astana IT University — Cybersecurity (graduated 2026)",
             "cert_label": "Certifications & Training",
@@ -36,26 +36,26 @@ const translations = {
             "whoami": "WHOAMI",
             "name1": "DAUREN",
             "name2": "KOSHKENBEK",
-            "role1": "SOC ANALYST L1",
-            "role2": "PENTESTER (IN TRAINING)",
-            "blurb": "I'm a cybersecurity specialist focused on security monitoring, incident analysis and offensive security. I enjoy turning complex security data into clear insights and building practical solutions.",
+            "role1": "PENETRATION TESTER",
+            "role2": "SOC ANALYST L1",
+            "blurb": "I assess web applications and network services in authorized engagements, while monitoring threats and investigating alerts in a SOC. My defensive experience informs my offensive work.",
             "work": "VIEW MY WORK",
             "cv": "DOWNLOAD CV"
         },
         "about": {
             "eyebrow": "// 02",
             "dossier": "OPERATOR DOSSIER",
-            "desc": "I am Koshkenbek Dauren, a Cybersecurity graduate of Astana IT University (Class of 2026) and a SOC Analyst L1 with hands-on experience in security monitoring.\n\nI currently work as a SOC Analyst L1 at Sauyt Lab (Freedom), supporting national-level information security operations in Kazakhstan. Previously, I worked in an international SOC environment at Sr Holding (China), where I monitored security events and analyzed logs from network, endpoint, and system sources.\n\nMy main focus is Blue Team operations, including alert triage, incident investigation, and security monitoring. At the same time, I am developing offensive security skills and studying penetration testing using Kali Linux.\n\nIn parallel, I build practical projects and initiatives, including HackShield and OYNA, combining cybersecurity knowledge with real-world product development.",
+            "desc": "I am Dauren Koshkenbek, a 2026 Cybersecurity graduate of Astana IT University. I work as a Penetration Tester at Jupiter SR and a SOC Analyst L1 at Freedom Cloud Kazakhstan.\n\nMy offensive work covers reconnaissance, enumeration and vulnerability assessment of web applications and network services. I use Kali Linux, Nmap, Burp Suite, Metasploit and SQLMap within authorized scopes, then document evidence and remediation guidance.\n\nIn the SOC, I monitor Splunk alerts, examine network, endpoint and system logs, identify indicators of compromise and escalate incidents. I previously worked as a SOC Analyst L1 at Jupiter SR and a Network Specialist at Kazakhtelecom JSC.\n\nI developed HackShield, a gamified cybersecurity training project, and contributed to the OYNA sports platform.",
             "fact_loc": "Astana, Kazakhstan",
             "fact_edu": "Astana IT University",
             "fact_lang": "KZ / RU / EN / CN",
             "fact_open": "Open to opportunities"
         },
         "goals": {
-            "short_title": "SHORT-TERM GOAL",
-            "short_desc": "SOC Analyst L2 / Blue Team Engineer",
-            "long_title": "LONG-TERM GOAL",
-            "long_desc": "Penetration Tester with strong defensive background"
+            "short_title": "CURRENT FOCUS",
+            "short_desc": "Web application security and vulnerability assessment",
+            "long_title": "OPEN TO",
+            "long_desc": "Penetration Tester and Cybersecurity Specialist roles"
         },
         "focus": {
             "title": "FOCUS AREAS",
@@ -108,7 +108,7 @@ const translations = {
             "s6": {
                 "title": "REPORTING"
             },
-            "note": "The offensive part of this chain is what I am training toward; the defensive side is what I do at work."
+            "note": "I use reconnaissance, validation and reporting in authorized penetration tests, informed by my SOC experience."
         },
         "arsenal": {
             "eyebrow": "// 04",
@@ -117,33 +117,38 @@ const translations = {
         "exp": {
             "title": "EXPERIENCE",
             "job1": {
-                "role": "SOC Analyst L1",
-                "company": "Sauyt Lab (Freedom)",
-                "date": "February 03, 2026 – Present",
-                "list1": "Security event monitoring in SOC environment",
-                "list2": "Log analysis from network, endpoint, and system sources",
-                "list3": "Initial alert triage and incident investigation",
-                "list4": "Identification of suspicious activity and escalation",
-                "list5": "Working within a high-responsibility national security environment"
+                "role": "Penetration Tester",
+                "company": "Jupiter SR",
+                "date": "June 2026 – Present",
+                "list1": "Remote contract penetration testing of web applications and network services",
+                "list2": "Reconnaissance, enumeration and vulnerability assessment",
+                "list3": "Validation with Nmap, Burp Suite, Metasploit and SQLMap in authorized scopes",
+                "list4": "Findings documented with evidence and remediation guidance"
             },
             "job2": {
                 "role": "SOC Analyst L1",
-                "company": "Sr Holding (China)",
-                "date": "September 01, 2025 – February 01, 2026",
-                "list1": "Security event monitoring in SOC environment",
-                "list2": "Log analysis from network, endpoint, and system sources",
-                "list3": "Initial incident triage and alert investigation",
-                "list4": "Identification of suspicious activity and escalation when required",
-                "list5": "Working with security monitoring tools and dashboards"
+                "company": "Freedom Cloud Kazakhstan",
+                "date": "February 2026 – Present",
+                "list1": "Monitor and triage alerts in Splunk SIEM",
+                "list2": "Analyze network, endpoint and system logs for suspicious activity and IOCs",
+                "list3": "Escalate confirmed threats following SOC procedures",
+                "list4": "Support continuous monitoring for enterprise and government clients"
             },
             "job3": {
-                "role": "Network Security Project Participant",
-                "company": "Kazakhtelecom (Sapa+)",
-                "date": "January 20, 2025 – June 20, 2025",
-                "list1": "Participation in a network security project",
-                "list2": "Support of secure network infrastructure",
-                "list3": "Monitoring and basic analysis of network security events",
-                "list4": "Working within a large enterprise telecom environment"
+                "role": "SOC Analyst L1",
+                "company": "Jupiter SR",
+                "date": "September 2025 – June 2026",
+                "list1": "Remote contract work in an international SOC",
+                "list2": "Monitored alerts and analyzed logs using SIEM tools",
+                "list3": "Escalated incidents and supported threat detection"
+            },
+            "job4": {
+                "role": "Network Specialist",
+                "company": "Kazakhtelecom JSC",
+                "date": "January – June 2025",
+                "list1": "Supported network security work in a telecom environment",
+                "list2": "Assisted with secure network infrastructure operations",
+                "list3": "Monitored and analyzed network security events"
             }
         },
         "dash": {
@@ -231,7 +236,7 @@ const translations = {
             },
             "p2": {
                 "title": "OYNA",
-                "desc": "Kazakhstan’s first platform for amateur sports, enabling fair matchmaking by skill level and connecting verified organizers and players."
+                "desc": "I contributed to OYNA, an amateur sports platform for skill-based matchmaking and connecting organizers with players."
             }
         },
         "cert": {
@@ -293,7 +298,7 @@ const translations = {
             "blue_sub": "DETECT / ANALYZE / RESPOND",
             "red": "RED TEAM",
             "red_sub": "FIND / EXPLOIT / VALIDATE",
-            "training": "IN TRAINING",
+            "training": "AUTHORIZED TESTING",
             "term": "TERMINAL",
             "term_hint": "TRY 'hunt'",
             "term_ph": "help",
@@ -368,7 +373,7 @@ const translations = {
         "sec": {
             "about": "ABOUT",
             "about_tag": "OPERATOR DOSSIER",
-            "exp_tag": "REAL SOC WORK"
+            "exp_tag": "PENTEST + SOC WORK"
         },
         "c": {
             "head1": "Let's build",
@@ -383,10 +388,10 @@ const translations = {
             "help": "whoami  role  skills  experience  projects  certs  education  tools  hunt  contact  cv [en|ru|kz]  lang  clear",
             "hunt": "Tuning into the rogue signal...",
             "notfound": "command not found. type \"help\".",
-            "role": "SOC Analyst L1 | Pentester (in training)",
+            "role": "Penetration Tester | SOC Analyst L1",
             "motto": "Blue Team visibility. Red Team validation.",
             "skills": "SIEM · Log analysis · Linux · Windows · Networking · Web pentesting basics",
-            "experience": "Sauyt Lab (Freedom) · SOC Analyst L1 · 2026-now\nSr Holding (China) · SOC Analyst L1 · 2025-2026\nKazakhtelecom (Sapa+) · Network Security Project · 2025",
+            "experience": "Jupiter SR · Penetration Tester · Jun 2026–present\nFreedom Cloud Kazakhstan · SOC Analyst L1 · Feb 2026–present\nJupiter SR · SOC Analyst L1 · Sep 2025–Jun 2026\nKazakhtelecom JSC · Network Specialist · Jan–Jun 2025",
             "projects": "HackShield · gamified cybersecurity training (diploma project)\nOYNA · amateur sports matchmaking platform\nSecurity Tools · scanner, OSINT lookup, KØZ\nGhost Packet · interactive simulated signal hunt",
             "certs": "DarkControl Prompt Injection & Input Integrity · AI Security University: Introduction to AI Security · CyberShield CSCSA · Red Hat RH124 (course attendance) · Bachelor in Cybersecurity (AITU)",
             "education": "Astana IT University · Cybersecurity · graduated 2026",
@@ -422,7 +427,7 @@ const translations = {
             "tooltip": "Режим для рекрутёра — чистая сводка: CV, контакты и ключевые факты",
             "available": "Открыт к предложениям · Астана, Казахстан",
             "exp_label": "Опыт",
-            "exp_val": "SOC-аналитик L1 · Blue Team — Sauyt Lab, Sr Holding",
+            "exp_val": "Пентестер — Jupiter SR · SOC-аналитик L1 — Freedom Cloud Kazakhstan",
             "edu_label": "Образование",
             "edu_val": "Astana IT University — Кибербезопасность (выпуск 2026)",
             "cert_label": "Сертификаты и обучение",
@@ -434,26 +439,26 @@ const translations = {
             "whoami": "КТО Я",
             "name1": "ДАУРЕН",
             "name2": "КОШКЕНБЕК",
-            "role1": "SOC-АНАЛИТИК L1",
-            "role2": "ПЕНТЕСТЕР (В ОБУЧЕНИИ)",
-            "blurb": "Я специалист по кибербезопасности: мониторинг безопасности, анализ инцидентов и наступательная безопасность. Люблю превращать сложные данные безопасности в понятные выводы и создавать практичные решения.",
+            "role1": "ПЕНТЕСТЕР",
+            "role2": "SOC-АНАЛИТИК L1",
+            "blurb": "Проверяю безопасность веб-приложений и сетевых сервисов в рамках согласованных задач, а также анализирую угрозы и оповещения в SOC. Опыт защиты помогает мне в пентесте.",
             "work": "МОИ РАБОТЫ",
             "cv": "СКАЧАТЬ CV"
         },
         "about": {
             "eyebrow": "// 02",
             "dossier": "ДОСЬЕ ОПЕРАТОРА",
-            "desc": "Я Кошкенбек Даурен — выпускник Astana IT University по специальности Кибербезопасность (выпуск 2026) и SOC Analyst L1 с практическим опытом мониторинга безопасности.\n\nВ настоящее время я работаю SOC аналитиком (L1) в Sauyt Lab (Freedom), поддерживая операции по информационной безопасности национального уровня в Казахстане. Ранее я работал в международном SOC в компании Sr Holding (Китай), где занимался мониторингом событий безопасности и анализом логов сети, конечных точек и систем.\n\nМой основной фокус — операции Blue Team, включая триаж предупреждений, расследование инцидентов и мониторинг безопасности. В то же время я развиваю навыки наступательной безопасности (offensive security) и изучаю тестирование на проникновение с использованием Kali Linux.\n\nПараллельно я создаю практические проекты, такие как HackShield и OYNA, объединяя знания в области кибербезопасности с разработкой реальных продуктов.",
+            "desc": "Я Даурен Кошкенбек, выпускник Astana IT University по специальности «Кибербезопасность» (2026). Работаю пентестером в Jupiter SR и SOC-аналитиком L1 в Freedom Cloud Kazakhstan.\n\nВ пентесте занимаюсь разведкой, перечислением сервисов и оценкой уязвимостей веб-приложений и сетевой инфраструктуры. Использую Kali Linux, Nmap, Burp Suite, Metasploit и SQLMap в согласованных рамках; готовлю отчёты с доказательствами и рекомендациями.\n\nВ SOC обрабатываю оповещения Splunk, анализирую сетевые и системные логи, ищу индикаторы компрометации и передаю инциденты на эскалацию. Ранее работал SOC-аналитиком L1 в Jupiter SR и сетевым специалистом в Kazakhtelecom JSC.\n\nРазработал HackShield — игровой проект для обучения кибербезопасности — и участвовал в разработке спортивной платформы OYNA.",
             "fact_loc": "Астана, Казахстан",
             "fact_edu": "Astana IT University",
             "fact_lang": "KZ / RU / EN / CN",
             "fact_open": "Открыт к предложениям"
         },
         "goals": {
-            "short_title": "КРАТКОСРОЧНАЯ ЦЕЛЬ",
-            "short_desc": "SOC Analyst L2 / Blue Team Engineer",
-            "long_title": "ДОЛГОСРОЧНАЯ ЦЕЛЬ",
-            "long_desc": "Penetration Tester с сильным защитным бэкграундом"
+            "short_title": "ТЕКУЩИЙ ФОКУС",
+            "short_desc": "Безопасность веб-приложений и оценка уязвимостей",
+            "long_title": "ОТКРЫТ К ПРЕДЛОЖЕНИЯМ",
+            "long_desc": "Пентестер и специалист по кибербезопасности"
         },
         "focus": {
             "title": "ОБЛАСТИ ФОКУСА",
@@ -506,7 +511,7 @@ const translations = {
             "s6": {
                 "title": "ОТЧЁТНОСТЬ"
             },
-            "note": "Наступательную часть цепочки я осваиваю; защитную часть выполняю на работе."
+            "note": "В согласованных пентестах применяю разведку, проверку уязвимостей и отчётность с опорой на опыт работы в SOC."
         },
         "arsenal": {
             "eyebrow": "// 04",
@@ -515,33 +520,38 @@ const translations = {
         "exp": {
             "title": "ОПЫТ РАБОТЫ",
             "job1": {
-                "role": "SOC Analyst L1",
-                "company": "Sauyt Lab (Freedom)",
-                "date": "3 февраля 2026 – По настоящее время",
-                "list1": "Мониторинг событий безопасности в SOC",
-                "list2": "Анализ логов сетевых устройств, endpoint и систем",
-                "list3": "Первичная обработка алертов и инцидентов",
-                "list4": "Выявление подозрительной активности и эскалация",
-                "list5": "Работа в среде с повышенными требованиями к безопасности"
+                "role": "Пентестер",
+                "company": "Jupiter SR",
+                "date": "Июнь 2026 – настоящее время",
+                "list1": "Удалённое контрактное тестирование веб-приложений и сетевых сервисов",
+                "list2": "Разведка, перечисление сервисов и оценка уязвимостей",
+                "list3": "Проверка с Nmap, Burp Suite, Metasploit и SQLMap в согласованных рамках",
+                "list4": "Отчёты с доказательствами и рекомендациями по устранению"
             },
             "job2": {
-                "role": "SOC Analyst L1",
-                "company": "Sr Holding (China)",
-                "date": "1 сентября 2025 – 1 февраля 2026",
-                "list1": "Мониторинг событий безопасности в SOC",
-                "list2": "Анализ логов сетевых устройств, endpoint и систем",
-                "list3": "Первичная обработка алертов и инцидентов",
-                "list4": "Выявление подозрительной активности и эскалация",
-                "list5": "Работа с инструментами мониторинга безопасности"
+                "role": "SOC-аналитик L1",
+                "company": "Freedom Cloud Kazakhstan",
+                "date": "Февраль 2026 – настоящее время",
+                "list1": "Мониторинг и первичная обработка оповещений в Splunk SIEM",
+                "list2": "Анализ сетевых, системных и endpoint-логов на подозрительную активность и IOC",
+                "list3": "Эскалация подтверждённых угроз по процедурам SOC",
+                "list4": "Непрерывный мониторинг для корпоративных и государственных клиентов"
             },
             "job3": {
-                "role": "Участник проекта сетевой безопасности",
-                "company": "Kazakhtelecom (Sapa+)",
-                "date": "20 января 2025 – 20 июня 2025",
-                "list1": "Участие в проекте сетевой безопасности",
-                "list2": "Поддержка защищённой сетевой инфраструктуры",
-                "list3": "Мониторинг и базовый анализ событий сетевой безопасности",
-                "list4": "Работа в крупной телекоммуникационной компании"
+                "role": "SOC-аналитик L1",
+                "company": "Jupiter SR",
+                "date": "Сентябрь 2025 – июнь 2026",
+                "list1": "Удалённая контрактная работа в международном SOC",
+                "list2": "Мониторинг оповещений и анализ логов с помощью SIEM",
+                "list3": "Эскалация инцидентов и участие в обнаружении угроз"
+            },
+            "job4": {
+                "role": "Сетевой специалист",
+                "company": "Kazakhtelecom JSC",
+                "date": "Январь – июнь 2025",
+                "list1": "Работа по сетевой безопасности в телекоммуникационной среде",
+                "list2": "Помощь в поддержке защищённой сетевой инфраструктуры",
+                "list3": "Мониторинг и анализ событий сетевой безопасности"
             }
         },
         "dash": {
@@ -629,7 +639,7 @@ const translations = {
             },
             "p2": {
                 "title": "OYNA",
-                "desc": "Первая в Казахстане платформа для любительского спорта с подбором по уровню, позволяющая находить честные игры, проверенных организаторов и игроков своего уровня."
+                "desc": "Участвовал в разработке OYNA — платформы для любительского спорта с подбором по уровню и поиском организаторов и игроков."
             }
         },
         "cert": {
@@ -691,7 +701,7 @@ const translations = {
             "blue_sub": "ОБНАРУЖИТЬ / ПРОАНАЛИЗИРОВАТЬ / ОТРЕАГИРОВАТЬ",
             "red": "RED TEAM",
             "red_sub": "НАЙТИ / ЭКСПЛУАТИРОВАТЬ / ПОДТВЕРДИТЬ",
-            "training": "В ОБУЧЕНИИ",
+            "training": "СОГЛАСОВАННЫЙ ПЕНТЕСТ",
             "term": "ТЕРМИНАЛ",
             "term_hint": "ПОПРОБУЙТЕ 'hunt'",
             "term_ph": "help",
@@ -766,7 +776,7 @@ const translations = {
         "sec": {
             "about": "ОБО МНЕ",
             "about_tag": "ДОСЬЕ ОПЕРАТОРА",
-            "exp_tag": "РЕАЛЬНАЯ РАБОТА В SOC"
+            "exp_tag": "ПЕНТЕСТ + SOC"
         },
         "c": {
             "head1": "Создаём",
@@ -781,10 +791,10 @@ const translations = {
             "help": "whoami  role  skills  experience  projects  certs  education  tools  hunt  contact  cv [en|ru|kz]  lang  clear",
             "hunt": "Настраиваю приём подозрительного сигнала...",
             "notfound": "команда не найдена. введите \"help\".",
-            "role": "SOC-аналитик L1 | Пентестер (в обучении)",
+            "role": "Пентестер | SOC-аналитик L1",
             "motto": "Blue Team — видимость. Red Team — проверка.",
             "skills": "SIEM · Анализ логов · Linux · Windows · Сети · Основы веб-пентеста",
-            "experience": "Sauyt Lab (Freedom) · SOC Analyst L1 · 2026-наст. время\nSr Holding (Китай) · SOC Analyst L1 · 2025-2026\nKazakhtelecom (Sapa+) · проект сетевой безопасности · 2025",
+            "experience": "Jupiter SR · пентестер · июн 2026–наст. время\nFreedom Cloud Kazakhstan · SOC-аналитик L1 · фев 2026–наст. время\nJupiter SR · SOC-аналитик L1 · сен 2025–июн 2026\nKazakhtelecom JSC · сетевой специалист · янв–июн 2025",
             "projects": "HackShield · геймифицированное обучение кибербезопасности (диплом)\nOYNA · платформа для любительского спорта\nИнструменты · сканер, OSINT, проверка утечек\nGhost Packet · игровая охота за сигналом",
             "certs": "DarkControl Prompt Injection & Input Integrity · AI Security University: Introduction to AI Security · CyberShield CSCSA · Red Hat RH124 (участие в курсе) · Бакалавр кибербезопасности (AITU)",
             "education": "Astana IT University · Кибербезопасность · выпуск 2026",

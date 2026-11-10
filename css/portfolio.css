@@ -513,6 +513,7 @@ body.reveal-ready .reveal:not(.in) { opacity: 0; transform: translateY(26px); }
 .exp-head { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
 .logo-tile { width: 56px; height: 56px; flex: none; display: grid; place-items: center; background: #fff; border-radius: 4px; padding: 6px; }
 .logo-tile img { width: 100%; height: 100%; object-fit: contain; }
+.logo-tile--text { font: 800 14px/1 var(--f-ui); color: #151c22; letter-spacing: -.04em; }
 .exp-head h3 { font: 600 18px/1.25 var(--f-ui); color: #fff; }
 .exp-co { display: block; color: var(--g); font-size: 13px; }
 .exp-date { margin-left: auto; align-self: flex-start; font-size: 11px; letter-spacing: 0.06em; color: var(--tx-dim); border: 1px solid var(--line-hi); padding: 3px 10px; border-radius: 2px; white-space: nowrap; }
